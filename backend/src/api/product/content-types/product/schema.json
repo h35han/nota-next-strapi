@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "products",
+  "info": {
+    "singularName": "product",
+    "pluralName": "products",
+    "displayName": "Product"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "heading": {
+      "type": "string"
+    },
+    "subheading": {
+      "type": "string"
+    },
+    "tagline": {
+      "type": "text"
+    },
+    "description": {
+      "type": "text"
+    },
+    "about": {
+      "type": "text"
+    },
+    "who_for_intro": {
+      "type": "text"
+    },
+    "cta_label": {
+      "type": "string"
+    },
+    "cta_price": {
+      "type": "string"
+    },
+    "availability": {
+      "type": "enumeration",
+      "enum": ["launching_soon", "available", "draft"],
+      "default": "draft"
+    },
+    "year": {
+      "type": "integer"
+    },
+    "team": {
+      "type": "string"
+    },
+    "design_credit": {
+      "type": "text"
+    },
+    "built_credit": {
+      "type": "text"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

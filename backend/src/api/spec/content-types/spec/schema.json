@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "specs",
+  "info": {
+    "singularName": "spec",
+    "pluralName": "specs",
+    "displayName": "Specification"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "items": {
+      "type": "json"
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

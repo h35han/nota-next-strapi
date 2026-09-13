@@ -1,0 +1,156 @@
+{
+  "$schema": "schema.json",
+
+  "meta": {
+    "source": "https://nota.uprock.pro",
+    "scraped_at": "2026-09-13",
+    "status": "launching_soon",
+    "collections": [
+      "products",
+      "specs",
+      "audiences",
+      "features",
+      "color_variants",
+      "box_items"
+    ]
+  },
+
+  "products": [
+    {
+      "name": "Nota One",
+      "heading": "Smart pen",
+      "subheading": "for real thinking",
+      "tagline": "Nota pen",
+      "description": "NŌTA creates tools that respect the way people think and write. Natural handwriting, quietly connected to digital structure.",
+      "about": "Some thoughts need time, space, and a physical trace to exist. Writing by hand creates focus, presence, and a deeper connection with ideas. This tool is built around that simple truth.",
+      "who_for_intro": "This tool is made for people who think on paper. It keeps handwriting natural and focused, letting you write the way you always have without distractions or screens getting in the way.\n\nEverything you write syncs to the app, where your notes are organized, searchable, and ready to work with AI when you need more clarity or structure.",
+      "cta_label": "Order",
+      "cta_price": "$300",
+      "availability": "launching_soon",
+      "year": 2026,
+      "team": "NŌTA Team",
+      "design_credit": "Designed by Alice & UPROCK Studio",
+      "built_credit": "Built by NōtaTeam · Made in Taptop",
+      "order": 0
+    }
+  ],
+
+  "specs": [
+    {
+      "title": "Writing System",
+      "order": 0,
+      "items": [
+        "Fountain pen nib",
+        "Natural ink flow",
+        "Replaceable fountain-pen ink cartridge",
+        "Designed for precise, expressive handwriting"
+      ]
+    },
+    {
+      "title": "Capture Technology",
+      "order": 1,
+      "items": [
+        "High-precision optical tracking",
+        "Real-time stroke capture",
+        "Line-by-line accuracy",
+        "Supports handwriting, diagrams, sketches"
+      ]
+    },
+    {
+      "title": "Digital Continuity",
+      "order": 2,
+      "items": [
+        "Notes sync automatically",
+        "Searchable over time",
+        "Structured with AI support",
+        "Ready when you return"
+      ]
+    }
+  ],
+
+  "audiences": [
+    {
+      "title": "Students & Learners",
+      "order": 0,
+      "description": "Handwritten notes stay personal and intuitive, but become searchable, organized, and easy to study. Lectures, ideas, and revisions are captured as they are — then supported by AI summaries, text recognition, and quick navigation when it matters most."
+    },
+    {
+      "title": "Creators, Designers & Architects",
+      "order": 1,
+      "description": "Sketches, diagrams, concepts, and fragments of ideas belong on paper. This tool makes sure they don't disappear. Everything drawn or written is safely stored, easy to revisit, and ready to evolve into something bigger — without interrupting the creative flow."
+    },
+    {
+      "title": "Managers & Product Thinkers",
+      "order": 2,
+      "description": "Meetings start on paper and end with structure. Notes turn into clear summaries, tasks, and follow-ups. The pen captures everything quietly, while the app helps organize decisions without pulling attention away from the room."
+    }
+  ],
+
+  "features": [
+    {
+      "eyebrow": "Everything you write is synced to your phone in real time",
+      "title": "Your notes. Already there.",
+      "body": "Every note is instantly transferred to your device and safely stored in your personal space. Access your thoughts anytime, organize them effortlessly, and continue working across devices. Your handwriting becomes part of a system that is searchable, structured, and always available.",
+      "order": 0
+    },
+    {
+      "eyebrow": "No delays. No glitches. No random effects.",
+      "title": "AI-powered structure",
+      "body": "Handwriting is processed in real time and enriched quietly in the background. AI recognizes text, structure, and context to organize notes, highlight key ideas, and connect thoughts over time. The technology stays invisible, so your focus remains fully on writing.",
+      "order": 1
+    },
+    {
+      "eyebrow": "Looks like paper. Works like a system.",
+      "title": "For you, it's just a blank sheet",
+      "body": "You write freely, without grids, guides, or visible markers. The paper feels clean and familiar, keeping your focus on ideas instead of tools. Nothing distracts you from the act of writing. Nothing changes in how you write — only what becomes possible after.",
+      "order": 2
+    },
+    {
+      "eyebrow": "We use special paper with a nearly invisible pattern",
+      "title": "For the pen, it's a precise map",
+      "body": "The pattern defines exact coordinates across the page, allowing the pen to capture every stroke with precision and consistency. For you, it feels like ordinary paper. For the system, it becomes a stable reference that turns handwriting into structured, accurate digital data.",
+      "order": 3
+    }
+  ],
+
+  "color_variants": [
+    {
+      "name": "Silver",
+      "tagline": "Impossible to overthink",
+      "order": 0
+    },
+    {
+      "name": "Graphite Black",
+      "tagline": "Clarity in silence.",
+      "order": 1
+    },
+    {
+      "name": "Mist Blue",
+      "tagline": "Light thinking.",
+      "order": 2
+    },
+    {
+      "name": "Precision Red",
+      "tagline": "Form follows thought.",
+      "order": 3
+    },
+    {
+      "name": "Bright Orange",
+      "tagline": "Steady focus.",
+      "order": 4
+    }
+  ],
+
+  "box_items": [
+    {
+      "title": "The NŌTA Smart Pen",
+      "description": "A precision smart pen with a solid aluminum body, designed for natural handwriting and accurate digital capture. Seamlessly connects to smart paper, translating every stroke into structured digital data — no screens, no distractions, just writing. Aluminum body, USB-C charging, physical control button, and Bluetooth connectivity. Up to 8 hours of active use with a lightweight, balanced design for everyday writing.",
+      "order": 0
+    },
+    {
+      "title": "Charging Adapter",
+      "description": "Compact USB-C power adapter with stable output for everyday charging. Designed for safe, efficient power delivery with minimal heat.",
+      "order": 1
+    }
+  ]
+}

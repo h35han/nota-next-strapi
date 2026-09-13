@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nota.uprock.pro/schemas/seed-data.schema.json",
+  "title": "NŌTA seed data (nota.uprock.pro)",
+  "description": "Scraped text content from https://nota.uprock.pro, organized into Strapi collections. Validates seed/data.json.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["meta", "products", "specs", "audiences", "features", "color_variants", "box_items"],
+  "properties": {
+    "$schema": {
+      "type": "string"
+    },
+    "meta": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": ["source", "scraped_at", "collections"],
+      "properties": {
+        "source": { "type": "string" },
+        "scraped_at": { "type": "string", "format": "date" },
+        "status": { "enum": ["launching_soon", "available", "draft"] },
+        "collections": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "products": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "heading": { "type": "string" },
+          "subheading": { "type": "string" },
+          "tagline": { "type": "string" },
+          "description": { "type": "string" },
+          "about": { "type": "string" },
+          "who_for_intro": { "type": "string" },
+          "cta_label": { "type": "string" },
+          "cta_price": { "type": "string" },
+          "availability": { "enum": ["launching_soon", "available", "draft"] },
+          "year": { "type": "integer" },
+          "team": { "type": "string" },
+          "design_credit": { "type": "string" },
+          "built_credit": { "type": "string" },
+          "order": { "type": "integer" }
+        }
+      }
+    },
+    "specs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "items"],
+        "properties": {
+          "title": { "type": "string" },
+          "items": { "type": "array", "items": { "type": "string" } },
+          "order": { "type": "integer" }
+        }
+      }
+    },
+    "audiences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title"],
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "order": { "type": "integer" }
+        }
+      }
+    },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "eyebrow": { "type": "string" },
+          "title": { "type": "string" },
+          "body": { "type": "string" },
+          "order": { "type": "integer" }
+        }
+      }
+    },
+    "color_variants": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": { "type": "string" },
+          "tagline": { "type": "string" },
+          "order": { "type": "integer" }
+        }
+      }
+    },
+    "box_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title"],
+        "properties": {
+          "title": { "type": "string" },
+          "description": { "type": "string" },
+          "order": { "type": "integer" }
+        }
+      }
+    }
+  }
+}
