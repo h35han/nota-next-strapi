@@ -11,16 +11,13 @@
   },
   "attributes": {
     "inside_complete_heading": {
-      "type": "string",
-      "default": "A complete, ready-to-use set"
+      "type": "string"
     },
     "inside_complete_text": {
-      "type": "text",
-      "default": "Smart pen, Smartpaper notepad, charging cable, and instructions — carefully packaged for a hassle-free start."
+      "type": "text"
     },
     "inside_intro": {
-      "type": "text",
-      "default": "A precision smart pen with a solid aluminum body, designed for natural handwriting and accurate digital capture. Seamlessly connects to smart paper, translating every stroke into structured digital data — no screens, no distractions, just writing."
+      "type": "text"
     },
     "inside_set_image": {
       "type": "media",
@@ -33,60 +30,57 @@
       "allowedTypes": ["videos"]
     },
     "popup_heading": {
-      "type": "string",
-      "default": "Stay ahead"
+      "type": "string"
     },
     "popup_text": {
-      "type": "text",
-      "default": "Launching soon. Get early access and insider updates"
+      "type": "text"
     },
     "popup_input_placeholder": {
-      "type": "string",
-      "default": "E-mail"
+      "type": "string"
     },
     "popup_button": {
-      "type": "string",
-      "default": "Notify me"
+      "type": "string"
     },
     "popup_success": {
-      "type": "string",
-      "default": "All set. We'll keep you posted"
+      "type": "string"
     },
     "popup_error": {
-      "type": "string",
-      "default": "Something went wrong! Try again"
+      "type": "string"
     },
     "popup_close": {
-      "type": "string",
-      "default": "Close"
+      "type": "string"
     },
     "footer_copyright": {
-      "type": "string",
-      "default": "@2026 Nōta Team"
+      "type": "string"
     },
     "footer_made_in": {
-      "type": "string",
-      "default": "Made in Taptop"
+      "type": "string"
     },
     "footer_built_by": {
-      "type": "string",
-      "default": "Builded by NōtaTeam"
+      "type": "string"
     },
     "footer_designed_by": {
-      "type": "string",
-      "default": "Designed by Alice & UPROCK Studio"
+      "type": "string"
     },
     "made_in_url": {
-      "type": "string",
-      "default": "https://taptop.pro/"
+      "type": "string"
     },
     "designed_url": {
-      "type": "string",
-      "default": "https://www.behance.net/alicem"
+      "type": "string"
     },
     "uprock_url": {
-      "type": "string",
-      "default": "https://www.uprock.ru/"
+      "type": "string"
+    },
+    "meta_title": {
+      "type": "string"
+    },
+    "meta_description": {
+      "type": "text"
+    },
+    "og_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
     }
   }
 }

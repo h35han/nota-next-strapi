@@ -249,3 +249,30 @@ export async function getHomeData(): Promise<HomeData> {
 
   return { product, specs, audiences, features, colorVariants, boxItems, detailCards, teamMembers, homepage };
 }
+
+export type SeoMetadata = {
+  title: string;
+  description: string;
+  ogImage: string;
+};
+
+const DEFAULT_SEO: SeoMetadata = {
+  title: "NŌTA — Smart pen for real thinking",
+  description:
+    "NŌTA creates tools that respect the way people think and write. Natural handwriting, quietly connected to digital structure.",
+  ogImage: "/opengraph.jpg",
+};
+
+export async function getSeoMetadata(): Promise<SeoMetadata> {
+  try {
+    const raw = await fetchJson<Entry>("/homepage?populate=*");
+    const h = raw.data as unknown as Entry | null;
+    return {
+      title: str(h?.meta_title) || DEFAULT_SEO.title,
+      description: str(h?.meta_description) || DEFAULT_SEO.description,
+      ogImage: mediaToUrl(h?.og_image) || DEFAULT_SEO.ogImage,
+    };
+  } catch {
+    return DEFAULT_SEO;
+  }
+}

@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { Instrument_Serif, Inter } from "next/font/google";
 import "./globals.css";
 import Providers from "./components/Providers";
+import { getSeoMetadata } from "../lib/api";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -19,19 +20,21 @@ const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
-export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
-  title: "NŌTA — Smart pen for real thinking",
-  description:
-    "NŌTA creates tools that respect the way people think and write. Natural handwriting, quietly connected to digital structure.",
-  openGraph: {
-    title: "NŌTA — Smart pen for real thinking",
-    description:
-      "NŌTA creates tools that respect the way people think and write.",
-    type: "website",
-    images: [{ url: "/opengraph.jpg" }],
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const seo = await getSeoMetadata();
+  const metadataBase = new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000");
+  return {
+    metadataBase,
+    title: seo.title,
+    description: seo.description,
+    openGraph: {
+      title: seo.title,
+      description: seo.description,
+      type: "website",
+      images: [{ url: seo.ogImage }],
+    },
+  };
+}
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
