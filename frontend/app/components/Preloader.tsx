@@ -52,7 +52,7 @@ export default function Preloader() {
   return (
     <div
       ref={root}
-      className="fixed inset-0 z-100 flex flex-col items-center justify-center gap-8 bg-ink"
+      className="fixed inset-0 z-100 flex flex-col items-center justify-center gap-8"
     >
       <div
         ref={counter}
