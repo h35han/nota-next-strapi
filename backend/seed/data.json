@@ -3,7 +3,7 @@
 
   "meta": {
     "source": "https://nota.uprock.pro",
-    "scraped_at": "2026-09-13",
+    "scraped_at": "2026-09-14",
     "status": "launching_soon",
     "collections": [
       "products",
@@ -11,8 +11,15 @@
       "audiences",
       "features",
       "color_variants",
-      "box_items"
-    ]
+      "box_items",
+      "detail_cards",
+      "team_members",
+      "homepage"
+    ],
+    "media": {
+      "note": "All assets live in the Strapi media library (upload plugin). The string paths below are the SCRATCH source used by seed.cjs, which uploads each file from $MEDIA_SRC (default: ../frontend/public) and wires the { connect: [fileId] } relations. Uploads persist in backend/public/uploads — on Railway that directory is mounted from the volume (see RAILWAY.md).",
+      "soon": "Re-run npm run data:seed (or data:seed:reset) to sync; MEDIA_SRC can point at any folder holding the /media/... tree."
+    }
   },
 
   "products": [
@@ -31,6 +38,14 @@
       "team": "NŌTA Team",
       "design_credit": "Designed by Alice & UPROCK Studio",
       "built_credit": "Built by NōtaTeam · Made in Taptop",
+      "cover_image": "/media/hero/hero.png",
+      "cover_lottie": "/media/hero/cover.lottie.json",
+      "specs_image": "/media/specs/pen.png",
+      "specs_image_tablet": "/media/specs/pen-768.webp",
+      "specs_image_mobile": "/media/specs/pen-480.webp",
+      "who_video": "/media/videos/who.mp4",
+      "popup_image": "/media/popup/order-pen.png",
+      "popup_logo": "/media/icons/logo.svg",
       "order": 0
     }
   ],
@@ -88,27 +103,35 @@
 
   "features": [
     {
-      "eyebrow": "Everything you write is synced to your phone in real time",
-      "title": "Your notes. Already there.",
-      "body": "Every note is instantly transferred to your device and safely stored in your personal space. Access your thoughts anytime, organize them effortlessly, and continue working across devices. Your handwriting becomes part of a system that is searchable, structured, and always available.",
+      "eyebrow": "We use special paper with a nearly invisible pattern",
+      "title": "For the pen, it's a precise map",
+      "body": "The pattern defines exact coordinates across the page, allowing the pen to capture every stroke with precision and consistency. For you, it feels like ordinary paper. For the system, it becomes a stable reference that turns handwriting into structured, accurate digital data.",
+      "image": "/media/paper/media/paper-01.jpg",
+      "image_mobile": "/media/paper/mobile/41_block.jpg",
       "order": 0
-    },
-    {
-      "eyebrow": "No delays. No glitches. No random effects.",
-      "title": "AI-powered structure",
-      "body": "Handwriting is processed in real time and enriched quietly in the background. AI recognizes text, structure, and context to organize notes, highlight key ideas, and connect thoughts over time. The technology stays invisible, so your focus remains fully on writing.",
-      "order": 1
     },
     {
       "eyebrow": "Looks like paper. Works like a system.",
       "title": "For you, it's just a blank sheet",
       "body": "You write freely, without grids, guides, or visible markers. The paper feels clean and familiar, keeping your focus on ideas instead of tools. Nothing distracts you from the act of writing. Nothing changes in how you write — only what becomes possible after.",
+      "image": "/media/paper/media/paper-02.jpg",
+      "image_mobile": "/media/paper/mobile/42_block.jpg",
+      "order": 1
+    },
+    {
+      "eyebrow": "No delays. No glitches. No random effects.",
+      "title": "AI-powered structure",
+      "body": "Handwriting is processed in real time and enriched quietly in the background. AI recognizes text, structure, and context to organize notes, highlight key ideas, and connect thoughts over time. The technology stays invisible, so your focus remains fully on writing.",
+      "image": "/media/paper/media/paper-03.jpg",
+      "image_mobile": "/media/paper/mobile/43_block.jpg",
       "order": 2
     },
     {
-      "eyebrow": "We use special paper with a nearly invisible pattern",
-      "title": "For the pen, it's a precise map",
-      "body": "The pattern defines exact coordinates across the page, allowing the pen to capture every stroke with precision and consistency. For you, it feels like ordinary paper. For the system, it becomes a stable reference that turns handwriting into structured, accurate digital data.",
+      "eyebrow": "Everything you write is synced to your phone in real time",
+      "title": "Your notes. Already there.",
+      "body": "Every note is instantly transferred to your device and safely stored in your personal space. Access your thoughts anytime, organize them effortlessly, and continue working across devices. Your handwriting becomes part of a system that is searchable, structured, and always available.",
+      "image": "/media/paper/media/paper-04.jpg",
+      "image_mobile": "/media/paper/mobile/41_block1212.png",
       "order": 3
     }
   ],
@@ -117,26 +140,36 @@
     {
       "name": "Silver",
       "tagline": "Impossible to overthink",
+      "image": "/media/colors/color-01.jpg",
+      "accent": "light",
       "order": 0
     },
     {
       "name": "Graphite Black",
       "tagline": "Clarity in silence.",
+      "image": "/media/colors/color-02.jpg",
+      "accent": "light",
       "order": 1
     },
     {
       "name": "Mist Blue",
       "tagline": "Light thinking.",
+      "image": "/media/colors/color-03.jpg",
+      "accent": "light",
       "order": 2
     },
     {
       "name": "Precision Red",
       "tagline": "Form follows thought.",
+      "image": "/media/colors/color-04.jpg",
+      "accent": "light",
       "order": 3
     },
     {
       "name": "Bright Orange",
       "tagline": "Steady focus.",
+      "image": "/media/colors/color-05.jpg",
+      "accent": "violet",
       "order": 4
     }
   ],
@@ -145,12 +178,89 @@
     {
       "title": "The NŌTA Smart Pen",
       "description": "A precision smart pen with a solid aluminum body, designed for natural handwriting and accurate digital capture. Seamlessly connects to smart paper, translating every stroke into structured digital data — no screens, no distractions, just writing. Aluminum body, USB-C charging, physical control button, and Bluetooth connectivity. Up to 8 hours of active use with a lightweight, balanced design for everyday writing.",
+      "image": "/media/inside/pen.jpg",
+      "image_hover": "/media/inside/pen-hover.jpg",
       "order": 0
     },
     {
       "title": "Charging Adapter",
-      "description": "Compact USB-C power adapter with stable output for everyday charging. Designed for safe, efficient power delivery with minimal heat.",
+      "description": "Compact USB-C power adapter with stable output for everyday charging. Designed for safe, efficient power delivery with minimal heat. A complete, ready-to-use set — Smart pen, Smartpaper notepad, charging cable, and instructions — carefully packaged for a hassle-free start.",
+      "image": "/media/inside/adapter.jpg",
+      "image_hover": "",
       "order": 1
     }
-  ]
+  ],
+
+  "detail_cards": [
+    {
+      "title": "Flush-fit precision cap",
+      "image": "/media/details/cap.jpg",
+      "video": "",
+      "order": 0
+    },
+    {
+      "title": "",
+      "image": "/media/details/cap-color.jpg",
+      "video": "",
+      "order": 1
+    },
+    {
+      "title": "Refined colors. Personal expression",
+      "image": "/media/details/card-5.png",
+      "video": "",
+      "order": 2
+    },
+    {
+      "title": "Durable metal nib, low-profile control button",
+      "image": "",
+      "video": "/media/videos/details.mp4",
+      "order": 3
+    },
+    {
+      "title": "Aluminum body",
+      "image": "/media/details/body.jpg",
+      "video": "",
+      "order": 4
+    },
+    {
+      "title": "",
+      "image": "/media/details/adapter.jpg",
+      "video": "",
+      "order": 5
+    }
+  ],
+
+  "team_members": [
+    { "name": "Alexandra Kazimirskaya", "telegram": "lunary_me", "order": 0 },
+    { "name": "Daria Zubareva", "telegram": "mi_shunia", "order": 1 },
+    { "name": "Olga Kopyeva", "telegram": "imkopyova", "order": 2 },
+    { "name": "Stefania Orlova", "telegram": "whybitchcry", "order": 3 },
+    { "name": "Dobrinya Karepin", "telegram": "donkarepin", "order": 4 },
+    { "name": "Maya Melnichuk", "telegram": "MYaroslavovna", "order": 5 },
+    { "name": "Valeria Yalova-Chernova", "telegram": "Yalova_Valeriya", "order": 6 },
+    { "name": "Natalia Borovkova", "telegram": "NatalieMeribel", "order": 7 },
+    { "name": "Anastasia Voronova", "telegram": "Anastasia_coin", "order": 8 }
+  ],
+
+  "homepage": {
+    "inside_complete_heading": "A complete, ready-to-use set",
+    "inside_complete_text": "Smart pen, Smartpaper notepad, charging cable, and instructions — carefully packaged for a hassle-free start.",
+    "inside_intro": "A precision smart pen with a solid aluminum body, designed for natural handwriting and accurate digital capture. Seamlessly connects to smart paper, translating every stroke into structured digital data — no screens, no distractions, just writing.",
+    "inside_set_image": "/media/inside/set-wide.jpg",
+    "details_video": "/media/videos/details.mp4",
+    "popup_heading": "Stay ahead",
+    "popup_text": "Launching soon. Get early access and insider updates",
+    "popup_input_placeholder": "E-mail",
+    "popup_button": "Notify me",
+    "popup_success": "All set. We'll keep you posted",
+    "popup_error": "Something went wrong! Try again",
+    "popup_close": "Close",
+    "footer_copyright": "@2026 Nōta Team",
+    "footer_made_in": "Made in Taptop",
+    "footer_built_by": "Builded by NōtaTeam",
+    "footer_designed_by": "Designed by Alice & UPROCK Studio",
+    "made_in_url": "https://taptop.pro/",
+    "designed_url": "https://www.behance.net/alicem",
+    "uprock_url": "https://www.uprock.ru/"
+  }
 }

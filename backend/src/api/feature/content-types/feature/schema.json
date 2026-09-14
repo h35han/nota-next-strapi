@@ -19,6 +19,18 @@
     "body": {
       "type": "text"
     },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "description": "Fullscreen slide image for the 'Works with smart paper' carousel."
+    },
+    "image_mobile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "description": "Portrait image used for the mobile/tablet slider."
+    },
     "order": {
       "type": "integer",
       "default": 0

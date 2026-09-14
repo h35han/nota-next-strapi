@@ -1,26 +1,241 @@
 @import "tailwindcss";
 
+@theme {
+  --color-ink: #000000;
+  --color-paper: #ffffff;
+  --color-mist: #666666;
+  --color-violet: #5e1550;
+  --color-white-40: rgba(255, 255, 255, 0.4);
+  --color-white-50: rgba(255, 255, 255, 0.5);
+  --color-black-40: rgba(0, 0, 0, 0.4);
+  --color-black-10: rgba(0, 0, 0, 0.1);
+  --color-black-20: rgba(0, 0, 0, 0.2);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), Georgia, serif;
+
+  --breakpoint-lg: 992px;
+  --breakpoint-md: 768px;
+  --breakpoint-sm: 480px;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --ink: #000000;
+  --paper: #ffffff;
+  --mist: #666666;
+  --violet: #5e1550;
+  --white-40: rgba(255, 255, 255, 0.4);
+  --white-5: rgba(255, 255, 255, 0.05);
+  --black-2: rgba(0, 0, 0, 0.02);
+  --black-10: rgba(0, 0, 0, 0.1);
+  --black-20: rgba(0, 0, 0, 0.2);
+  --radial: radial-gradient(farthest-corner at center top, #969ca6 0%, #3a3c40 80%);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  background: var(--ink);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: clip;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+/* ------------------------------------------------------------------ */
+/* Type scale — mirrored from the reference (Instrument Serif + Inter) */
+/* ------------------------------------------------------------------ */
+
+.text-headline-1 {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(3rem, 9.68vw, 13.9rem);
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  font-weight: 400;
+}
+
+.text-headline-2 {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(3rem, 12.1vw, 17.4rem);
+  line-height: 80%;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+}
+
+.text-headline-3 {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.4rem, 2.22vw, 3.2rem);
+  line-height: 100%;
+  letter-spacing: -0.07em;
+  font-weight: 600;
+}
+
+.text-headline-4 {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.2rem, 1.81vw, 2.6rem);
+  line-height: 100%;
+  letter-spacing: -0.07em;
+  font-weight: 600;
+}
+
+.text-large-1 {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(2.2rem, 4.64vw, 6.7rem);
+  line-height: 110%;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+
+.text-large-2 {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1.5rem, 2.62vw, 3.8rem);
+  line-height: 120%;
+  letter-spacing: -0.07em;
+  font-weight: 600;
+}
+
+.text-large-3 {
+  font-family: var(--font-instrument-serif), Georgia, serif;
+  font-size: clamp(2.6rem, 6.05vw, 8.7rem);
+  line-height: 100%;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+}
+
+.text-main {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(1rem, 1.81vw, 2.6rem);
+  line-height: 130%;
+  letter-spacing: -0.05em;
+  font-weight: 400;
+}
+
+.text-card {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.95rem, 1.61vw, 2.3rem);
+  line-height: 130%;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+}
+
+.text-descriptor {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.85rem, 1.61vw, 2.3rem);
+  line-height: 100%;
+  letter-spacing: -0.07em;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.text-menu-link {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.85rem, 1.61vw, 2.3rem);
+  line-height: 100%;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+}
+
+.text-button {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.8rem, 1.39vw, 2rem);
+  line-height: 100%;
+  letter-spacing: -0.05em;
+  font-weight: 500;
+}
+
+.text-footer {
+  font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  font-size: clamp(0.75rem, 1.11vw, 1.6rem);
+  line-height: 100%;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+
+/* ------------------------------------------------------------------ */
+/* Backgrounds                                                         */
+/* ------------------------------------------------------------------ */
+
+.bg-radial {
+  background-image: radial-gradient(farthest-corner at center top, #969ca6 0%, #3a3c40 80%);
+}
+
+.bg-ink {
+  background-color: var(--ink);
+}
+
+.bg-paper {
+  background-color: var(--paper);
+}
+
+.bg-glass {
+  background: var(--black-2);
+  backdrop-filter: blur(2px);
+}
+
+/* ------------------------------------------------------------------ */
+/* Layout helpers used by the pinned/scrub sections                    */
+/* ------------------------------------------------------------------ */
+
+.sticky-spacer {
+  position: relative;
+}
+
+.pin {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(4vh);
+  will-change: transform, opacity;
+}
+
+.will-scale {
+  will-change: transform;
+}
+
+[data-char] {
+  display: inline-block;
+  will-change: transform;
+}
+
+/* Horizontal scroll driven by GSAP (paper slides, color panels) */
+.gsap-x {
+  display: flex;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    opacity: 1;
+    transform: none;
+  }
 }

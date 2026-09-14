@@ -5,6 +5,7 @@ const allowedMediaTypes = [
   'video/*',
   'audio/*',
   'application/pdf',
+  'application/json',
   'application/msword',
   'application/vnd.openxmlformats-officedocument.*',
   'text/plain',
@@ -12,7 +13,6 @@ const allowedMediaTypes = [
 ];
 
 const deniedTypes = [
-  'image/svg+xml',
   'application/vnd.microsoft.portable-executable',
   'application/x-msdownload',
   'application/x-msdos-program',

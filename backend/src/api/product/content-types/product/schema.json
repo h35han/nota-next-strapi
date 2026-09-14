@@ -21,7 +21,7 @@
       "type": "string"
     },
     "tagline": {
-      "type": "text"
+      "type": "string"
     },
     "description": {
       "type": "text"
@@ -54,6 +54,50 @@
     },
     "built_credit": {
       "type": "text"
+    },
+    "cover_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "description": "Static hero image used on tablet/mobile instead of the Lottie cover."
+    },
+    "cover_lottie": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["files"],
+      "description": "Scroll-scrubbed cover animation (Lottie JSON)."
+    },
+    "specs_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "description": "Specifications product shot (desktop, tall PNG)."
+    },
+    "specs_image_tablet": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "specs_image_mobile": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "who_video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["videos"],
+      "description": "Looping background video on the 'Who it's for' section."
+    },
+    "popup_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "popup_logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images", "files"]
     },
     "order": {
       "type": "integer",

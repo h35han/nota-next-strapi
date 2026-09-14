@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "detail_cards",
+  "info": {
+    "singularName": "detail-card",
+    "pluralName": "detail-cards",
+    "displayName": "Detail Card"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "description": "Leave empty when the card shows a video."
+    },
+    "video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["videos"],
+      "description": "Leave empty for image cards."
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}

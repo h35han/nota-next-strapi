@@ -17,6 +17,18 @@
     "tagline": {
       "type": "text"
     },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "description": "1920x1080 photo of the pen in this color."
+    },
+    "accent": {
+      "type": "enumeration",
+      "enum": ["light", "violet"],
+      "default": "light",
+      "description": "Text color used for the variant name. Violet is only used for 'Bright Orange'."
+    },
     "order": {
       "type": "integer",
       "default": 0

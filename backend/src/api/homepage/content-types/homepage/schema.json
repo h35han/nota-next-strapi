@@ -1,0 +1,92 @@
+{
+  "kind": "singleType",
+  "collectionName": "homepages",
+  "info": {
+    "singularName": "homepage",
+    "pluralName": "homepages",
+    "displayName": "Homepage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "inside_complete_heading": {
+      "type": "string",
+      "default": "A complete, ready-to-use set"
+    },
+    "inside_complete_text": {
+      "type": "text",
+      "default": "Smart pen, Smartpaper notepad, charging cable, and instructions — carefully packaged for a hassle-free start."
+    },
+    "inside_intro": {
+      "type": "text",
+      "default": "A precision smart pen with a solid aluminum body, designed for natural handwriting and accurate digital capture. Seamlessly connects to smart paper, translating every stroke into structured digital data — no screens, no distractions, just writing."
+    },
+    "inside_set_image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
+    "details_video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["videos"]
+    },
+    "popup_heading": {
+      "type": "string",
+      "default": "Stay ahead"
+    },
+    "popup_text": {
+      "type": "text",
+      "default": "Launching soon. Get early access and insider updates"
+    },
+    "popup_input_placeholder": {
+      "type": "string",
+      "default": "E-mail"
+    },
+    "popup_button": {
+      "type": "string",
+      "default": "Notify me"
+    },
+    "popup_success": {
+      "type": "string",
+      "default": "All set. We'll keep you posted"
+    },
+    "popup_error": {
+      "type": "string",
+      "default": "Something went wrong! Try again"
+    },
+    "popup_close": {
+      "type": "string",
+      "default": "Close"
+    },
+    "footer_copyright": {
+      "type": "string",
+      "default": "@2026 Nōta Team"
+    },
+    "footer_made_in": {
+      "type": "string",
+      "default": "Made in Taptop"
+    },
+    "footer_built_by": {
+      "type": "string",
+      "default": "Builded by NōtaTeam"
+    },
+    "footer_designed_by": {
+      "type": "string",
+      "default": "Designed by Alice & UPROCK Studio"
+    },
+    "made_in_url": {
+      "type": "string",
+      "default": "https://taptop.pro/"
+    },
+    "designed_url": {
+      "type": "string",
+      "default": "https://www.behance.net/alicem"
+    },
+    "uprock_url": {
+      "type": "string",
+      "default": "https://www.uprock.ru/"
+    }
+  }
+}

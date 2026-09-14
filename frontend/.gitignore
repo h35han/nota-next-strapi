@@ -40,3 +40,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# scraped media — served locally from public/ and provided by the
+# Railway volume in production (see RAILWAY.md at the repo root)
+public/media/

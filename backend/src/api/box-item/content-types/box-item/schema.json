@@ -17,6 +17,17 @@
     "description": {
       "type": "text"
     },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"],
+      "description": "Photo revealed under the blinds effect."
+    },
+    "image_hover": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": ["images"]
+    },
     "order": {
       "type": "integer",
       "default": 0
