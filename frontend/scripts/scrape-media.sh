@@ -33,8 +33,6 @@ fi
 url hero/hero.png            /media/hero/hero.png
 url hero/cover.lottie.json   /media/hero/cover.lottie.json
 url specs/pen.png            /media/specs/pen.png
-url specs/pen-768.webp       /media/specs/pen-768.webp
-url specs/pen-480.webp       /media/specs/pen-480.webp
 url paper/media/paper-01.jpg /media/paper/media/paper-01.jpg
 url paper/media/paper-02.jpg /media/paper/media/paper-02.jpg
 url paper/media/paper-03.jpg /media/paper/media/paper-03.jpg
