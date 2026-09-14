@@ -60,6 +60,16 @@
     "built_credit": {
       "type": "text"
     },
+    "hero_cover_video": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
     "cover_image": {
       "type": "media",
       "multiple": false,
