@@ -12,7 +12,7 @@ export const useOrder = () => useContext(Ctx);
 export function OrderProvider({
   children,
   homepage,
-  product,
+  product
 }: {
   children: ReactNode;
   homepage: Homepage;
@@ -24,12 +24,7 @@ export function OrderProvider({
   return (
     <Ctx.Provider value={{ openOrder }}>
       {children}
-      <OrderPopup
-        homepage={homepage}
-        product={product}
-        open={open}
-        onClose={() => setOpen(false)}
-      />
+      <OrderPopup homepage={homepage} product={product} open={open} onClose={() => setOpen(false)} />
     </Ctx.Provider>
   );
 }

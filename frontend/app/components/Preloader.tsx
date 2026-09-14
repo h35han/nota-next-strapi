@@ -24,7 +24,7 @@ export default function Preloader() {
               root.current.style.display = "none";
               root.current.style.pointerEvents = "none";
             }
-          },
+          }
         });
         tl.call(() => announceReady(), undefined, ">-0.05");
       };
@@ -43,17 +43,14 @@ export default function Preloader() {
         onUpdate: () => {
           if (counter.current) counter.current.textContent = `${Math.round(state.v)}%`;
         },
-        onComplete: finish,
+        onComplete: finish
       });
     },
     { scope: root }
   );
 
   return (
-    <div
-      ref={root}
-      className="fixed inset-0 z-100 flex flex-col items-center justify-center gap-8"
-    >
+    <div ref={root} className="fixed inset-0 z-100 flex flex-col items-center justify-center gap-8">
       <div
         ref={counter}
         className="font-(--font-instrument-serif) text-[clamp(4rem,14vw,12rem)] leading-[0.8] tracking-[-0.04em] text-paper"

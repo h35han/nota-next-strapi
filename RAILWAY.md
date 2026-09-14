@@ -65,17 +65,15 @@ Update the image domains so Next.js can optimize Strapi media:
 ```ts
 import type { NextConfig } from "next";
 
-const strapiHost = new URL(
-  process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://localhost:1337"
-).hostname;
+const strapiHost = new URL(process.env.NEXT_PUBLIC_STRAPI_URL ?? "http://localhost:1337").hostname;
 
 const nextConfig: NextConfig = {
   images: {
     remotePatterns: [
       { protocol: "http", hostname: "localhost" },
-      { protocol: "https", hostname: strapiHost },
-    ],
-  },
+      { protocol: "https", hostname: strapiHost }
+    ]
+  }
 };
 
 export default nextConfig;
