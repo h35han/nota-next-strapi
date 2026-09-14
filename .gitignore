@@ -24,7 +24,7 @@ backend/types/generated/
 *.tar
 *.tar.gz
 *.tar.gz.enc
-seed.tar
+!**/seed.tar.gz
 
 # logs
 *.log

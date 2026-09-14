@@ -32,10 +32,9 @@
     "data:export": "npm run strapi --workspace backend -- export",
     "data:import": "npm run strapi --workspace backend -- import",
     "data:transfer": "npm run strapi --workspace backend -- transfer",
-    "data:export:seed": "npm run strapi --workspace backend -- export -f seed --no-encrypt --no-compress",
-    "data:import:seed": "npm run strapi --workspace backend -- import -f seed.tar",
-    "data:seed": "npm run build --workspace backend && npm run seed --workspace backend",
-    "data:seed:reset": "npm run build --workspace backend && npm run seed --workspace backend -- --reset"
+    "data:export:seed": "npm run strapi --workspace backend -- export -f data/seed --no-encrypt",
+    "data:import:seed": "npm run strapi --workspace backend -- import -f data/seed.tar.gz",
+    "data:seed": "npm run build:backend && npm run data:import:seed"
   },
   "devDependencies": {
     "npm-run-all": "^4.1.5"
