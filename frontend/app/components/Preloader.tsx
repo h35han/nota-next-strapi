@@ -51,10 +51,7 @@ export default function Preloader() {
 
   return (
     <div ref={root} className="fixed inset-0 z-100 flex flex-col items-center justify-center gap-8">
-      <div
-        ref={counter}
-        className="font-(--font-instrument-serif) text-[clamp(4rem,14vw,12rem)] leading-[0.8] tracking-[-0.04em] text-paper"
-      >
+      <div ref={counter} className="font-serif text-[clamp(2rem,6vw,8rem)] leading-[0.8] tracking-[-0.04em] text-paper">
         0%
       </div>
     </div>
