@@ -1,14 +1,15 @@
 import { getHomeData } from "../lib/api";
 import Preloader from "./components/Preloader";
 import { OrderProvider } from "./components/chrome";
+import Hero from "./sections/Hero";
+import Specs from "./sections/Specs";
+import Who from "./sections/Who";
+import Paper from "./sections/Paper";
+import Inside from "./sections/Inside";
+import Details from "./sections/Details";
+import Colors from "./sections/Colors";
+
 import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Specs from "./components/sections/Specs";
-import Who from "./components/sections/Who";
-import Paper from "./components/sections/Paper";
-import Inside from "./components/sections/Inside";
-import Details from "./components/sections/Details";
-import Colors from "./components/sections/Colors";
 import Footer from "./components/Footer";
 
 export const dynamic = "force-dynamic";
