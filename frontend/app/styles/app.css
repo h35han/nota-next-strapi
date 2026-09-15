@@ -262,3 +262,33 @@ html.lenis body {
   line-height: 110%;
   white-space: pre-line;
 }
+
+/* ------------------------------------------------------------------ *
+ * Character-scrub paragraphs (the Inside section)
+ *
+ * The reference injects these at runtime, immediately before its
+ * `inline_12.js`:
+ *
+ *   p[class*='inside__text--animation'] { visibility: hidden;
+ *                                         display: inline-block !important; }
+ *   .space-char { display: inline-block; width: 0.27em; }
+ *   .inside__text--animation-child { transition: all 0.1s linear; }
+ *
+ * They are load-bearing, not cosmetic. `.text` makes the paragraph a flex
+ * container, so without the `inline-block` override the ~250 per-character
+ * spans are blockified into a single non-wrapping row and every space
+ * collapses to zero width — the copy neither wraps nor has word spacing.
+ *
+ * The reference's `visibility: hidden` only exists to hide the unsplit
+ * markup until its script has run; we render the split spans from the
+ * server, so it is deliberately omitted here.
+ * ------------------------------------------------------------------ */
+p[class*="inside__text--animation"],
+div[class*="inside__text--animation"] {
+  display: inline-block !important;
+}
+
+.inside__text--animation-child {
+  /* `all` in the reference; only the colour ever changes. */
+  transition: color 0.1s linear;
+}

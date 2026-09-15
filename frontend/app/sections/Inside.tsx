@@ -258,7 +258,7 @@ export default function Inside({
   return (
     <>
       {/* ------------------------------- desktop ------------------------------- */}
-      <section className="section inside" id="ir9soeuwq_0">
+      <section ref={section} className="section inside" id="ir9soeuwq_0">
         <div className="div div--u-iyv5tgngp" id="iyv5tgngp_0"></div>
         <div className="container container--primary bc--main-white" id="inanvef3l_0">
           <div className="div inside__content" id="i7tlh3c8n_0">
