@@ -60,6 +60,8 @@ export type Product = {
   builtCredit: string;
   coverImage: string;
   coverLottie: string;
+  heroCoverVideo: string;
+  heroVideo: string;
   specsImage: string;
   specsImageTablet: string;
   specsImageMobile: string;
@@ -129,6 +131,17 @@ function mediaToUrl(value: unknown): string {
   return typeof url === "string" ? (getStrapiMedia(url) ?? "") : "";
 }
 
+/**
+ * Derive the scroll-scrubbable MP4 sibling of an animated WebP asset
+ * (e.g. `/uploads/nota_lottie_ce8fd33945.webp` → the `.mp4` next to it).
+ * The MP4 gives us a reliable `<video>` `currentTime` scrub in every
+ * browser; the WebP remains the authored asset in Strapi.
+ */
+function heroToVideoUrl(webpUrl: string): string {
+  if (!webpUrl) return "";
+  return webpUrl.replace(/\.webp(\?.*)?$/i, ".mp4");
+}
+
 async function fetchJson<T>(path: string): Promise<T> {
   let res: Response | null = null;
   for (let attempt = 1; ; attempt += 1) {
@@ -140,8 +153,10 @@ async function fetchJson<T>(path: string): Promise<T> {
       break;
     } catch (err) {
       // The backend may still be booting (npm run dev starts both services
-      // in parallel) — retry connection failures with short backoff.
-      if (attempt >= 8) throw err;
+      // in parallel) — retry connection failures with short backoff, but
+      // bail out quickly so the page falls back to static content instead
+      // of hanging on a dead backend.
+      if (attempt >= 3) throw err;
       await new Promise((resolve) => setTimeout(resolve, 300 * attempt));
     }
   }
@@ -173,6 +188,8 @@ function mapProduct(entry: Entry | undefined): Product {
     builtCredit: str(entry?.built_credit),
     coverImage: mediaToUrl(entry?.cover_image),
     coverLottie: mediaToUrl(entry?.cover_lottie),
+    heroCoverVideo: mediaToUrl(entry?.hero_cover_video),
+    heroVideo: heroToVideoUrl(mediaToUrl(entry?.hero_cover_video)),
     specsImage: mediaToUrl(entry?.specs_image),
     specsImageTablet: mediaToUrl(entry?.specs_image_tablet),
     specsImageMobile: mediaToUrl(entry?.specs_image_mobile),
@@ -211,6 +228,69 @@ const DEFAULT_METADATA: HtmlMetadata = {
   description:
     "NŌTA is a smart writing system that combines a precision smart pen, intelligent paper, and real-time digital sync. Designed for people who think better by hand, it captures handwriting instantly, organizes notes automatically, and turns analog writing into structured, searchable digital knowledge.",
   ogImage: "/opengraph.jpg"
+};
+
+/**
+ * Minimal data set so the page still renders a functional hero, sections,
+ * and footer if the Strapi backend is unreachable. Gives the site a static
+ * default instead of hard 500s while the CMS boots.
+ */
+export const FALLBACK_HOME_DATA: HomeData = {
+  product: {
+    name: "NŌTA",
+    heading: "Smart pen",
+    subheading: "for real thinking",
+    tagline: "Nota pen",
+    description: "",
+    about:
+      "Some thoughts need time, space, and a physical trace to exist. Writing by hand creates focus, presence, and a deeper connection with ideas. This tool is built around that simple truth.",
+    whoForIntro: "",
+    ctaLabel: "Order",
+    ctaPrice: "$300",
+    availability: "",
+    year: 2026,
+    team: "",
+    designCredit: "",
+    builtCredit: "",
+    coverImage: "",
+    coverLottie: "",
+    heroCoverVideo: "",
+    heroVideo: "",
+    specsImage: "",
+    specsImageTablet: "",
+    specsImageMobile: "",
+    whoVideo: "",
+    popupImage: "",
+    popupLogo: ""
+  },
+  specs: [],
+  audiences: [],
+  features: [],
+  colorVariants: [],
+  boxItems: [],
+  detailCards: [],
+  teamMembers: [],
+  homepage: {
+    insideCompleteHeading: "Everything, in one box",
+    insideCompleteText: "",
+    insideIntro: "Inside the box",
+    insideSetImage: "",
+    detailsVideo: "",
+    popupHeading: "Get early access",
+    popupText: "",
+    popupInputPlaceholder: "",
+    popupButton: "Submit",
+    popupSuccess: "",
+    popupError: "",
+    popupClose: "",
+    footerCopyright: "© 2026 NŌTA",
+    footerMadeIn: "",
+    footerBuiltBy: "",
+    footerDesignedBy: "",
+    madeInUrl: "",
+    designedUrl: "",
+    uprockUrl: ""
+  }
 };
 
 // ---------------------------------------------------------------------------

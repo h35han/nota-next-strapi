@@ -1,12 +1,14 @@
-import { getHomeData } from "../lib/api";
+import { getHomeData, FALLBACK_HOME_DATA } from "../lib/api";
 import Preloader from "./components/Preloader";
 import { OrderProvider } from "./components/chrome";
 import Hero from "./sections/Hero";
+import Transition1 from "./sections/Transition1";
 import Specs from "./sections/Specs";
+import Transition2 from "./sections/Transition2";
 import Who from "./sections/Who";
 import Paper from "./sections/Paper";
+import Transition3 from "./sections/Transition3";
 import Inside from "./sections/Inside";
-import Details from "./sections/Details";
 import Colors from "./sections/Colors";
 
 import Header from "./components/Header";
@@ -15,20 +17,28 @@ import Footer from "./components/Footer";
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
-  const data = await getHomeData();
+  let data;
+  try {
+    data = await getHomeData();
+  } catch {
+    // Strapi unreachable — render a static default so the site never 500s.
+    data = FALLBACK_HOME_DATA;
+  }
 
   return (
     <>
       <Preloader />
       <OrderProvider homepage={data.homepage} product={data.product}>
-        <Header orderLabel={data.product.ctaLabel || "Order"} />
+        <Header product={data.product} />
         <main>
           <Hero product={data.product} />
+          <Transition1 />
           <Specs product={data.product} specs={data.specs} />
+          <Transition2 product={data.product} />
           <Who product={data.product} audiences={data.audiences} />
           <Paper features={data.features} />
-          <Inside items={data.boxItems} homepage={data.homepage} />
-          <Details cards={data.detailCards} homepage={data.homepage} />
+          <Transition3 />
+          <Inside items={data.boxItems} homepage={data.homepage} cards={data.detailCards} />
           <Colors colors={data.colorVariants} />
           <Footer product={data.product} homepage={data.homepage} team={data.teamMembers} />
         </main>

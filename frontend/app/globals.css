@@ -239,3 +239,63 @@ body {
     transform: none;
   }
 }
+
+/* ------------------------------------------------------------------ */
+/* Header — fixed glassmorphic nav                                     */
+/* ------------------------------------------------------------------ */
+
+.nav-link {
+  position: relative;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.25rem;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+/* ------------------------------------------------------------------ */
+/* Horizontal scroll track (paper showcase)                            */
+/* ------------------------------------------------------------------ */
+
+.h-track {
+  display: flex;
+  height: 100%;
+  width: max-content;
+  will-change: transform;
+}
+
+.h-panel {
+  flex: 0 0 100vw;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ------------------------------------------------------------------ */
+/* Word-by-word scrubbing (who introduction)                           */
+/* ------------------------------------------------------------------ */
+
+[data-scrub-word] {
+  opacity: 0.2;
+  will-change: opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-scrub-word] {
+    opacity: 1;
+  }
+}
