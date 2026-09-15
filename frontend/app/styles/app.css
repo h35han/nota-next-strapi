@@ -174,3 +174,91 @@ html.lenis body {
 .nota-cover-image {
   object-fit: contain;
 }
+
+/* ------------------------------------------------------------------ *
+ * Colour carousel (≤ 991px) — text row
+ *
+ * The reference stacks the colour name and its tagline; the brief here is
+ * a single row: the name on the left, right-aligned so it hugs the centre,
+ * and the tagline on the right, left-aligned, with a row gap between them.
+ *
+ * Keyed on first/last child rather than the wrapper class names because
+ * the reference reuses `section-colors__text-wrapper3--static` for both
+ * halves of the graphite slide.
+ * ------------------------------------------------------------------ */
+/* The track is a flex row of full-width slides moved by GSAP; the wrapper
+   clips it. Native scrolling and scroll-snap are deliberately off — letting
+   the browser also move the track is what made the slide order unreliable. */
+.section-colors--static .section-colors__slider,
+.section-colors--static .section-colors__slider-wrapper {
+  overflow: hidden;
+}
+
+/* …but NOT the track: it is only one slide wide, so clipping it there would
+   hide every slide after the first. The wrapper above does the clipping. */
+.section-colors--static .section-colors__slider-list {
+  overflow: visible;
+}
+
+.section-colors--static .section-colors__slider-list {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+  touch-action: pan-y;
+}
+
+.section-colors--static .section-colors__slider-list > .slider__slide {
+  /* The track is transformed, which makes it a containing block for
+     absolutely-positioned descendants — so each slide has to establish its
+     own, or every slide's image wrapper resolves against the whole track
+     and stacks on slide 1. */
+  position: relative;
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.section-colors--static .section-colors__content-wrapper--static,
+.section-colors--static .section-colors__content-wrapper2--static {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: center;
+  row-gap: 0.5rem;
+  column-gap: 1.5rem;
+}
+
+.section-colors--static .section-colors__content-wrapper--static > *:first-child,
+.section-colors--static .section-colors__content-wrapper2--static > *:first-child {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  /* Size to content so the pair sits side by side. `width: auto` undoes the
+     Taptop reset's `.div { width: 100% }`, which would otherwise put each
+     half on its own line. */
+  width: auto;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+.section-colors--static .section-colors__content-wrapper--static > *:last-child,
+.section-colors--static .section-colors__content-wrapper2--static > *:last-child {
+  display: flex;
+  justify-content: flex-start;
+  text-align: left;
+  width: auto;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+
+/* Two `large-text--3` runs side by side would overflow a phone, so the row
+   uses a size that keeps the longest pair ("Graphite Black" + "Clarity in
+   silence.") on one line. */
+.section-colors--static .section-colors__content-wrapper--static .large-text--3,
+.section-colors--static .section-colors__content-wrapper2--static .large-text--3 {
+  font-size: clamp(1.05rem, 5.2vw, 2.4rem);
+  line-height: 110%;
+  white-space: pre-line;
+}

@@ -165,6 +165,16 @@ export function initTaptopAnimations(root: ParentNode = document): () => void {
 
   const nodes = root.querySelectorAll<HTMLElement>("[id]");
   nodes.forEach((el) => {
+    /**
+     * `data-tt-skip` opts an element out of the spec.
+     *
+     * A couple of places (the colour carousel's cross-fade) hand-write a
+     * richer timeline than the spec describes — Taptop never fades an image
+     * *out*, so the five pen renders would otherwise pile up. Two timelines
+     * writing the same property means whoever happens to sort last wins,
+     * which is fragile; opting out of the spec makes the owner explicit.
+     */
+    if (el.hasAttribute("data-tt-skip")) return;
     const key = el.id.endsWith("_0") ? el.id.slice(0, 9) : el.id.split("_")[0];
     const animId = SPEC.m[key];
     if (!animId) return;

@@ -11,7 +11,7 @@ import Paper from "./sections/Paper";
 import InsideTransition from "./sections/InsideTransition";
 import Inside from "./sections/Inside";
 import Details from "./sections/Details";
-import Colors from "./sections/Colors";
+import Colors, { ColorsStatic } from "./sections/Colors";
 import Footer from "./components/Footer";
 
 export const dynamic = "force-dynamic";
@@ -74,6 +74,11 @@ export default async function Home() {
 
         <Inside items={data.boxItems} homepage={data.homepage} />
         <Details homepage={data.homepage} cards={data.detailCards} />
+
+        {/* The mobile carousel sits *before* the wrapper: `.footer` is
+            `position: sticky; bottom: -0.1vw`, so if the carousel lived
+            inside `.scroll-wrapper` the footer would pin over it. */}
+        <ColorsStatic colors={data.colorVariants} />
 
         <div className="div scroll-wrapper" id="itst048wh_0">
           <Colors colors={data.colorVariants} />

@@ -3,9 +3,10 @@
 import { useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Draggable from "gsap/Draggable";
 import type { ColorVariant } from "../../lib/api";
 
-gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger, Draggable);
 
 /**
  * The desktop section hard-codes five variant slots — silver, graphite,
@@ -17,12 +18,6 @@ const VARIANT_COUNT = 5;
 
 /** Desktop breakpoint used by the reference (`.section-colors` ≥ 992px). */
 const DESKTOP_QUERY = "(min-width: 992px)";
-
-/** Mobile slider slide transition, matching the reference slider's timing. */
-const SLIDE_MS = 500;
-
-/** Pixels a touch must travel horizontally before it counts as a swipe. */
-const SWIPE_THRESHOLD = 40;
 
 /** The reference wraps the last word of a tagline in a `white-space: normal`
  *  span (only the Precision Red slide does this) so it can wrap. */
@@ -37,25 +32,38 @@ function lastWords(text: string) {
 }
 
 /**
- * Index state for the mobile `section-colors--static` slider, plus the
- * matching `is-current` bullet, the `n / 5` counter and the prev/next
- * arrows. Deliberately dependency-free: the reference ships Swiper, but as
- * the markup is already a flex row of full-width slides we let native
- * `scroll-snap` do the moving (see the inline style on the list) and only
- * track the index here. Touch swipes work natively; `onTouchEnd` merely
- * nudges to the neighbouring snap point so a short flick still advances.
+ * GSAP-driven carousel for the mobile `section-colors--static` slider.
+ *
+ * The reference ships Swiper; we drive the same markup with GSAP instead so
+ * the slides move on an explicit `x` transform rather than native
+ * scrolling. That removes the whole class of bugs native scroll-snap
+ * brought with it — a restored `scrollLeft`, images landing after hydration
+ * or a snap point recalculated mid-drag could all leave the carousel on a
+ * slide the index state disagreed with, which is what made the order look
+ * wrong.
+ *
+ * `index` is the single source of truth: it positions the track, highlights
+ * the bullet and updates the `n / 5` counter, and `Draggable` only ever
+ * proposes a new index when the user lets go.
  */
-function useMobileSlider(count: number) {
-  const listRef = useRef<HTMLDivElement>(null);
-  const touchX = useRef(0);
-  const dragging = useRef(false);
-  const suppressScroll = useRef(false);
-  const suppressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+function useCarousel(count: number) {
+  const trackRef = useRef<HTMLDivElement>(null);
+  const indexRef = useRef(0);
   const [index, setIndex] = useState(0);
 
-  useEffect(
-    () => () => {
-      if (suppressTimer.current) clearTimeout(suppressTimer.current);
+  /** One slide is exactly one container width. */
+  const slideWidth = () => trackRef.current?.parentElement?.clientWidth ?? 0;
+
+  const place = useCallback(
+    (next: number, animate: boolean) => {
+      const track = trackRef.current;
+      if (!track) return;
+      const x = -next * slideWidth();
+      if (!animate || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        gsap.set(track, { x });
+      } else {
+        gsap.to(track, { x, duration: 0.6, ease: "power2.out", overwrite: "auto" });
+      }
     },
     []
   );
@@ -63,276 +71,82 @@ function useMobileSlider(count: number) {
   const go = useCallback(
     (next: number) => {
       const target = Math.max(0, Math.min(count - 1, next));
+      indexRef.current = target;
       setIndex(target);
-      const list = listRef.current;
-      if (!list) return;
-      // Ignore the scroll events our own smooth scroll produces.
-      suppressScroll.current = true;
-      if (suppressTimer.current) clearTimeout(suppressTimer.current);
-      suppressTimer.current = setTimeout(() => {
-        suppressScroll.current = false;
-      }, SLIDE_MS + 150);
-      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      list.scrollTo({ left: target * list.clientWidth, behavior: reduced ? "auto" : "smooth" });
+      place(target, true);
     },
-    [count]
+    [count, place]
   );
 
-  const onScroll = useCallback(() => {
-    if (suppressScroll.current) return;
-    const list = listRef.current;
-    if (!list || list.clientWidth === 0) return;
-    const next = Math.round(list.scrollLeft / list.clientWidth);
-    setIndex((prev) => (prev === next ? prev : Math.max(0, Math.min(count - 1, next))));
-  }, [count]);
+  useEffect(() => {
+    const track = trackRef.current;
+    if (!track) return;
 
-  const onTouchStart = useCallback((event: React.TouchEvent<HTMLDivElement>) => {
-    const touch = event.touches[0];
-    if (!touch) return;
-    touchX.current = touch.clientX;
-    dragging.current = true;
-  }, []);
+    place(0, false);
 
-  const onTouchEnd = useCallback(
-    (event: React.TouchEvent<HTMLDivElement>) => {
-      if (!dragging.current) return;
-      dragging.current = false;
-      const touch = event.changedTouches[0];
-      if (!touch) return;
-      const delta = touchX.current - touch.clientX;
-      if (Math.abs(delta) < SWIPE_THRESHOLD) return;
-      go(index + (delta > 0 ? 1 : -1));
-    },
-    [go, index]
-  );
+    const bounds = () => ({
+      minX: -(count - 1) * slideWidth(),
+      maxX: 0
+    });
 
-  return { listRef, index, go, onScroll, onTouchStart, onTouchEnd };
+    const [draggable] = Draggable.create(track, {
+      type: "x",
+      allowNativeTouchScrolling: false,
+      // Let the page scroll vertically while a horizontal drag is in play.
+      allowContextMenu: true,
+      bounds: bounds(),
+      onDragEnd() {
+        const width = slideWidth() || 1;
+        go(Math.round(-this.x / width));
+      }
+    });
+
+    const onResize = () => {
+      draggable.applyBounds(bounds());
+      // Re-seat the track: keep the same slide, new slide width.
+      place(indexRef.current, false);
+    };
+    window.addEventListener("resize", onResize);
+
+    return () => {
+      window.removeEventListener("resize", onResize);
+      draggable.kill();
+      gsap.killTweensOf(track);
+    };
+  }, [count, go, place]);
+
+  return { trackRef, index, go };
 }
 
-/**
- * Colors — the reference's five-variant colour scrollytelling section.
- *
- * Desktop (`section-colors`, ≥ 992px): the section is 350vh tall and
- * `.section-colors__camera` is `sticky; top: 0; height: 100vh`, so the
- * 250vh of scroll inside it scrubs a single GSAP timeline that cross-fades
- * the five variants and lights the matching pagination dot.
- *
- * Mobile (≤ 991px): `section-colors--static`, a five-slide slider with
- * scroll-snap, touch swiping, bullets, arrows and a `n / 5` page counter.
- */
-export default function Colors({ colors }: { colors: ColorVariant[] }) {
-  const section = useRef<HTMLElement>(null);
-  const camera = useRef<HTMLDivElement>(null);
-  const desktop = useRef<HTMLDivElement>(null);
-  const { listRef, index, go, onScroll, onTouchStart, onTouchEnd } = useMobileSlider(VARIANT_COUNT);
-
-  const variants = Array.from(
+/** The five CMS `color-variant` entries, in `order`, padded so the fixed
+ *  five-slot markup can index safely without inventing any content. */
+function useVariants(colors: ColorVariant[]): ColorVariant[] {
+  return Array.from(
     { length: VARIANT_COUNT },
     (_, i): ColorVariant => colors[i] ?? { name: "", tagline: "", image: "", accent: "light" }
   );
+}
 
-  // The slider scrolls its own list, so the page-level scroll
-  // measurements have to be redone when the viewport changes.
-  useEffect(() => {
-    const onResize = () => ScrollTrigger.refresh();
-    window.addEventListener("resize", onResize);
-    return () => window.removeEventListener("resize", onResize);
-  }, []);
-
-  useEffect(() => {
-    const root = desktop.current;
-    const container = camera.current;
-    if (!root || !container) return;
-
-    const media = window.matchMedia(DESKTOP_QUERY);
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-    const images = Array.from(root.querySelectorAll<HTMLElement>('[id$="_0"][class*="section-colors__img-wrapper--static"]'));
-    const contents = Array.from(root.querySelectorAll<HTMLElement>('[id$="_0"][class*="section-colors__content-wrapper"]'));
-    const dots = Array.from(root.querySelectorAll<HTMLElement>('[id$="_0"][class*="pagination-dot"]'));
-
-    /* The reference spec (see `.reference/animations_full.json`) drives
-       these ids against `#itcx2nwlb_0` with these keyframes, in percent of
-       the section's 350vh scroll range:
-
-         i8xxxe533 (silver copy)      1 -> 0    @ 15-25
-         ii452cx5b (graphite image)   0 -> 1    @ 10-25
-         il18j45dh (graphite copy)    0 -> 1    @ 15-25, 1 -> 0 @ 35-45
-         inkrb08oy (blue image)       0 -> 1    @ 35-45
-         iqogndg22 (blue copy)        0 -> 1    @ 35-45, 1 -> 0 @ 55-65
-         iwd7fdw96 (red image)        0 -> 1    @ 55-65
-         iunzn1r8v (red copy)         0 -> 1    @ 55-65, 1 -> 0 @ 75-85
-         i44lvqr6l (orange image)     0 -> 1    @ 75-85
-         i9yml8q3k (orange copy)      0 -> 1    @ 75-85
-         ingm9j6ml (dot 1)            1 -> 0.4  @ 10-25
-         iuyp5b57e (dot 2)            0.4 -> 1  @ 15-25, 1 -> 0.4 @ 35-45
-         ijiw4belh (dot 3)            0.4 -> 1  @ 35-45, 1 -> 0.4 @ 55-65
-         ivuwyi94b (dot 4)            0.4 -> 1  @ 55-65, 1 -> 0.4 @ 75-85
-         iz9ohs15z (dot 5)            0.4 -> 1  @ 75-85
-
-       The spec never fades a single image back OUT, so on its own every
-       render it has revealed stays at opacity 1 and all five pens stack.
-       The image fade-outs below are the hand-written part; the copy and dot
-       keyframes are reproduced exactly. */
-
-    let tl: gsap.core.Timeline | null = null;
-
-    /**
-     * Update order for ScrollTrigger's internal list. The desktop variant
-     * and the engine's timelines animate the same element ids, so this one
-     * is kept last (highest `refreshPriority`) to win the final write.
-     */
-    const colorsLast = (a: ScrollTrigger, b: ScrollTrigger) =>
-      (a.vars.refreshPriority ?? 0) - (b.vars.refreshPriority ?? 0);
-
-    const build = () => {
-      tl?.scrollTrigger?.kill();
-      tl?.kill();
-      tl = null;
-      // The desktop family is `display: none` below 992px — nothing to scrub.
-      if (!media.matches) return;
-
-      // Initial state: silver up, everything else down (matches the
-      // `animations.css` "before" rules), every dot at its 40% base.
-      gsap.set(images[0], { opacity: 1 });
-      gsap.set(images.slice(1), { opacity: 0 });
-      gsap.set(contents[0], { opacity: 1 });
-      gsap.set(contents.slice(1), { opacity: 0 });
-      gsap.set(dots, { opacity: 0.4 });
-
-      if (reduced) return;
-
-      // One unit == 1% of the trigger's scroll range, so the spec's
-      // keyframe percentages can be written straight into the timeline.
-      //
-      // `refreshPriority` + the sort above keep this timeline at the END of
-      // ScrollTrigger's update order: the spec engine (see
-      // `lib/taptop/engine.ts`, booted by `Providers`) also writes inline
-      // opacity on eight of these nine ids from `spec.json`, and where the
-      // two disagree — the engine leaves every image it has faded in at
-      // opacity 1 for the rest of the scroll — the hand-written cross-fade
-      // has to be the final writer.
-      tl = gsap.timeline({
-        defaults: { ease: "none" },
-        scrollTrigger: {
-          trigger: section.current,
-          start: "top top",
-          end: "bottom bottom",
-          scrub: 1,
-          invalidateOnRefresh: true,
-          refreshPriority: 1,
-          onRefresh: () => ScrollTrigger.sort(colorsLast)
-        }
-      });
-
-      /* Cross-fade windows, in percent of the section's scroll range,
-         written straight onto a 100-unit timeline:
-
-           variant  image id     copy id      image in/out     copy in/out
-           silver   iqrvm6uro    i8xxxe533    10-25 / 10-25    0-15 (hold)
-           graphite ii452cx5b    il18j45dh    10-25 / 35-45    15-25 / 35-45
-           blue     inkrb08oy    iqogndg22    35-55 / 55-65    35-45 / 55-65
-           red      iwd7fdw96    iunzn1r8v    55-75 / 75-85    55-65 / 75-85
-           orange   i44lvqr6l    i9yml8q3k    75-85 / 85-100   75-85 / 75-100
-
-         The `in` column and the copy windows are the spec's own keyframes
-         (`effect-*` in `.reference/animations_full.json`, driven against
-         `#itcx2nwlb_0`), so they agree with what `lib/taptop/engine.ts`
-         writes for these ids. Every `image out` is hand-written — Taptop
-         never fades an image out, so the five pen renders would pile up at
-         opacity 1 — and is placed so an image leaves over exactly the window
-         its successor arrives in. Across the whole scroll the image
-         opacities therefore sum to at most 1.0: a clean cross-fade, never
-         two stacked pens.
-
-         The copy does briefly overlap (graphite's caption leaves at 45 while
-         blue's arrives at 35, so 35-45 shows both at partial opacity). That
-         is the reference's own rhythm and the spec drives those ids
-         directly, so it is kept rather than "fixed". */
-      const IMAGE_CURVES: number[][] = [
-        [10, 25, 10, 25],
-        [10, 25, 35, 45],
-        [35, 55, 55, 65],
-        [55, 75, 75, 85],
-        [75, 85, 85, 100]
-      ];
-      const COPY_CURVES: number[][] = [
-        [0, 15, 15, 25],
-        [15, 25, 35, 45],
-        [35, 45, 55, 65],
-        [55, 65, 75, 85],
-        [75, 85]
-      ];
-
-      const window2 = (curve: number[], at: number): [number, number] => [
-        curve[at] ?? 0,
-        curve[at + 1] ?? 100
-      ];
-      const fade = (el: HTMLElement | undefined, curve: number[]) => {
-        if (!el || !tl) return;
-        const [start, end] = window2(curve, 0);
-        tl.fromTo(el, { opacity: 0 }, { opacity: 1, duration: end - start, ease: "none" }, start);
-      };
-      const dim = (el: HTMLElement | undefined, curve: number[]) => {
-        if (!el || !tl || curve.length < 4) return;
-        const [start, end] = window2(curve, 2);
-        tl.to(el, { opacity: 0, duration: end - start, ease: "none" }, start);
-      };
-
-      // `dim` before `fade`: for the fade each element holds at opacity 1
-      // well past its tween (silver's copy), the `to` has to capture its
-      // start value before the `fromTo` rewrites the element to 0.
-      images.forEach((el, i) => {
-        const curve = IMAGE_CURVES[i];
-        if (!curve) return;
-        dim(el, curve);
-        fade(el, curve);
-      });
-      contents.forEach((el, i) => {
-        const curve = COPY_CURVES[i];
-        if (!curve) return;
-        dim(el, curve);
-        fade(el, curve);
-      });
-
-      // The spec engine (see `lib/taptop/engine.ts`) also builds
-      // ScrollTriggers for `i8xxxe533`, `ii452cx5b`, `il18j45dh`,
-      // `inkrb08oy`, `iqogndg22`, `iwd7fdw96`, `iunzn1r8v`, `i44lvqr6l`,
-      // `i9yml8q3k` and the five dots from the same ids. Our curves use the
-      // spec's own keyframes, so the values agree wherever both write.
-      ScrollTrigger.sort(colorsLast);
-
-      // pagination dots 2-5: 0.4 -> 1 -> 0.4 around their variant
-      for (let i = 1; i < VARIANT_COUNT; i += 1) {
-        const dot = dots[i];
-        if (!dot) continue;
-        tl.fromTo(dot, { opacity: 0.4 }, { opacity: 1, duration: 10, ease: "none" }, i * 20 - 5);
-        tl.to(dot, { opacity: 0.4, duration: 10, ease: "none" }, (i + 1) * 20 - 5);
-      }
-    };
-
-    build();
-    media.addEventListener("change", build);
-
-    return () => {
-      media.removeEventListener("change", build);
-      tl?.scrollTrigger?.kill();
-      tl?.kill();
-    };
-  }, []);
+/**
+ * ColorsStatic — the ≤991px carousel.
+ *
+ * Rendered by `page.tsx` as a *sibling before* `.scroll-wrapper`, exactly
+ * where the reference puts it. That matters: `.footer` is
+ * `position: sticky; bottom: -0.1vw`, so if this section lived inside the
+ * wrapper the footer would pin over it and hide the slides.
+ */
+export function ColorsStatic({ colors }: { colors: ColorVariant[] }) {
+  const variants = useVariants(colors);
+  const { trackRef, index, go } = useCarousel(VARIANT_COUNT);
 
   return (
-    <>
-      <section className="section section-colors--static" id="ius70bmqv_0">
+    <section className="section section-colors--static" id="ius70bmqv_0">
         <div className="slider section-colors__slider" id="ie29e5u5m_0">
           <div className="slider__wrapper section-colors__slider-wrapper" id="i0z78cl1f_0">
             <div
               className="slider__list section-colors__slider-list"
               id="izbvywgpp_0"
-              ref={listRef}
-              onScroll={onScroll}
-              onTouchStart={onTouchStart}
-              onTouchEnd={onTouchEnd}
+              ref={trackRef}
             >
               {/* Slide 1 — Silver */}
               <div className="slider__slide section-colors__slide-silver slider__slide--s2-igegjt1yn" id="igegjt1yn_0">
@@ -636,24 +450,172 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
             </div>
           </div>
         </div>
-        {/* Native scroll-snap drives the slider list; the reference ships
-            Swiper's equivalent as an inline style on `.slider__list`. */}
-        <style>{`#izbvywgpp_0{overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;-webkit-overflow-scrolling:touch}#izbvywgpp_0::-webkit-scrollbar{display:none}#izbvywgpp_0>.slider__slide{scroll-snap-align:start}`}</style>
-      </section>
+    </section>
+  );
+}
 
-      {/* ------------------------------------------------------------------ *
-       * Desktop: 350vh sticky scrollytelling, hidden below 992px by CSS.
-       * ------------------------------------------------------------------ */}
-      <div ref={desktop} className="section section--u-itcx2nwlb section-colors" id="itcx2nwlb_0">
-        <div
-          ref={camera}
-          className="container section-colors__camera container--u-ihhnniscu"
-          id="ihhnniscu_0"
-        >
+/**
+ * Colors — the ≥992px scrollytelling section (350vh, sticky camera).
+ * Rendered by `page.tsx` inside `.scroll-wrapper`, before the footer.
+ */
+export default function Colors({ colors }: { colors: ColorVariant[] }) {
+  const camera = useRef<HTMLDivElement>(null);
+  const desktop = useRef<HTMLDivElement>(null);
+  const variants = useVariants(colors);
+
+  // The slider scrolls its own list, so the page-level scroll
+  // measurements have to be redone when the viewport changes.
+  useEffect(() => {
+    const onResize = () => ScrollTrigger.refresh();
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, []);
+
+  useEffect(() => {
+    const root = desktop.current;
+    const container = camera.current;
+    if (!root || !container) return;
+
+    const media = window.matchMedia(DESKTOP_QUERY);
+    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    const images = Array.from(root.querySelectorAll<HTMLElement>('[id$="_0"][class*="section-colors__img-wrapper--static"]'));
+    const contents = Array.from(root.querySelectorAll<HTMLElement>('[id$="_0"][class*="section-colors__content-wrapper"]'));
+    const dots = Array.from(root.querySelectorAll<HTMLElement>('[id$="_0"][class*="pagination-dot"]'));
+
+    /* The reference spec (see `.reference/animations_full.json`) drives
+       these ids against `#itcx2nwlb_0` with these keyframes, in percent of
+       the section's 350vh scroll range:
+
+         i8xxxe533 (silver copy)      1 -> 0    @ 15-25
+         ii452cx5b (graphite image)   0 -> 1    @ 10-25
+         il18j45dh (graphite copy)    0 -> 1    @ 15-25, 1 -> 0 @ 35-45
+         inkrb08oy (blue image)       0 -> 1    @ 35-45
+         iqogndg22 (blue copy)        0 -> 1    @ 35-45, 1 -> 0 @ 55-65
+         iwd7fdw96 (red image)        0 -> 1    @ 55-65
+         iunzn1r8v (red copy)         0 -> 1    @ 55-65, 1 -> 0 @ 75-85
+         i44lvqr6l (orange image)     0 -> 1    @ 75-85
+         i9yml8q3k (orange copy)      0 -> 1    @ 75-85
+         ingm9j6ml (dot 1)            1 -> 0.4  @ 10-25
+         iuyp5b57e (dot 2)            0.4 -> 1  @ 15-25, 1 -> 0.4 @ 35-45
+         ijiw4belh (dot 3)            0.4 -> 1  @ 35-45, 1 -> 0.4 @ 55-65
+         ivuwyi94b (dot 4)            0.4 -> 1  @ 55-65, 1 -> 0.4 @ 75-85
+         iz9ohs15z (dot 5)            0.4 -> 1  @ 75-85
+
+       The spec never fades a single image back OUT, so on its own every
+       render it has revealed stays at opacity 1 and all five pens stack.
+       The image fade-outs below are the hand-written part; the copy and dot
+       keyframes are reproduced exactly. */
+
+    let tl: gsap.core.Timeline | null = null;
+
+    /* Fade windows, in percent of the section's scroll range, taken straight
+       from the spec (`.reference/animations_full.json`) so the desktop
+       section matches the reference:
+
+         variant  pen render   copy
+         silver   visible      1 → 0    @ 15-25
+         graphite in 10-25     0 → 1 @ 15-25, 1 → 0 @ 35-45
+         blue     in 35-45     0 → 1 @ 35-45, 1 → 0 @ 55-65
+         red      in 55-65     0 → 1 @ 55-65, 1 → 0 @ 75-85
+         orange   in 75-85     0 → 1 @ 75-85, then holds
+
+       `null` means "this side never runs", which is why it is spelled out
+       rather than encoded as a degenerate range. Each pen render fades in and
+       then stays at 1 — the five wrappers are stacked in DOM order, so the
+       newest simply covers the previous one, exactly as the reference does. */
+    type Fade = { in: [number, number] | null; out: [number, number] | null };
+
+    const IMAGE_FADES: Fade[] = [
+      { in: null, out: null },
+      { in: [10, 25], out: null },
+      { in: [35, 45], out: null },
+      { in: [55, 65], out: null },
+      { in: [75, 85], out: null }
+    ];
+    const COPY_FADES: Fade[] = [
+      { in: null, out: [15, 25] },
+      { in: [15, 25], out: [35, 45] },
+      { in: [35, 45], out: [55, 65] },
+      { in: [55, 65], out: [75, 85] },
+      { in: [75, 85], out: null }
+    ];
+    /* Pagination dots: 0.4 base, brightening while their variant is on. */
+    const DOT_FADES: Fade[] = [
+      { in: null, out: [10, 25] },
+      { in: [15, 25], out: [35, 45] },
+      { in: [35, 45], out: [55, 65] },
+      { in: [55, 65], out: [75, 85] },
+      { in: [75, 85], out: null }
+    ];
+
+    const ramp = (v: number, [a, b]: [number, number]) =>
+      b === a ? 1 : Math.min(1, Math.max(0, (v - a) / (b - a)));
+
+    /** Opacity at scroll percentage `p` for one fade description. */
+    const opacityAt = (p: number, { in: rise, out: fall }: Fade) => {
+      const up = rise ? ramp(p, rise) : 1;
+      const down = fall ? ramp(p, fall) : 0;
+      return Math.max(0, Math.min(1, Math.min(up, 1 - down)));
+    };
+
+    const apply = (p: number) => {
+      images.forEach((el, i) => gsap.set(el, { opacity: opacityAt(p, IMAGE_FADES[i]) }));
+      contents.forEach((el, i) => gsap.set(el, { opacity: opacityAt(p, COPY_FADES[i]) }));
+      dots.forEach((el, i) => gsap.set(el, { opacity: 0.4 + 0.6 * opacityAt(p, DOT_FADES[i]) }));
+    };
+
+    const build = () => {
+      tl?.scrollTrigger?.kill();
+      tl?.kill();
+      tl = null;
+      // The desktop family is `display: none` below 992px — nothing to scrub.
+      if (!media.matches) return;
+
+      apply(0);
+      if (reduced) return;
+
+      /* A single ScrollTrigger drives every opacity from one `onUpdate`.
+       *
+       * The elements carry `data-tt-skip`, so `lib/taptop/engine.ts` leaves
+       * them alone — two timelines writing the same property meant the
+       * result depended on ScrollTrigger's internal update order, which is
+       * not something worth depending on. Computing the value ourselves is
+       * deterministic and keeps the spec's own curves. */
+      tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: desktop.current,
+          start: "top top",
+          end: "bottom bottom",
+          scrub: 1,
+          invalidateOnRefresh: true,
+          onUpdate: (self) => apply(self.progress * 100),
+          onRefresh: (self) => apply(self.progress * 100)
+        }
+      });
+    };
+
+    build();
+    media.addEventListener("change", build);
+
+    return () => {
+      media.removeEventListener("change", build);
+      tl?.scrollTrigger?.kill();
+      tl?.kill();
+    };
+  }, []);
+
+  return (
+    <div ref={desktop} className="section section--u-itcx2nwlb section-colors" id="itcx2nwlb_0">
+      <div
+        ref={camera}
+        className="container section-colors__camera container--u-ihhnniscu"
+        id="ihhnniscu_0"
+      >
           <div className="div section-colors__content" id="imodgwvc7_0">
             {/* Variant 1 — Silver */}
             <div className="div section-colors__wrapper-silver div--u-i4niya4cp" id="i4niya4cp_0">
-              <div className="image image--u-iqrvm6uro section-colors__img-wrapper--static" id="iqrvm6uro_0">
+              <div data-tt-skip className="image image--u-iqrvm6uro section-colors__img-wrapper--static" id="iqrvm6uro_0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={variants[0].image || undefined}
@@ -665,7 +627,7 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
                   id="iqikcd8xb_0"
                 />
               </div>
-              <div className="div section-colors__content-wrapper div--u-i8xxxe533" id="i8xxxe533_0">
+              <div data-tt-skip className="div section-colors__content-wrapper div--u-i8xxxe533" id="i8xxxe533_0">
                 <div className="div section-colors__text-wrapper div--u-ivpg8x4qh" id="ivpg8x4qh_0">
                   <p className="text large-text--3 text--u-irazfckmj tc--main-white" id="irazfckmj_0">
                     <span className="text-block-wrap-div">{variants[0].name}</span>
@@ -681,7 +643,7 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
 
             {/* Variant 2 — Graphite Black */}
             <div className="div section-colors__wrapper-graphite div--u-i9u537bzj" id="i9u537bzj_0">
-              <div className="image image--u-ii452cx5b section-colors__img-wrapper--static" id="ii452cx5b_0">
+              <div data-tt-skip className="image image--u-ii452cx5b section-colors__img-wrapper--static" id="ii452cx5b_0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={variants[1].image || undefined}
@@ -693,7 +655,7 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
                   id="i6qd50zxn_0"
                 />
               </div>
-              <div className="div section-colors__content-wrapper div--u-il18j45dh" id="il18j45dh_0">
+              <div data-tt-skip className="div section-colors__content-wrapper div--u-il18j45dh" id="il18j45dh_0">
                 <div className="div section-colors__text-wrapper div--u-ic35b724k" id="ic35b724k_0">
                   <p className="text large-text--3 text--u-ianjavuah tc--main-white" id="ianjavuah_0">
                     <span className="text-block-wrap-div">{variants[1].name}</span>
@@ -709,7 +671,7 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
 
             {/* Variant 3 — Mist Blue */}
             <div className="div section-colors__wrapper-blue div--u-izopkj036" id="izopkj036_0">
-              <div className="image image--u-inkrb08oy section-colors__img-wrapper--static" id="inkrb08oy_0">
+              <div data-tt-skip className="image image--u-inkrb08oy section-colors__img-wrapper--static" id="inkrb08oy_0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={variants[2].image || undefined}
@@ -721,7 +683,7 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
                   id="iqifg9qnc_0"
                 />
               </div>
-              <div className="div section-colors__content-wrapper div--u-iqogndg22" id="iqogndg22_0">
+              <div data-tt-skip className="div section-colors__content-wrapper div--u-iqogndg22" id="iqogndg22_0">
                 <div className="div section-colors__text-wrapper div--u-ioksphuuu" id="ioksphuuu_0">
                   <p className="text large-text--3 text--u-i6yskbyol tc--main-white" id="i6yskbyol_0">
                     <span className="text-block-wrap-div">{variants[2].name}</span>
@@ -737,7 +699,7 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
 
             {/* Variant 4 — Precision Red */}
             <div className="div section-colors__wrapper-red div--u-irsyqy74z" id="irsyqy74z_0">
-              <div className="image image--u-iwd7fdw96 section-colors__img-wrapper--static" id="iwd7fdw96_0">
+              <div data-tt-skip className="image image--u-iwd7fdw96 section-colors__img-wrapper--static" id="iwd7fdw96_0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={variants[3].image || undefined}
@@ -749,7 +711,7 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
                   id="igrnroo20_0"
                 />
               </div>
-              <div className="div section-colors__content-wrapper div--u-iunzn1r8v" id="iunzn1r8v_0">
+              <div data-tt-skip className="div section-colors__content-wrapper div--u-iunzn1r8v" id="iunzn1r8v_0">
                 <div className="div section-colors__text-wrapper div--u-i268597yp" id="i268597yp_0">
                   <p className="text large-text--3 text--u-ipc7zrb48 tc--main-white" id="ipc7zrb48_0">
                     <span className="text-block-wrap-div">{variants[3].name}</span>
@@ -767,7 +729,7 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
 
             {/* Variant 5 — Bright Orange */}
             <div className="div section-colors__wrapper-orange div--u-ifuxi7sp3" id="ifuxi7sp3_0">
-              <div className="image image--u-i44lvqr6l section-colors__img-wrapper--static" id="i44lvqr6l_0">
+              <div data-tt-skip className="image image--u-i44lvqr6l section-colors__img-wrapper--static" id="i44lvqr6l_0">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={variants[4].image || undefined}
@@ -779,7 +741,7 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
                   id="ivk1zk7bz_0"
                 />
               </div>
-              <div className="div section-colors__content-wrapper div--u-i9yml8q3k" id="i9yml8q3k_0">
+              <div data-tt-skip className="div section-colors__content-wrapper div--u-i9yml8q3k" id="i9yml8q3k_0">
                 <div className="div section-colors__text-wrapper div--u-iicoczyfb" id="iicoczyfb_0">
                   <p className="text large-text--3 text--u-iwbejcwiy tc--violet" id="iwbejcwiy_0">
                     <span className="text-block-wrap-div">{variants[4].name}</span>
@@ -795,15 +757,14 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
 
             {/* Pagination — one dot per variant, driven by the timeline */}
             <div className="div section-colors__paginations-wrapper div--u-ihwbns9u0" id="ihwbns9u0_0">
-              <div className="div pagination-dot1 div--u-ingm9j6ml bc--white-40" id="ingm9j6ml_0" />
-              <div className="div pagination-dot2 div--u-iuyp5b57e bc--white-40" id="iuyp5b57e_0" />
-              <div className="div div--u-ijiw4belh pagination-dot3 bc--white-40" id="ijiw4belh_0" />
-              <div className="div div--u-ivuwyi94b pagination-dot4 bc--white-40" id="ivuwyi94b_0" />
-              <div className="div pagination-dot5 div--u-iz9ohs15z bc--white-40" id="iz9ohs15z_0" />
+              <div data-tt-skip className="div pagination-dot1 div--u-ingm9j6ml bc--white-40" id="ingm9j6ml_0" />
+              <div data-tt-skip className="div pagination-dot2 div--u-iuyp5b57e bc--white-40" id="iuyp5b57e_0" />
+              <div data-tt-skip className="div div--u-ijiw4belh pagination-dot3 bc--white-40" id="ijiw4belh_0" />
+              <div data-tt-skip className="div div--u-ivuwyi94b pagination-dot4 bc--white-40" id="ivuwyi94b_0" />
+              <div data-tt-skip className="div pagination-dot5 div--u-iz9ohs15z bc--white-40" id="iz9ohs15z_0" />
             </div>
           </div>
         </div>
       </div>
-    </>
   );
 }
