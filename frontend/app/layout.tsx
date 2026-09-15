@@ -33,7 +33,8 @@ export async function generateMetadata(): Promise<Metadata> {
       title: metadata.title,
       description: metadata.description,
       type: "website",
-      images: [{ url: metadata.ogImage }]
+      // Only when Strapi actually holds an `og_image`.
+      ...(metadata.ogImage ? { images: [{ url: metadata.ogImage }] } : {})
     }
   };
 }

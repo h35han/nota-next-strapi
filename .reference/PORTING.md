@@ -76,14 +76,15 @@ Data comes from `lib/api.ts` (already bound to Strapi). Media URLs are absolute
 `<video src>`, not `next/image`, to keep the layout identical to the reference.
 
 The reference's own hard-coded media lives on the Taptop CDN. Some of it is
-already mirrored into `frontend/public/d/…` because the vendor CSS references
-it. For media the CMS does not provide, prefer the CMS value; if you truly need
-a reference-only asset, download it into `frontend/public/` (do not hotlink).
+painted by the vendored CSS. The frontend ships **no local images** — every
+image comes from Strapi. Where a vendored CSS rule paints a `/d/…` asset,
+bind the element to the matching CMS media with an inline style instead, and
+strip the dead declaration from the vendored sheet.
 
 ## Reference asset paths (original → local)
 
-The reference's `/d/library_image-…` and `/thumb/2/…` URLs are already handled:
-`frontend/public/d/…` mirrors every URL that appears inside the vendored CSS.
+The reference's `/d/library_image-…` and `/thumb/2/…` URLs have been removed
+from the vendored CSS entirely — `frontend/public/` no longer exists.
 
 ## Scroll behaviour (from the reference's own scripts)
 

@@ -229,9 +229,11 @@ function mapHomepage(entry: Entry | null | undefined): Homepage {
  * Error-path metadata only. Every rendered word on the site comes from
  * Strapi; this is used solely when the CMS cannot be reached while the
  * document head is being built, so the page still has a title.
+ *
+ * There is deliberately no bundled og:image: `homepage.og_image` is the
+ * only source, and an empty value simply omits the tag.
  */
 const SITE_NAME = "NŌTA";
-const SITE_OG_IMAGE = "/opengraph.jpg";
 
 // ---------------------------------------------------------------------------
 // Public API
@@ -301,9 +303,9 @@ export async function getHtmlMetadata(): Promise<HtmlMetadata> {
     return {
       title: str(h?.meta_title) || SITE_NAME,
       description: str(h?.meta_description),
-      ogImage: mediaToUrl(h?.og_image) || SITE_OG_IMAGE
+      ogImage: mediaToUrl(h?.og_image)
     };
   } catch {
-    return { title: SITE_NAME, description: "", ogImage: SITE_OG_IMAGE };
+    return { title: SITE_NAME, description: "", ogImage: "" };
   }
 }

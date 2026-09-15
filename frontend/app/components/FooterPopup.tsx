@@ -4,6 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import type { Homepage, TeamMember } from "../../lib/api";
 import { setScrollLock } from "../../lib/smooth";
+import { CloseFrame } from "./icons";
 
 /**
  * Footer popup — the team card opened from the footer's "Builded by NōtaTeam"
@@ -138,7 +139,13 @@ export default function FooterPopup({
             </a>
           ))}
         </div>
-        <div className="pop-up__inside-close-button footer-popup__close" id="ibg8u1pmu_0" onClick={onClose}></div>
+        <div
+          className="pop-up__inside-close-button footer-popup__close"
+          id="ibg8u1pmu_0"
+          onClick={onClose}
+        >
+          <CloseFrame />
+        </div>
       </div>
     </div>
   );

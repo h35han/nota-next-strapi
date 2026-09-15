@@ -30,10 +30,27 @@ Every word and every image on the page is fetched from the CMS through
   `color_variant.image`, `feature.image`, `box_item.image` and
   `detail_card.image` is used straight from the API.
 
-`frontend/public/d/` holds **design chrome only** — the 40 backgrounds and
-icons that the vendored stylesheets reference by URL (`.inside__blinds-image--hover`,
-`.footer-popup__close`, the footer credits dot, …). Those are part of the
-design system, not content, and the schema has no field for them.
+**There are no bundled images at all.** `frontend/public/` has been removed
+entirely, and every `url(/d/…)` / `url(/g/…)` declaration has been stripped from
+the vendored stylesheets.
+
+That works because the CMS already owns every content image: the vendored CSS
+originally painted the box-item, detail-card, inside-set and hover images as
+per-element `background-image` rules, but each of those elements now carries a
+Strapi-bound inline `background-image` which overrides the rule anyway. Only two
+rules were still painting a local file, and both are design chrome with no
+schema field:
+
+* `.footer-popup__close` → an inline `<CloseFrame />` SVG (`components/icons.tsx`);
+* the footer credits divider (`.footer__team-icon`) → an inline `<Ellipse />` SVG;
+* `.inside__blinds-image--hover` → CMS-only now; it paints nothing when
+  `box_items[].image_hover` is empty.
+
+`meta.og:image` comes solely from `homepage.og_image`; when the CMS has none the
+tag is omitted rather than falling back to a bundled file.
+
+The one remaining local image is `app/favicon.ico`, which is Next's file
+convention for browser chrome (there is no schema field for a favicon).
 
 A handful of visible labels have no field in `backend/src/api/**` either, so
 they remain constants in the components: the four header/menu nav labels, the

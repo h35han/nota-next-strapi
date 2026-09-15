@@ -4,6 +4,7 @@ import { useState, type HTMLAttributes, type MouseEvent } from "react";
 import type { Homepage, Product, TeamMember } from "../../lib/api";
 import { scrollToId } from "../../lib/smooth";
 import FooterPopup from "./FooterPopup";
+import { Ellipse } from "./icons";
 
 /**
  * Footer — reference block `i6xdke8ib_0`
@@ -81,13 +82,6 @@ const NAV_LINKS_STATIC: NavLink[] = [
     className: "link footer__link-wrapper footer-link--white"
   }
 ];
-
-/**
- * The tiny dot that separates the footer credits. It is a design-system
- * asset (mirrored next to the other `/d/` files the vendored stylesheets
- * reference), not CMS content — the schema has no field for it.
- */
-const ELLIPSE_SRC = "/d/library_image-14785-ellipse_6750.svg";
 
 export default function Footer({
   product,
@@ -192,16 +186,12 @@ export default function Footer({
                     </a>
                   </div>
                   <div className="image footer__team-icon image--u-iak699zx6" id="iak699zx6_0">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={ELLIPSE_SRC}
-                      alt="Ellipse 6750"
-                      title=""
-                      data-size="0x0"
-                      data-origin-src={ELLIPSE_SRC}
-                      className="image__img"
-                      id="inop2608n_0"
-                    />
+                    {/* The credits divider is pure design chrome with no CMS
+                        field, so it is an inlined SVG rather than a local
+                        image file. */}
+                    <span className="image__img" id="inop2608n_0">
+                      <Ellipse />
+                    </span>
                   </div>
                   <div className="div footer__link-wrapper" id="i959q48t3_0">
                     <div
