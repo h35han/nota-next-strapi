@@ -1,0 +1,170 @@
+/* ------------------------------------------------------------------ *
+ * App-level base styles.
+ *
+ * Everything visual comes from the vendored Taptop design system in
+ * ./reference/*.css. This file only adds what the reference injected at
+ * runtime (Lenis classes, page background) plus the `.nota-*` helpers the
+ * React components need.
+ * ------------------------------------------------------------------ */
+
+:root {
+  --ink: #000000;
+  --paper: #ffffff;
+  --mist: #666666;
+  --violet: #5e1550;
+  --white-40: rgba(255, 255, 255, 0.4);
+  --black-10: rgba(0, 0, 0, 0.1);
+  --radial: radial-gradient(farthest-corner at center top, #969ca6 0%, #3a3c40 80%);
+}
+
+html {
+  background: var(--ink);
+  -webkit-text-size-adjust: 100%;
+}
+
+/**
+ * No `color` here on purpose.
+ *
+ * The reference never sets a foreground on `html`/`body`, so uncoloured text
+ * inherits the browser default **black**, and every section that sits on a
+ * dark background opts into white with `tc--main-white` /
+ * `tc--main-white-40`. Forcing white at this level (as an earlier iteration
+ * did) makes the light sections — specifications, inside the box — render
+ * their unstyled copy in white on white.
+ *
+ * `background` is still set so overscroll and the moment before hydration
+ * are black rather than white.
+ */
+body {
+  background: var(--ink);
+  margin: 0;
+  overflow-x: clip;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* The reference locks the page while the preloader counts down. */
+body.nota-locked {
+  overflow: hidden;
+}
+
+/* --- Lenis (injected at runtime by the reference) ------------------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* --- app helpers --------------------------------------------------- */
+
+.nota-app {
+  position: relative;
+  min-height: 100vh;
+}
+
+/* The reference toggles whole section families at 991px. */
+.nota-mobile-only {
+  display: block;
+}
+
+.nota-desktop-only {
+  display: none;
+}
+
+@media screen and (min-width: 992px) {
+  .nota-mobile-only {
+    display: none;
+  }
+
+  .nota-desktop-only {
+    display: block;
+  }
+}
+
+/* Sticky camera sections need their own stacking context so the negative
+   margins between them resolve predictably. */
+.section {
+  isolation: auto;
+}
+
+/* --- scramble text (reference injected this at runtime) ------------- */
+.scramble-text {
+  position: relative;
+  display: inline-block;
+}
+
+.scramble-base {
+  position: relative;
+  z-index: 3;
+  user-select: text;
+}
+
+.scramble-ghost,
+.scramble-ghost2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  white-space: nowrap;
+  z-index: 2;
+  pointer-events: none;
+  user-select: none;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+.scramble-ghost {
+  opacity: 0.95;
+}
+
+.scramble-ghost2 {
+  opacity: 0.92;
+}
+
+.scramble-ghost span,
+.scramble-ghost2 span,
+.scramble-base span {
+  display: inline-block;
+  transition: opacity 0.25s ease-out;
+}
+
+.scramble-text[data-animated="true"] {
+  opacity: 1;
+}
+
+/* --- hero Lottie stack --------------------------------------------- */
+.nota-lottie-host,
+.nota-lottie-video,
+.nota-lottie-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.nota-lottie-host svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.nota-lottie-video,
+.nota-lottie-image {
+  object-fit: cover;
+}

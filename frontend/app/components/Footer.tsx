@@ -1,120 +1,246 @@
 "use client";
 
+import { useState, type HTMLAttributes, type MouseEvent } from "react";
 import type { Homepage, Product, TeamMember } from "../../lib/api";
+import { scrollToId } from "../../lib/smooth";
+import FooterPopup from "./FooterPopup";
 
 /**
- * Footer — multi-column minimal dark layout (#0A0A0A).
+ * Footer — reference block `i6xdke8ib_0`
+ * (`.reference/index.html` lines 1739-1827, pretty slice in
+ * `.reference/sections/i6xdke8ib_0__section-footer-bc--main-black.html`).
  *
- * Brand mission summary, navigation sitemap, metadata, and designer
- * attributions. Dynamic year via client hydration.
+ * Every id and class is kept verbatim; the copy that the CMS holds is bound
+ * (`footer_copyright`, `footer_designed_by`/`designed_url`/`uprock_url`,
+ * `footer_made_in`/`made_in_url`, `footer_built_by`, `product.year`,
+ * `product.team`, `product.description`) and the team list lives in the
+ * footer popup that the "Builded by NōtaTeam" action opens (the reference
+ * `link` with `data-action-element='i8n40m1el_0'`).
  */
+
+/** Taptop renders action targets as `<div href="/" role="button">`; React's
+ *  types don't accept `href` on a div, so it is spread in loosely to keep the
+ *  DOM identical to the reference. */
+const actionTarget = (action: string, onClick: () => void) =>
+  ({ href: "/", "data-action-element": action, onClick }) as unknown as HTMLAttributes<HTMLDivElement>;
+
+type NavLink = { label: string; target: string; anchorId: string; className: string };
+
+/** `footer__links` — the desktop anchors (desktop section ids). */
+const NAV_LINKS: NavLink[] = [
+  {
+    label: "Specifications",
+    target: "i34o078vy_0",
+    anchorId: "ijhefpktb_0",
+    className: "link footer__link-wrapper footer-link--white link--u-ijhefpktb"
+  },
+  {
+    label: "Who it's for",
+    target: "i2hggnt58_0",
+    anchorId: "i86baiktq_0",
+    className: "link footer__link-wrapper footer-link--white"
+  },
+  {
+    label: "About",
+    target: "i0oeetgkk_0",
+    anchorId: "il4ztycyw_0",
+    className: "link footer__link-wrapper footer-link--white"
+  },
+  {
+    label: "Inside the box",
+    target: "iyv5tgngp_0",
+    anchorId: "iha6r5yst_0",
+    className: "link footer__link-wrapper footer-link--white"
+  }
+];
+
+/** `footer__links--static` — the ≤991px anchors (the `*-static` sections). */
+const NAV_LINKS_STATIC: NavLink[] = [
+  {
+    label: "Specifications",
+    target: "i9uqhe1cp_0",
+    anchorId: "iql4v8ebw_0",
+    className: "link footer__link-wrapper footer-link--white link--u-iql4v8ebw"
+  },
+  {
+    label: "Who it's for",
+    target: "icu3mt31j_0",
+    anchorId: "ivage8l8q_0",
+    className: "link footer__link-wrapper footer-link--white"
+  },
+  {
+    label: "About",
+    target: "ixv7fgfun_0",
+    anchorId: "i3l5fe0zn_0",
+    className: "link footer__link-wrapper footer-link--white"
+  },
+  {
+    label: "Inside the box",
+    target: "ipavj5rd0_0",
+    anchorId: "ir1q310gm_0",
+    className: "link footer__link-wrapper footer-link--white"
+  }
+];
+
+const ELLIPSE_SRC =
+  "/thumb/2/XFO-Z6KKLQ1J3F5qhK1gag/640r480/d/library_image-14785-symbol-iof6gcmn1-ellipse_6750.svg";
+
 export default function Footer({
   product,
   homepage,
-  team,
+  team
 }: {
   product: Product;
   homepage: Homepage;
   team: TeamMember[];
 }) {
-  const year = new Date().getFullYear();
+  const [teamOpen, setTeamOpen] = useState(false);
+
+  const year = product.year || new Date().getFullYear();
+  const description =
+    product.description ||
+    "NŌTA creates tools that respect the way people think and write. Natural handwriting, quietly connected to digital structure.";
+
+  const scroll = (event: MouseEvent<HTMLAnchorElement>, target: string) => {
+    event.preventDefault();
+    scrollToId(target);
+  };
 
   return (
-    <footer className="bg-[#0A0A0A] text-paper">
-      <div className="mx-auto max-w-7xl px-5 py-16 md:px-10 md:py-24">
-        <div className="flex flex-col gap-14 md:flex-row md:justify-between">
-          {/* Brand mission */}
-          <div className="max-w-sm">
-            <p className="font-serif text-headline-4">Nōta</p>
-            <p className="mt-4 text-card text-paper/60">
-              {product.description ||
-                "A smart writing system that combines a precision smart pen, intelligent paper, and real-time digital sync."}
-            </p>
-          </div>
-
-          {/* Navigation sitemap */}
-          <nav aria-label="Footer" className="grid gap-2 text-footer">
-            {[
-              { label: "Specifications", id: "specs" },
-              { label: "Who it's for", id: "who" },
-              { label: "About", id: "paper" },
-              { label: "Inside the box", id: "inside" }
-            ].map((link) => (
-              <a
-                key={link.id}
-                href={`#${link.id}`}
-                className="w-fit text-paper/60 transition-colors hover:text-paper"
-              >
-                {link.label}
-              </a>
-            ))}
-          </nav>
-
-          {/* Team */}
-          {team.length > 0 && (
-            <div className="grid gap-2 text-footer">
-              <p className="text-paper/40">{product.team || "Team"}</p>
-              {team.map((member) => (
-                <a
-                  key={member.name}
-                  href={member.telegram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="w-fit text-paper/60 transition-colors hover:text-paper"
-                >
-                  {member.name}
-                </a>
-              ))}
+    <>
+      <footer className="section footer bc--main-black tc--main-white" id="i6xdke8ib_0">
+        <div className="container container--primary" id="i7a0ah6sw_0">
+          <div className="div footer__content" id="imdte2051_0">
+            <div className="div footer__content-top" id="i57w7t0iv_0">
+              <div className="div footer__description-wrapper div--u-i9qhsq5hn" id="i9qhsq5hn_0">
+                <p className="text footer-text footer__description text--u-isfw00xlm" id="isfw00xlm_0">
+                  <span className="text-block-wrap-div">{description}</span>
+                </p>
+                <p className="text footer-text footer__description text--u-ihtsnorgm" id="ihtsnorgm_0">
+                  <span className="text-block-wrap-div">{description}</span>
+                </p>
+              </div>
+              <div className="div footer__info-wrapper" id="i2on3wzy1_0">
+                <div className="div footer__menu" id="i9mtfzl2p_0">
+                  <h2 className="text footer-title tc--main-white-55" id="io3nhjq8y_0">
+                    <span className="text-block-wrap-div">Navigation</span>
+                  </h2>
+                  <div className="div footer__links" id="i8m8vibqq_0">
+                    {NAV_LINKS.map((link) => (
+                      <a
+                        key={link.anchorId}
+                        href={`#${link.target}`}
+                        data-action-element=""
+                        target="_self"
+                        rel="nofollow"
+                        className={link.className}
+                        id={link.anchorId}
+                        onClick={(event) => scroll(event, link.target)}
+                      >
+                        <span className="text-block-wrap-div">{link.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                  <div className="div footer__links--static" id="i0oh18fok_0">
+                    {NAV_LINKS_STATIC.map((link) => (
+                      <a
+                        key={link.anchorId}
+                        href={`#${link.target}`}
+                        data-action-element=""
+                        target="_self"
+                        rel="nofollow"
+                        className={link.className}
+                        id={link.anchorId}
+                        onClick={(event) => scroll(event, link.target)}
+                      >
+                        <span className="text-block-wrap-div">{link.label}</span>
+                      </a>
+                    ))}
+                  </div>
+                </div>
+                <div className="div footer__year" id="it31khk6c_0">
+                  <h3 className="text footer-title tc--main-white-55" id="itsee6t8m_0">
+                    <span className="text-block-wrap-div">Year</span>
+                  </h3>
+                  <p className="text footer__year-text" id="ik07wvusu_0">
+                    <span className="text-block-wrap-div">{year}</span>
+                  </p>
+                </div>
+              </div>
             </div>
-          )}
-        </div>
-
-        {/* Metadata + attributions */}
-        <div className="mt-16 flex flex-col justify-between gap-6 border-t border-white/10 pt-8 text-footer text-paper/40 md:flex-row md:items-center">
-          <p>
-            {homepage.footerCopyright?.replace("{year}", String(year)) || `©${year} Nōta Team`}
-          </p>
-
-          <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
-            <span>{product.designCredit || homepage.footerDesignedBy || "Designed by"}</span>
-            {homepage.designedUrl && (
-              <a
-                href={homepage.designedUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-paper/60 transition-colors hover:text-paper"
-              >
-                Alice
-              </a>
-            )}
-            {homepage.uprockUrl && (
-              <a
-                href={homepage.uprockUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-paper/60 transition-colors hover:text-paper"
-              >
-                &amp; UPROCK Studio
-              </a>
-            )}
-            <span className="text-paper/40">·</span>
-            {homepage.footerMadeIn && homepage.madeInUrl ? (
-              <a
-                href={homepage.madeInUrl}
-                target="_blank"
-                rel="noreferrer"
-                className="text-paper/60 transition-colors hover:text-paper"
-              >
-                {homepage.footerMadeIn}
-              </a>
-            ) : (
-              <span>{homepage.footerMadeIn}</span>
-            )}
-            <span className="text-paper/40">·</span>
-            <span>{homepage.footerBuiltBy || product.builtCredit}</span>
+            <div className="div footer__content-bottom" id="iers039h0_0">
+              <p className="text footer__copyright footer-title tc--main-white-50" id="iwqnz2xi6_0">
+                <span className="text-block-wrap-div">{homepage.footerCopyright || "@2026 Nōta Team"}</span>
+              </p>
+              <div className="div footer__team-wrapper" id="il774jhmo_0">
+                {/* `aria-label` is the one addition to the reference node: it is
+                    where `product.team` ("NŌTA Team") lands — the reference
+                    footer has no visible slot for the team's own name. */}
+                <div className="div footer__team" id="ijim6lty4_0" aria-label={product.team || "NŌTA Team"}>
+                  <div className="div footer__link-wrapper" id="i59lstgrf_0">
+                    <a
+                      href={homepage.madeInUrl || "https://taptop.pro/"}
+                      data-action-element=""
+                      target="_blank"
+                      className="link footer-link--gray"
+                      id="i6zco9f6s_0"
+                    >
+                      <span className="text-block-wrap-div">{homepage.footerMadeIn || "Made in Taptop"}</span>
+                    </a>
+                  </div>
+                  <div className="image footer__team-icon image--u-iak699zx6" id="iak699zx6_0">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                      src={ELLIPSE_SRC}
+                      alt="Ellipse 6750"
+                      title=""
+                      data-size="0x0"
+                      data-origin-src={ELLIPSE_SRC}
+                      className="image__img"
+                      id="inop2608n_0"
+                    />
+                  </div>
+                  <div className="div footer__link-wrapper" id="i959q48t3_0">
+                    <div
+                      {...actionTarget("i8n40m1el_0", () => setTeamOpen(true))}
+                      role="button"
+                      className="link footer-link--gray"
+                      id="ioayzm2vy_0"
+                    >
+                      <span className="text-block-wrap-div">{homepage.footerBuiltBy || "Builded by NōtaTeam"}</span>
+                    </div>
+                  </div>
+                </div>
+                <div className="div footer__design-team" id="i0nnjl6yp_0">
+                  <a
+                    href={homepage.designedUrl || "https://www.behance.net/alicem"}
+                    data-action-element=""
+                    target="_blank"
+                    className="link footer-link--gray"
+                    id="ibcdu08c9_0"
+                  >
+                    <span className="text-block-wrap-div">
+                      <span style={{ whiteSpace: "pre" }}>{homepage.footerDesignedBy || "Designed by Alice"}</span>
+                    </span>
+                  </a>
+                  <a
+                    href={homepage.uprockUrl || "https://www.uprock.ru/"}
+                    data-action-element=""
+                    target="_blank"
+                    className="link footer-link--gray"
+                    id="ibsr4v1iu_0"
+                  >
+                    <span className="text-block-wrap-div">
+                      <span style={{ whiteSpace: "pre" }}>& UPROCK Studio</span>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+      </footer>
+      <FooterPopup open={teamOpen} onClose={() => setTeamOpen(false)} homepage={homepage} team={team} />
+    </>
   );
 }

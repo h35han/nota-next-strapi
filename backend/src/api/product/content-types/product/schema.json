@@ -70,6 +70,13 @@
         "audios"
       ]
     },
+    "cover_lottie": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "files"
+      ]
+    },
     "cover_image": {
       "type": "media",
       "multiple": false,

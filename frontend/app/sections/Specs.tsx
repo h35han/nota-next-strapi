@@ -1,108 +1,199 @@
-"use client";
-
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import type { Product, SpecItem } from "../../lib/api";
 
-gsap.registerPlugin(ScrollTrigger);
-
 /**
- * Specifications — editorial 3-column grid + rising pen render.
+ * Specifications — faithful port of the reference's desktop `section specs`
+ * (inside the sticky wrapper `ixh1v63v5_0`) plus its mobile `section
+ * specs--static`. The vendored CSS toggles the two families at 991px.
  *
- * A large serif title sits centered at the top. The pen nib render
- * translates up from below center. Three asymmetric spec cards
- * (Writing System / Capture Technology / Digital Continuity) fade up
- * staggered as they enter the viewport.
+ * Animations are handled automatically by `lib/taptop/engine.ts`, which
+ * looks the element ids up in `spec.json`, so the ids below must stay:
+ *   ig5resaoj_0  ixb5fk6ut_0  i9b3n0vje_0  imaomcjy4_0
+ *   izt89q94t_0  ihn3af3jk_0  iqu0h75s7_0
  */
+
+/** Per-position ids/classes the reference declares for the three cards. */
+const CARD_META: { id: string; u: string }[] = [
+  { id: "izt89q94t_0", u: "div--u-izt89q94t" },
+  { id: "ihn3af3jk_0", u: "div--u-ihn3af3jk" },
+  { id: "iqu0h75s7_0", u: "div--u-iqu0h75s7" }
+];
+
+/** Same, for the static (≤ 991px) family. */
+const STATIC_CARD_META: { id: string; u: string }[] = [
+  { id: "iezuu53gp_0", u: "div--u-iezuu53gp" },
+  { id: "iazylkn9w_0", u: "div--u-iazylkn9w" },
+  { id: "iciehuxta_0", u: "div--u-iciehuxta" }
+];
+
 export default function Specs({ product, specs }: { product: Product; specs: SpecItem[] }) {
-  const section = useRef<HTMLElement>(null);
-
-  useGSAP(
-    () => {
-      const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-      const title = section.current?.querySelector<HTMLElement>("[data-specs-title]");
-      const pen = section.current?.querySelector<HTMLElement>("[data-specs-pen]");
-      const rows = section.current?.querySelectorAll<HTMLElement>("[data-specs-card]");
-
-      const set = (el: HTMLElement, from: gsap.TweenVars, to: gsap.TweenVars, trigger: Element) => {
-        if (reduced) {
-          gsap.set(el, { ...to, opacity: 1, y: 0 });
-          return;
-        }
-        gsap.fromTo(
-          el,
-          from,
-          {
-            ...to,
-            opacity: 1,
-            ease: "power3.out",
-            scrollTrigger: { trigger, start: "top 80%", once: true }
-          }
-        );
-      };
-
-      if (title) set(title, { y: 40 }, { y: 0, duration: 1 }, title);
-      if (pen) set(pen, { y: 120, opacity: 0 }, { y: 0, duration: 1.2 }, section.current!);
-      rows?.forEach((row, i) => {
-        set(row, { y: 30, opacity: 0 }, { y: 0, duration: 0.9, delay: i * 0.1 }, row);
-      });
-    },
-    { scope: section }
-  );
+  const tagline = product.tagline || product.name;
 
   return (
-    <section id="specs" ref={section} className="relative bg-paper text-ink">
-      <div className="mx-auto max-w-7xl px-5 py-24 md:px-10 md:py-32 lg:py-40">
-        <div data-specs-title className="mb-20 text-center md:mb-24">
-          <h2 className="font-serif text-headline-1">
-            <span className="block text-mist">{product.name || "Nota pen"}</span>
-            <span className="block">Specifications</span>
-          </h2>
-        </div>
-
-        <div className="flex flex-col gap-16">
-          {/* Central pen render rising from the bottom */}
-          <div className="relative flex h-[70vh] items-end justify-center overflow-hidden md:h-[80vh]">
-            <div data-specs-pen className="will-scale h-full">
-              {product.specsImage ? (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img
-                  src={product.specsImage}
-                  alt={product.name}
-                  className="h-full w-auto object-contain"
-                />
-              ) : (
-                <div className="h-full w-16 bg-mist/20" aria-hidden />
-              )}
+    <>
+      <section className="section specs section--u-ig5resaoj" id="ig5resaoj_0">
+        <div className="div div--u-i34o078vy" id="i34o078vy_0"></div>
+        <div className="container specs__camera" id="io4jf4ysb_0">
+            <div
+              className="div specs__content div--u-ixb5fk6ut bc--main-white"
+              id="ixb5fk6ut_0"
+            >
+              <div
+                className="div specs__content-text-wrapper div--u-i9b3n0vje"
+                id="i9b3n0vje_0"
+              >
+                <h2 className="text headline--1 tc--gray" id="ir5c0gacs_0">
+                  <span className="text-block-wrap-div">{tagline}</span>
+                </h2>
+                <h2 className="text headline--1 tc--main-black" id="ikcxjydut_0">
+                  <span className="text-block-wrap-div">Specifications</span>
+                </h2>
+              </div>
+              <div
+                className="div specs-content__img-wrapper div--u-imaomcjy4"
+                id="imaomcjy4_0"
+              >
+                <div
+                  className="image specs__content--img image--u-ixy050e5m"
+                  id="ixy050e5m_0"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={product.specsImage || undefined}
+                    alt="Black smart pen"
+                    title=""
+                    data-size="233x734"
+                    data-origin-src={product.specsImage || undefined}
+                    className="image__img image__img--s2-i2aatmykv"
+                    id="i2aatmykv_0"
+                  />
+                </div>
+              </div>
+              <div className="div specs-pack__list" id="ingz5hdf9_0">
+                {specs.map((spec, i) => {
+                  const card = CARD_META[i];
+                  return (
+                    <div
+                      key={spec.title}
+                      className={`div specs-list__card${card ? ` ${card.u}` : ""}`}
+                      id={card?.id}
+                    >
+                      <div className="div specs-card__top-content bc--black-2 effect--glass">
+                        <h3 className="text headline--3">
+                          <span className="text-block-wrap-div">{spec.title}</span>
+                        </h3>
+                      </div>
+                      <div className="div specs-card__bottom-content bc--black-2 effect--glass">
+                        {spec.items.map((item, j) => (
+                          <div
+                            key={j}
+                            className={
+                              j === spec.items.length - 1
+                                ? "div specs-card__bottom-info--last"
+                                : "div specs-card__bottom-info bc--black-10"
+                            }
+                          >
+                            <div className="div specs-card__bottom-wrapper">
+                              <p className="text card-text specs-card__bottom-text">
+                                <span className="text-block-wrap-div">{item}</span>
+                              </p>
+                              <div className="div specs-card__bottom-dot bc--black-20"></div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
+        </section>
 
-          {/* 3-column asymmetric spec grid */}
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
-            {specs.map((spec) => (
-              <article
-                key={spec.title}
-                data-specs-card
-                className="group flex flex-col overflow-hidden rounded-3xl bg-ink text-paper"
-              >
-                <header className="p-6 md:p-8">
-                  <h3 className="text-headline-3">{spec.title}</h3>
-                </header>
-                <div className="flex flex-1 flex-col gap-3 border-t border-white/10 p-6 md:p-8">
-                  {spec.items.map((item, j) => (
-                    <div key={j} className="flex items-baseline gap-3">
-                      <span className="h-1.5 w-1.5 shrink-0 translate-y-[-2px] rounded-full bg-white/30" />
-                      <p className="text-card text-paper/80">{item}</p>
+      <section className="section specs--static section--u-i9uqhe1cp" id="i9uqhe1cp_0">
+        <div className="container container--primary" id="ip07sfqld_0">
+          <div className="div specs__content--static" id="i7jk8zulu_0">
+            <div className="div specs-content__text-wrapper--static" id="irv6cx8mg_0">
+              <h2 className="text headline--1 tc--gray" id="ir01h6qr3_0">
+                <span className="text-block-wrap-div">{tagline}</span>
+              </h2>
+              <h2 className="text headline--1 tc--main-black" id="iwd5hqlta_0">
+                <span className="text-block-wrap-div">Specifications</span>
+              </h2>
+            </div>
+            <div className="image specs-content__mobile-img--static" id="iivj6t60b_0">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={product.specsImageMobile || undefined}
+                alt="scene2-adaptive480-ezgif.com-png-to-webp-converter"
+                title=""
+                data-size="896x141"
+                data-origin-src={product.specsImageMobile || undefined}
+                className="image__img"
+                id="iofpk87n7_0"
+              />
+            </div>
+            <div className="div specs-bottom-content--static" id="iu6ydntgo_0">
+              <div className="div specs__pack-list--static" id="i6u5b0o3x_0">
+                {specs.map((spec, i) => {
+                  const card = STATIC_CARD_META[i];
+                  return (
+                    <div
+                      key={spec.title}
+                      className={`div specs-list__card--static${card ? ` ${card.u}` : ""}`}
+                      id={card?.id}
+                    >
+                      <div className="div specs-card__top-content--static effect--glass">
+                        <h3 className="text headline--3">
+                          <span className="text-block-wrap-div">{spec.title}</span>
+                        </h3>
+                      </div>
+                      <div className="div specs-card__bottom-content--static effect--glass">
+                        {spec.items.map((item, j) => (
+                          <div
+                            key={j}
+                            className={
+                              j === spec.items.length - 1
+                                ? "div bc--black-10 specs-card__bottom-info-last--static"
+                                : "div specs-card__bottom-info--static bc--black-10"
+                            }
+                          >
+                            <div className="div specs-card__bottom-wrapper--static">
+                              <p className="text specs-card-__bottom-text--static card-text">
+                                <span className="text-block-wrap-div">{item}</span>
+                              </p>
+                              <div className="div specs-card__bottom-dot--static bc--black-20"></div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
                     </div>
-                  ))}
+                  );
+                })}
+              </div>
+              <div
+                className="div specs-content--static__img-wrapper div--u-i2l0a0iax"
+                id="i2l0a0iax_0"
+              >
+                <div
+                  className="image specs-content--static__img image--u-ipzilxnpg"
+                  id="ipzilxnpg_0"
+                >
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={product.specsImageTablet || undefined}
+                    alt="Black smart pen"
+                    title=""
+                    data-size="471x2052"
+                    data-origin-src={product.specsImageTablet || undefined}
+                    className="image__img"
+                    id="igv47q2nv_0"
+                  />
                 </div>
-              </article>
-            ))}
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

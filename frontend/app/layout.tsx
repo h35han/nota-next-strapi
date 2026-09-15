@@ -38,11 +38,23 @@ export async function generateMetadata(): Promise<Metadata> {
   };
 }
 
+/**
+ * Root layout.
+ *
+ * The `mosaic-wrap` / `root root--primary` wrappers come straight from the
+ * reference: `.root` is the positioning context the Taptop constructor
+ * relies on and `.root--primary` is what applies the Inter family, so the
+ * vendored `shared.css` resolves its font stack correctly.
+ */
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable} h-full antialiased`}>
-      <body className="min-h-full">
-        <Providers>{children}</Providers>
+    <html lang="en" className={`${inter.variable} ${instrumentSerif.variable}`}>
+      <body>
+        <div className="mosaic-wrap">
+          <div className="root root--primary" id="i8z5xo3zc_0">
+            <Providers>{children}</Providers>
+          </div>
+        </div>
       </body>
     </html>
   );

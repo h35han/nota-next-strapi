@@ -1,0 +1,53 @@
+/**
+ * Transition into the specifications block — a black background plus six
+ * white "curtain" panels that the Taptop engine (lib/taptop) drops into
+ * place. The markup is a verbatim copy of the reference section
+ * `iib2p854e_0`; every id is required by `spec.json`.
+ */
+export default function TransitionSpecs() {
+  return (
+    <section
+      className="section transition-specs section--u-iib2p854e negative-margin--100-vh"
+      id="iib2p854e_0"
+    >
+      <div
+        className="container transition-specs__camera container--u-irdgo1js4"
+        id="irdgo1js4_0"
+      >
+        <div
+          className="div transition-specs__black-bg div--u-im29stx1x bc--main-black"
+          id="im29stx1x_0"
+        ></div>
+        <div
+          className="div transition-specs__curtains-wrapper div--u-i0dseo9yw"
+          id="i0dseo9yw_0"
+        >
+          <div
+            className="div transition-specs__curtain div--u-ipkrcmz5k bc--main-white"
+            id="ipkrcmz5k_0"
+          ></div>
+          <div
+            className="div transition-specs__curtain div--u-if9jjeysz bc--main-white"
+            id="if9jjeysz_0"
+          ></div>
+          <div
+            className="div transition-specs__curtain div--u-igr5kp5rz bc--main-white"
+            id="igr5kp5rz_0"
+          ></div>
+          <div
+            className="div transition-specs__curtain div--u-iw64lc1vx bc--main-white"
+            id="iw64lc1vx_0"
+          ></div>
+          <div
+            className="div transition-specs__curtain div--u-i59ynn4fv bc--main-white"
+            id="i59ynn4fv_0"
+          ></div>
+          <div
+            className="div transition-specs__curtain div--u-infqf3b3x bc--main-white"
+            id="infqf3b3x_0"
+          ></div>
+        </div>
+      </div>
+    </section>
+  );
+}

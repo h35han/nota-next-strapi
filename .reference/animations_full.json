@@ -1,0 +1,6544 @@
+{
+ "2471424382": {
+  "screen": {
+   "scroll": false,
+   "smooth": true
+  }
+ },
+ "910827732": {
+  "animations": {
+   "animation-ixoboh0jn": {
+    "id": "animation-ixoboh0jn",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ihwqzjnfu",
+       "effect-ibrbx05aj"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ihwqzjnfu": {
+    "screen": {
+     "id": "effect-ihwqzjnfu",
+     "name": "BACKGROUND_COLOR",
+     "disabled": false,
+     "keyframes": [
+      {
+       "backgroundColor": "rgba(255, 255, 255, 1)"
+      },
+      {
+       "backgroundColor": "rgba(0, 0, 0, 1)"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 12,
+      "endKeyframe": 13
+     }
+    }
+   },
+   "effect-ibrbx05aj": {
+    "screen": {
+     "id": "effect-ibrbx05aj",
+     "name": "BACKGROUND_COLOR",
+     "disabled": false,
+     "keyframes": [
+      {
+       "backgroundColor": "rgba(0, 0, 0, 1)"
+      },
+      {
+       "backgroundColor": "rgba(0, 0, 0, 0)"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 13,
+      "endKeyframe": 23
+     }
+    }
+   }
+  }
+ },
+ "2179622896": {
+  "animations": {
+   "animation-i6ca2jgy4": {
+    "id": "animation-i6ca2jgy4",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i3n024yso",
+       "effect-i81f7ljh6"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i3n024yso": {
+    "screen": {
+     "id": "effect-i3n024yso",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "100%",
+       "height": "0vh"
+      },
+      {
+       "width": "100%",
+       "height": "100vh"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 8,
+      "endKeyframe": 12
+     }
+    }
+   },
+   "effect-i81f7ljh6": {
+    "screen": {
+     "id": "effect-i81f7ljh6",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 14,
+      "endKeyframe": 23
+     }
+    }
+   }
+  }
+ },
+ "3950629730": {
+  "animations": {
+   "animation-iwwwgcts4": {
+    "id": "animation-iwwwgcts4",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ihzs7exle",
+       "effect-iuyit4vbe"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ihzs7exle": {
+    "screen": {
+     "id": "effect-ihzs7exle",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "100%",
+       "height": "0vh"
+      },
+      {
+       "width": "100%",
+       "height": "100vh"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 7,
+      "endKeyframe": 11
+     }
+    }
+   },
+   "effect-iuyit4vbe": {
+    "screen": {
+     "id": "effect-iuyit4vbe",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 15,
+      "endKeyframe": 23
+     }
+    }
+   }
+  }
+ },
+ "3941952474": {
+  "animations": {
+   "animation-iwwwgcts4": {
+    "id": "animation-iwwwgcts4",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ihzs7exle",
+       "effect-i2atusk6g"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ihzs7exle": {
+    "screen": {
+     "id": "effect-ihzs7exle",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "100%",
+       "height": "0vh"
+      },
+      {
+       "width": "100%",
+       "height": "100vh"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 6,
+      "endKeyframe": 10
+     }
+    }
+   },
+   "effect-i2atusk6g": {
+    "screen": {
+     "id": "effect-i2atusk6g",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 16,
+      "endKeyframe": 23
+     }
+    }
+   }
+  }
+ },
+ "4120131586": {
+  "animations": {
+   "animation-ihb5rq0q7": {
+    "id": "animation-ihb5rq0q7",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ik1iksz4i",
+       "effect-is6roi267"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ik1iksz4i": {
+    "screen": {
+     "id": "effect-ik1iksz4i",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "100%",
+       "height": "0vh"
+      },
+      {
+       "width": "100%",
+       "height": "100vh"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 5,
+      "endKeyframe": 9
+     }
+    }
+   },
+   "effect-is6roi267": {
+    "screen": {
+     "id": "effect-is6roi267",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 17,
+      "endKeyframe": 23
+     }
+    }
+   }
+  }
+ },
+ "3641592089": {
+  "animations": {
+   "animation-imdb1g2rd": {
+    "id": "animation-imdb1g2rd",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i05nka61g",
+       "effect-i4fmyo1dw"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i05nka61g": {
+    "screen": {
+     "id": "effect-i05nka61g",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "100%",
+       "height": "0vh"
+      },
+      {
+       "width": "100%",
+       "height": "100vh"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 4,
+      "endKeyframe": 8
+     }
+    }
+   },
+   "effect-i4fmyo1dw": {
+    "screen": {
+     "id": "effect-i4fmyo1dw",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 18,
+      "endKeyframe": 23
+     }
+    }
+   }
+  }
+ },
+ "1384862411": {
+  "animations": {
+   "animation-ii17ypxmj": {
+    "id": "animation-ii17ypxmj",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i08werc40",
+       "effect-ilk32rla3"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i08werc40": {
+    "screen": {
+     "id": "effect-i08werc40",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "100%",
+       "height": "0vh"
+      },
+      {
+       "width": "100%",
+       "height": "100vh"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 3,
+      "endKeyframe": 7
+     }
+    }
+   },
+   "effect-ilk32rla3": {
+    "screen": {
+     "id": "effect-ilk32rla3",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 19,
+      "endKeyframe": 23
+     }
+    }
+   }
+  }
+ },
+ "31428100": {
+  "screen": {
+   "objectFit": "cover",
+   "lockRatio": true,
+   "maxWidth": "1920",
+   "maxHeight": "1080"
+  }
+ },
+ "2340576327": {
+  "animations": {
+   "animation-iohf5g0as": {
+    "id": "animation-iohf5g0as",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iciddt4bf",
+       "effect-i3sor28cw"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iciddt4bf": {
+    "screen": {
+     "id": "effect-iciddt4bf",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 39,
+      "endKeyframe": 42
+     }
+    }
+   },
+   "effect-i3sor28cw": {
+    "screen": {
+     "id": "effect-i3sor28cw",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1
+      },
+      {
+       "scale": 0.6
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 39,
+      "endKeyframe": 42
+     }
+    }
+   }
+  }
+ },
+ "1232491320": {
+  "animations": {
+   "animation-ijg9227w1": {
+    "id": "animation-ijg9227w1",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iie7xeff8"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iie7xeff8": {
+    "screen": {
+     "id": "effect-iie7xeff8",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 40,
+      "endKeyframe": 41
+     }
+    }
+   }
+  }
+ },
+ "2909075160": {
+  "animations": {
+   "animation-i5clynb57": {
+    "id": "animation-i5clynb57",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ipj6o6y5g",
+       "effect-ic8x0i4lz",
+       "effect-imxlysp9p",
+       "effect-icqvya59y"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ipj6o6y5g": {
+    "screen": {
+     "id": "effect-ipj6o6y5g",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1.4
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 39,
+      "endKeyframe": 42
+     }
+    }
+   },
+   "effect-ic8x0i4lz": {
+    "screen": {
+     "id": "effect-ic8x0i4lz",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 60
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 42,
+      "endKeyframe": 56
+     }
+    }
+   },
+   "effect-imxlysp9p": {
+    "screen": {
+     "id": "effect-imxlysp9p",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 56,
+      "endKeyframe": 59
+     }
+    }
+   },
+   "effect-icqvya59y": {
+    "screen": {
+     "id": "effect-icqvya59y",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 100
+      },
+      {
+       "scale": 0.6
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 56,
+      "endKeyframe": 59
+     }
+    }
+   }
+  }
+ },
+ "2000402064": {
+  "animations": {
+   "animation-i0xco4u0r": {
+    "id": "animation-i0xco4u0r",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ic3gvwcrh",
+       "effect-iyi76bhkl",
+       "effect-ii7krfu3m"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ic3gvwcrh": {
+    "screen": {
+     "id": "effect-ic3gvwcrh",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 40,
+      "endKeyframe": 41
+     }
+    }
+   },
+   "effect-iyi76bhkl": {
+    "screen": {
+     "id": "effect-iyi76bhkl",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 41,
+      "endKeyframe": 57
+     }
+    }
+   },
+   "effect-ii7krfu3m": {
+    "screen": {
+     "id": "effect-ii7krfu3m",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 57,
+      "endKeyframe": 58
+     }
+    }
+   }
+  }
+ },
+ "4201721257": {
+  "animations": {
+   "animation-infphnsr8": {
+    "id": "animation-infphnsr8",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ipvt7l4cz",
+       "effect-irb90t3sp",
+       "effect-ivc3k6ysl",
+       "effect-iw4scybcg"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ipvt7l4cz": {
+    "screen": {
+     "id": "effect-ipvt7l4cz",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1.4
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 56,
+      "endKeyframe": 59
+     }
+    }
+   },
+   "effect-irb90t3sp": {
+    "screen": {
+     "id": "effect-irb90t3sp",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 60
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 59,
+      "endKeyframe": 73
+     }
+    }
+   },
+   "effect-ivc3k6ysl": {
+    "screen": {
+     "id": "effect-ivc3k6ysl",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 73,
+      "endKeyframe": 76
+     }
+    }
+   },
+   "effect-iw4scybcg": {
+    "screen": {
+     "id": "effect-iw4scybcg",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 100
+      },
+      {
+       "scale": 0.6
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 73,
+      "endKeyframe": 76
+     }
+    }
+   }
+  }
+ },
+ "1957991462": {
+  "animations": {
+   "animation-iija2mqvd": {
+    "id": "animation-iija2mqvd",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-il39iduge",
+       "effect-iql5tjf4t",
+       "effect-i3uflk754"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-il39iduge": {
+    "screen": {
+     "id": "effect-il39iduge",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 57,
+      "endKeyframe": 58
+     }
+    }
+   },
+   "effect-iql5tjf4t": {
+    "screen": {
+     "id": "effect-iql5tjf4t",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 58,
+      "endKeyframe": 74
+     }
+    }
+   },
+   "effect-i3uflk754": {
+    "screen": {
+     "id": "effect-i3uflk754",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 74,
+      "endKeyframe": 75
+     }
+    }
+   }
+  }
+ },
+ "1079863541": {
+  "animations": {
+   "animation-i5fl22l9f": {
+    "id": "animation-i5fl22l9f",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ih77v6iuv",
+       "effect-ij16tpblq"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ih77v6iuv": {
+    "screen": {
+     "id": "effect-ih77v6iuv",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1.4
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 73,
+      "endKeyframe": 76
+     }
+    }
+   },
+   "effect-ij16tpblq": {
+    "screen": {
+     "id": "effect-ij16tpblq",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 97,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "639955232": {
+  "animations": {
+   "animation-ikdf2a9pe": {
+    "id": "animation-ikdf2a9pe",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iy40qlqj3"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iy40qlqj3": {
+    "screen": {
+     "id": "effect-iy40qlqj3",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 74,
+      "endKeyframe": 75
+     }
+    }
+   }
+  }
+ },
+ "811751861": {
+  "animations": {
+   "animation-inmx3q3pf": {
+    "id": "animation-inmx3q3pf",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iavfvr322"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iavfvr322": {
+    "screen": {
+     "id": "effect-iavfvr322",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 94,
+      "endKeyframe": 97
+     }
+    }
+   }
+  }
+ },
+ "1212502499": {
+  "animations": {
+   "animation-i0c0cwy0t": {
+    "id": "animation-i0c0cwy0t",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iyv5i0o8s"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iyv5i0o8s": {
+    "screen": {
+     "id": "effect-iyv5i0o8s",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 95,
+      "endKeyframe": 98
+     }
+    }
+   }
+  }
+ },
+ "3978992544": {
+  "animations": {
+   "animation-iupy9u52f": {
+    "id": "animation-iupy9u52f",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iifzz4p14"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iifzz4p14": {
+    "screen": {
+     "id": "effect-iifzz4p14",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 90,
+      "endKeyframe": 96
+     }
+    }
+   }
+  }
+ },
+ "3396367722": {
+  "animations": {
+   "animation-ilqnejcx3": {
+    "id": "animation-ilqnejcx3",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i8fntyyww"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i8fntyyww": {
+    "screen": {
+     "id": "effect-i8fntyyww",
+     "name": "BACKGROUND_COLOR",
+     "disabled": false,
+     "keyframes": [
+      {
+       "backgroundColor": "rgba(255, 255, 255, 1)"
+      },
+      {
+       "backgroundColor": "rgba(255, 255, 255, 0.4)"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 40,
+      "endKeyframe": 42
+     }
+    }
+   }
+  }
+ },
+ "1175450196": {
+  "animations": {
+   "animation-i9bsut3ni": {
+    "id": "animation-i9bsut3ni",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-igl7ziu86",
+       "effect-itrfe7lpb",
+       "effect-ift4jy86i"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-igl7ziu86": {
+    "screen": {
+     "id": "effect-igl7ziu86",
+     "name": "BACKGROUND_COLOR",
+     "disabled": false,
+     "keyframes": [
+      {
+       "backgroundColor": "rgba(255, 255, 255, 0.4)"
+      },
+      {
+       "backgroundColor": "rgba(255, 255, 255, 1)"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 40,
+      "endKeyframe": 42
+     }
+    }
+   },
+   "effect-itrfe7lpb": {
+    "screen": {
+     "id": "effect-itrfe7lpb",
+     "name": "BACKGROUND_COLOR",
+     "disabled": false,
+     "keyframes": [
+      {
+       "backgroundColor": "rgba(255, 255, 255, 1)"
+      },
+      {
+       "backgroundColor": "rgba(255, 255, 255, 1)"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 42,
+      "endKeyframe": 57
+     }
+    }
+   },
+   "effect-ift4jy86i": {
+    "screen": {
+     "id": "effect-ift4jy86i",
+     "name": "BACKGROUND_COLOR",
+     "disabled": false,
+     "keyframes": [
+      {
+       "backgroundColor": "rgba(255, 255, 255, 1)"
+      },
+      {
+       "backgroundColor": "rgba(255, 255, 255, 0.4)"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 57,
+      "endKeyframe": 59
+     }
+    }
+   }
+  }
+ },
+ "1786996599": {
+  "animations": {
+   "animation-i5h11brs1": {
+    "id": "animation-i5h11brs1",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i5v6bhse2",
+       "effect-i5g46w2yk",
+       "effect-i9j574ko6"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i5v6bhse2": {
+    "screen": {
+     "id": "effect-i5v6bhse2",
+     "name": "BACKGROUND_COLOR",
+     "disabled": false,
+     "keyframes": [
+      {
+       "backgroundColor": "rgba(255, 255, 255, 0.4)"
+      },
+      {
+       "backgroundColor": "rgba(255, 255, 255, 1)"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 57,
+      "endKeyframe": 59
+     }
+    }
+   },
+   "effect-i5g46w2yk": {
+    "screen": {
+     "id": "effect-i5g46w2yk",
+     "name": "BACKGROUND_COLOR",
+     "disabled": false,
+     "keyframes": [
+      {
+       "backgroundColor": "rgba(255, 255, 255, 1)"
+      },
+      {
+       "backgroundColor": "rgba(255, 255, 255, 1)"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 59,
+      "endKeyframe": 74
+     }
+    }
+   },
+   "effect-i9j574ko6": {
+    "screen": {
+     "id": "effect-i9j574ko6",
+     "name": "BACKGROUND_COLOR",
+     "disabled": false,
+     "keyframes": [
+      {
+       "backgroundColor": "rgba(255, 255, 255, 1)"
+      },
+      {
+       "backgroundColor": "rgba(255, 255, 255, 0.4)"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 74,
+      "endKeyframe": 76
+     }
+    }
+   }
+  }
+ },
+ "3025169727": {
+  "animations": {
+   "animation-ixh6ua6cr": {
+    "id": "animation-ixh6ua6cr",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-inwxdwae8"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-inwxdwae8": {
+    "screen": {
+     "id": "effect-inwxdwae8",
+     "name": "BACKGROUND_COLOR",
+     "disabled": false,
+     "keyframes": [
+      {
+       "backgroundColor": "rgba(255, 255, 255, 0.4)"
+      },
+      {
+       "backgroundColor": "rgba(255, 255, 255, 1)"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 74,
+      "endKeyframe": 76
+     }
+    }
+   }
+  }
+ },
+ "3911976997": {
+  "animations": {
+   "animation-ivs8nr1cm": {
+    "id": "animation-ivs8nr1cm",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-irsm9u2o0"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ikrvtklue_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-irsm9u2o0": {
+    "screen": {
+     "id": "effect-irsm9u2o0",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 3
+     }
+    }
+   }
+  }
+ },
+ "2698024087": {
+  "screen": {
+   "direction": "horizontal",
+   "effect": "slide",
+   "easing": "linear",
+   "speed": 500,
+   "autoHeight": false,
+   "loop": false,
+   "allowTouchMove": true,
+   "autoplay": false,
+   "delay": 3000,
+   "hideArrowsAtTheEnd": false,
+   "paginationType": "points",
+   "thumbs": false,
+   "thumbsNumber": 3,
+   "thumbsSlider": false,
+   "centeredThumbs": false
+  },
+  "(max-width: 991px)": {
+   "loop": true
+  }
+ },
+ "4226276507": {
+  "screen": {
+   "objectFit": "cover",
+   "lockRatio": true
+  }
+ },
+ "312510708": {
+  "screen": {
+   "objectFit": "cover",
+   "lockRatio": true,
+   "maxWidth": "1276",
+   "maxHeight": "2108"
+  }
+ },
+ "2674048494": {
+  "screen": {
+   "objectFit": "cover",
+   "lockRatio": true,
+   "maxWidth": "480",
+   "maxHeight": "1020"
+  }
+ },
+ "755724247": {
+  "animations": {
+   "animation-ih943lq7h": {
+    "id": "animation-ih943lq7h",
+    "triggerName": "APPEAR_ON_SCREEN",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i87leoong"
+      ],
+      "preset": "FADE_IN",
+      "iterations": 1,
+      "stageOfAppear": "top",
+      "loop": "none"
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     },
+     "(max-width: 767px)": {
+      "disabled": true
+     },
+     "(max-width: 479px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i87leoong": {
+    "screen": {
+     "id": "effect-i87leoong",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "delay": 1.4,
+      "duration": 1
+     }
+    }
+   }
+  }
+ },
+ "4186462212": {
+  "animations": {
+   "animation-ik3v3gko1": {
+    "id": "animation-ik3v3gko1",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ingu8kbxv"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iljeh1gyu_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 0,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ingu8kbxv": {
+    "screen": {
+     "id": "effect-ingu8kbxv",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "-20%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 70,
+      "endKeyframe": 90
+     }
+    }
+   }
+  }
+ },
+ "3965659908": {
+  "animations": {
+   "animation-ilzn19nu6": {
+    "id": "animation-ilzn19nu6",
+    "triggerName": "APPEAR_ON_SCREEN",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ioltgtyru"
+      ],
+      "preset": "FADE_IN",
+      "iterations": 1,
+      "stageOfAppear": "top",
+      "loop": "none"
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ioltgtyru": {
+    "screen": {
+     "id": "effect-ioltgtyru",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "delay": 2,
+      "duration": 1
+     }
+    }
+   }
+  }
+ },
+ "2375729968": {
+  "screen": {
+   "objectFit": "cover",
+   "lockRatio": true,
+   "maxWidth": "364",
+   "maxHeight": "1526"
+  },
+  "(max-width: 991px)": {
+   "objectFit": "contain"
+  },
+  "(max-width: 479px)": {
+   "objectFit": "cover"
+  }
+ },
+ "2892560938": {
+  "screen": {
+   "type": "link",
+   "eventName": "click",
+   "eventElement": "self",
+   "eventAction": "",
+   "displayType": "",
+   "selectedTag": "",
+   "linkType": "page",
+   "blank": false
+  }
+ },
+ "3616752113": {
+  "screen": {
+   "type": "link",
+   "eventName": "click",
+   "eventElement": "select",
+   "eventAction": "",
+   "displayType": "",
+   "selectedTag": "",
+   "linkType": "anchor",
+   "blank": false,
+   "speed": 0
+  }
+ },
+ "431000726": {
+  "screen": {
+   "type": "link",
+   "eventName": "click",
+   "eventElement": "self",
+   "eventAction": "",
+   "displayType": "",
+   "selectedTag": "",
+   "linkType": "anchor",
+   "blank": false
+  }
+ },
+ "2762150459": {
+  "screen": {
+   "type": "button",
+   "eventName": "click",
+   "eventElement": "select",
+   "eventAction": "show",
+   "displayType": "",
+   "selectedTag": "",
+   "linkType": "page",
+   "blank": false
+  }
+ },
+ "825693763": {
+  "screen": {
+   "closeOnOverlay": true,
+   "scrollLock": true,
+   "effect": "fade",
+   "open": {
+    "easing": "linear",
+    "duration": 200
+   },
+   "close": {
+    "easing": "linear",
+    "duration": 200
+   }
+  }
+ },
+ "2991027277": {
+  "screen": {
+   "mode": "main",
+   "anketa_id": "201209716",
+   "name": "Email Form",
+   "initial_state": "{\"anketa_id\":\"201209716\",\"name\":\"Email Form\",\"submit_name\":\"Notify me\",\"success_note\":\"Stay ahead\",\"tag_id\":\"i1bnnq8cf\",\"symbol_id\":0,\"change\":false,\"dictionaries\":{\"ixj6u7qa9\":{\"dictionary_id\":865065116,\"name\":\"E-mail\",\"type_id\":13,\"required\":true,\"alias\":\"email\",\"note\":\"\",\"variants\":[],\"params_value\":\"\",\"validator\":\"\",\"change\":false}},\"redirect_url\":\"\"}",
+   "nativeStyle": false,
+   "disabledNativeStyleSelect": true
+  }
+ },
+ "4208680131": {
+  "screen": {
+   "type_id": 13,
+   "type_code": "email",
+   "name": "E-mail",
+   "required": true,
+   "maxlength": 256,
+   "dictionary_id": 865065116,
+   "alias": "email"
+  }
+ },
+ "3069542459": {
+  "screen": {
+   "type": "button",
+   "eventName": "click",
+   "eventElement": "select",
+   "eventAction": "hide",
+   "displayType": "",
+   "selectedTag": "",
+   "linkType": "link",
+   "blank": false
+  }
+ },
+ "3304598187": {
+  "animations": {
+   "animation-ifj9bn1g4": {
+    "id": "animation-ifj9bn1g4",
+    "triggerName": "CLICK",
+    "mediaParams": {
+     "screen": {
+      "disabled": true,
+      "effectIds": [
+       "effect-iu6oew5sa",
+       "effect-iwob6n62a"
+      ],
+      "preset": "FADE_IN",
+      "secondClick": "reverse",
+      "loop": "none",
+      "triggerElement": ""
+     },
+     "(max-width: 991px)": {
+      "disabled": false,
+      "triggerElement": "#inv6md7ga_0",
+      "secondClick": "restart"
+     }
+    }
+   },
+   "animation-iv3r9wejm": {
+    "id": "animation-iv3r9wejm",
+    "triggerName": "CLICK",
+    "mediaParams": {
+     "screen": {
+      "disabled": true,
+      "effectIds": [
+       "effect-ivd3htzsv"
+      ],
+      "preset": "FADE_IN",
+      "secondClick": "reverse",
+      "loop": "none",
+      "triggerElement": ""
+     },
+     "(max-width: 991px)": {
+      "disabled": false,
+      "triggerElement": "#ipl6q5707_0",
+      "secondClick": "restart"
+     }
+    }
+   },
+   "animation-iz0pvisny": {
+    "id": "animation-iz0pvisny",
+    "triggerName": "CLICK",
+    "mediaParams": {
+     "screen": {
+      "disabled": true,
+      "effectIds": [
+       "effect-ifvhy84mc"
+      ],
+      "preset": "FADE_IN",
+      "secondClick": "reverse",
+      "loop": "none",
+      "triggerElement": ""
+     },
+     "(max-width: 991px)": {
+      "disabled": false,
+      "triggerElement": "#ihw171frl_0",
+      "secondClick": "restart"
+     }
+    }
+   },
+   "animation-i0dt9ld6k": {
+    "id": "animation-i0dt9ld6k",
+    "triggerName": "CLICK",
+    "mediaParams": {
+     "screen": {
+      "disabled": true,
+      "effectIds": [
+       "effect-iq3nsjt7o"
+      ],
+      "preset": "FADE_IN",
+      "secondClick": "reverse",
+      "loop": "none",
+      "triggerElement": ""
+     },
+     "(max-width: 991px)": {
+      "disabled": false,
+      "triggerElement": "#ib1x5kcx2_0",
+      "secondClick": "restart"
+     }
+    }
+   },
+   "animation-i305hjdgi": {
+    "id": "animation-i305hjdgi",
+    "triggerName": "CLICK",
+    "mediaParams": {
+     "screen": {
+      "disabled": true,
+      "effectIds": [
+       "effect-imzqensu0"
+      ],
+      "preset": "FADE_IN",
+      "secondClick": "reverse",
+      "loop": "none",
+      "triggerElement": ""
+     },
+     "(max-width: 991px)": {
+      "disabled": false,
+      "triggerElement": "#iscqffjt9_0",
+      "secondClick": "restart"
+     }
+    }
+   },
+   "animation-ih2mtfm89": {
+    "id": "animation-ih2mtfm89",
+    "triggerName": "CLICK",
+    "mediaParams": {
+     "screen": {
+      "disabled": true,
+      "effectIds": [
+       "effect-ik4if9gq3"
+      ],
+      "preset": "FADE_IN",
+      "secondClick": "reverse",
+      "loop": "none",
+      "triggerElement": ""
+     },
+     "(max-width: 991px)": {
+      "disabled": false,
+      "triggerElement": "#i23jxciyu_0",
+      "secondClick": "restart"
+     }
+    }
+   },
+   "animation-i9eaburnb": {
+    "id": "animation-i9eaburnb",
+    "triggerName": "CLICK",
+    "mediaParams": {
+     "screen": {
+      "disabled": true,
+      "effectIds": [
+       "effect-itq7k56ih"
+      ],
+      "preset": "FADE_IN",
+      "secondClick": "reverse",
+      "loop": "none",
+      "triggerElement": ""
+     },
+     "(max-width: 991px)": {
+      "disabled": false,
+      "triggerElement": "#it5glpme6_0",
+      "secondClick": "restart"
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iu6oew5sa": {
+    "screen": {
+     "id": "effect-iu6oew5sa",
+     "name": "MOVE",
+     "disabled": true,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "delay": 0,
+      "duration": 1
+     }
+    },
+    "(max-width: 991px)": {
+     "disabled": false,
+     "keyframes": [
+      {
+       "y": "-100%"
+      },
+      {
+       "y": "0%"
+      }
+     ],
+     "options": {
+      "delay": 0.1
+     }
+    }
+   },
+   "effect-ivd3htzsv": {
+    "screen": {
+     "id": "effect-ivd3htzsv",
+     "name": "MOVE",
+     "disabled": true,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "delay": 0,
+      "duration": 1
+     }
+    },
+    "(max-width: 991px)": {
+     "disabled": false,
+     "keyframes": [
+      {
+       "y": "0%"
+      },
+      {
+       "y": "-100%"
+      }
+     ]
+    }
+   },
+   "effect-iwob6n62a": {
+    "screen": {
+     "id": "effect-iwob6n62a",
+     "name": "OPACITY",
+     "disabled": true,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "delay": 0,
+      "duration": 1
+     }
+    },
+    "(max-width: 991px)": {
+     "disabled": false,
+     "options": {
+      "duration": 0.1
+     }
+    }
+   },
+   "effect-ifvhy84mc": {
+    "screen": {
+     "id": "effect-ifvhy84mc",
+     "name": "MOVE",
+     "disabled": true,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "delay": 0,
+      "duration": 1
+     }
+    },
+    "(max-width: 991px)": {
+     "disabled": false,
+     "keyframes": [
+      {
+       "y": "0%"
+      },
+      {
+       "y": "-100%"
+      }
+     ],
+     "options": {
+      "delay": 0.3
+     }
+    }
+   },
+   "effect-iq3nsjt7o": {
+    "screen": {
+     "id": "effect-iq3nsjt7o",
+     "name": "MOVE",
+     "disabled": true,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "delay": 0,
+      "duration": 1
+     }
+    },
+    "(max-width: 991px)": {
+     "disabled": false,
+     "keyframes": [
+      {
+       "y": "0%"
+      },
+      {
+       "y": "-100%"
+      }
+     ],
+     "options": {
+      "delay": 0.3
+     }
+    }
+   },
+   "effect-imzqensu0": {
+    "screen": {
+     "id": "effect-imzqensu0",
+     "name": "MOVE",
+     "disabled": true,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "delay": 0,
+      "duration": 1
+     }
+    },
+    "(max-width: 991px)": {
+     "disabled": false,
+     "keyframes": [
+      {
+       "y": "0%"
+      },
+      {
+       "y": "-100%"
+      }
+     ],
+     "options": {
+      "delay": 0.3
+     }
+    }
+   },
+   "effect-ik4if9gq3": {
+    "screen": {
+     "id": "effect-ik4if9gq3",
+     "name": "MOVE",
+     "disabled": true,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "delay": 0,
+      "duration": 1
+     }
+    },
+    "(max-width: 991px)": {
+     "disabled": false,
+     "keyframes": [
+      {
+       "y": "0%"
+      },
+      {
+       "y": "-100%"
+      }
+     ],
+     "options": {
+      "delay": 0.3
+     }
+    }
+   },
+   "effect-itq7k56ih": {
+    "screen": {
+     "id": "effect-itq7k56ih",
+     "name": "MOVE",
+     "disabled": true,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0px",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "delay": 0,
+      "duration": 1
+     }
+    },
+    "(max-width: 991px)": {
+     "disabled": false,
+     "keyframes": [
+      {
+       "y": "0%"
+      },
+      {
+       "y": "-100%"
+      }
+     ],
+     "options": {
+      "delay": 0.3
+     }
+    }
+   }
+  }
+ },
+ "2197378300": {
+  "screen": {
+   "type": "button",
+   "eventName": "click",
+   "eventElement": "select",
+   "eventAction": "show",
+   "displayType": "",
+   "selectedTag": "",
+   "linkType": "link",
+   "blank": false
+  }
+ },
+ "2207485177": {
+  "screen": {
+   "objectFit": "cover",
+   "lockRatio": true,
+   "maxWidth": "1472",
+   "maxHeight": "1008"
+  }
+ },
+ "3828834639": {
+  "screen": {
+   "objectFit": "cover",
+   "lockRatio": true,
+   "maxWidth": "896",
+   "maxHeight": "578"
+  }
+ },
+ "364407389": {
+  "screen": {
+   "objectFit": "cover",
+   "lockRatio": true,
+   "maxWidth": "600",
+   "maxHeight": "590"
+  }
+ },
+ "2236243533": {
+  "animations": {
+   "animation-im61m3yr6": {
+    "id": "animation-im61m3yr6",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i5vf14wu3"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#inmw53la5_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 0.5,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i5vf14wu3": {
+    "screen": {
+     "id": "effect-i5vf14wu3",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 0
+      },
+      {
+       "scale": 4.5
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 85
+     }
+    }
+   }
+  }
+ },
+ "3369358905": {
+  "animations": {
+   "animation-i83q93fcu": {
+    "id": "animation-i83q93fcu",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iy47paj18"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#inmw53la5_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 0.5,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iy47paj18": {
+    "screen": {
+     "id": "effect-iy47paj18",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 35,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "161528817": {
+  "animations": {
+   "animation-i0aa45jxj": {
+    "id": "animation-i0aa45jxj",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-i4thx7e4m"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iwhqwaa1s_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 0,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i4thx7e4m": {
+    "screen": {
+     "id": "effect-i4thx7e4m",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "100%",
+       "height": "100%"
+      },
+      {
+       "width": "100%",
+       "height": "0%"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 80
+     }
+    }
+   }
+  }
+ },
+ "3073001773": {
+  "animations": {
+   "animation-ip6bold5l": {
+    "id": "animation-ip6bold5l",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iztbuw9j8"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iwhqwaa1s_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 0,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iztbuw9j8": {
+    "screen": {
+     "id": "effect-iztbuw9j8",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 75,
+      "endKeyframe": 90
+     }
+    }
+   }
+  }
+ },
+ "74216699": {
+  "animations": {
+   "animation-i0aa45jxj": {
+    "id": "animation-i0aa45jxj",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-i4thx7e4m"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#igdkd86jj_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 0,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i4thx7e4m": {
+    "screen": {
+     "id": "effect-i4thx7e4m",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "100%",
+       "height": "100%"
+      },
+      {
+       "width": "100%",
+       "height": "0%"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 80
+     }
+    }
+   }
+  }
+ },
+ "628440825": {
+  "animations": {
+   "animation-is065nbfn": {
+    "id": "animation-is065nbfn",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iuutizy9i"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#igdkd86jj_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 0,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iuutizy9i": {
+    "screen": {
+     "id": "effect-iuutizy9i",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 75,
+      "endKeyframe": 90
+     }
+    }
+   }
+  }
+ },
+ "1335695687": {
+  "animations": {
+   "animation-iahxyimvh": {
+    "id": "animation-iahxyimvh",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-izfy9is1g"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#igdkd86jj_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 0,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-izfy9is1g": {
+    "screen": {
+     "id": "effect-izfy9is1g",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 75,
+      "endKeyframe": 90
+     }
+    }
+   }
+  }
+ },
+ "2262851596": {
+  "screen": {
+   "type": "link",
+   "eventName": "click",
+   "eventElement": "self",
+   "eventAction": "",
+   "displayType": "",
+   "selectedTag": "",
+   "linkType": "link",
+   "blank": true
+  }
+ },
+ "4184131844": {
+  "animations": {
+   "animation-iimejvpfr": {
+    "id": "animation-iimejvpfr",
+    "triggerName": "APPEAR_ON_SCREEN",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iy67zbaq6",
+       "effect-imox4ejoh"
+      ],
+      "preset": "FADE_IN",
+      "iterations": 1,
+      "stageOfAppear": "top",
+      "loop": "none"
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iy67zbaq6": {
+    "screen": {
+     "id": "effect-iy67zbaq6",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "none",
+      "delay": 0,
+      "duration": 0.5
+     }
+    }
+   },
+   "effect-imox4ejoh": {
+    "screen": {
+     "id": "effect-imox4ejoh",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1.3
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "0.25,0.1,0.25,1",
+      "delay": 0,
+      "duration": 1.5
+     }
+    }
+   }
+  }
+ },
+ "1588107605": {
+  "animations": {
+   "animation-ipnq26ppg": {
+    "id": "animation-ipnq26ppg",
+    "triggerName": "APPEAR_ON_SCREEN",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ivr931jhv",
+       "effect-i5kj3inkk"
+      ],
+      "preset": "FADE_IN",
+      "iterations": 1,
+      "stageOfAppear": "top",
+      "loop": "none"
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ivr931jhv": {
+    "screen": {
+     "id": "effect-ivr931jhv",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "none",
+      "delay": 0,
+      "duration": 0.5
+     }
+    }
+   },
+   "effect-i5kj3inkk": {
+    "screen": {
+     "id": "effect-i5kj3inkk",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1.3
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "0.25,0.1,0.25,1",
+      "delay": 0,
+      "duration": 1.5
+     }
+    }
+   }
+  }
+ },
+ "3760624063": {
+  "animations": {
+   "animation-iqouzvy9b": {
+    "id": "animation-iqouzvy9b",
+    "triggerName": "APPEAR_ON_SCREEN",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iapm5uabs",
+       "effect-i86p8uuz9"
+      ],
+      "preset": "FADE_IN",
+      "iterations": 1,
+      "stageOfAppear": "top",
+      "loop": "none"
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iapm5uabs": {
+    "screen": {
+     "id": "effect-iapm5uabs",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "none",
+      "delay": 0,
+      "duration": 0.5
+     }
+    }
+   },
+   "effect-i86p8uuz9": {
+    "screen": {
+     "id": "effect-i86p8uuz9",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1.3
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "0.25,0.1,0.25,1",
+      "delay": 0,
+      "duration": 1.5
+     }
+    }
+   }
+  }
+ },
+ "3474628679": {
+  "screen": {
+   "type": "video",
+   "viewportAutoPlay": true,
+   "objectFit": "cover"
+  }
+ },
+ "1385165840": {
+  "animations": {
+   "animation-ishibynol": {
+    "id": "animation-ishibynol",
+    "triggerName": "APPEAR_ON_SCREEN",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ic0ai8qfn"
+      ],
+      "preset": "FADE_IN",
+      "iterations": 1,
+      "stageOfAppear": "top",
+      "loop": "none"
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     },
+     "(min-width: 1440px)": {}
+    }
+   }
+  },
+  "effects": {
+   "effect-ic0ai8qfn": {
+    "screen": {
+     "id": "effect-ic0ai8qfn",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "none",
+      "delay": 0,
+      "duration": 0.5
+     }
+    }
+   }
+  }
+ },
+ "1158551043": {
+  "screen": {
+   "objectFit": "cover",
+   "lockRatio": true,
+   "maxWidth": "896",
+   "maxHeight": "141"
+  }
+ },
+ "3469038325": {
+  "screen": {
+   "objectFit": "cover",
+   "lockRatio": true,
+   "maxWidth": "471",
+   "maxHeight": "2052"
+  }
+ },
+ "2858738027": {
+  "animations": {
+   "animation-ixe8yxceo": {
+    "id": "animation-ixe8yxceo",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-if0k42ewd"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iljeh1gyu_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 0,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-if0k42ewd": {
+    "screen": {
+     "id": "effect-if0k42ewd",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "-20%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 70,
+      "endKeyframe": 90
+     }
+    }
+   }
+  }
+ },
+ "4249892070": {
+  "animations": {
+   "animation-ip7i5dfc4": {
+    "id": "animation-ip7i5dfc4",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i5hup1qwh"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iib2p854e_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     },
+     "(min-width: 1920px)": {}
+    }
+   }
+  },
+  "effects": {
+   "effect-i5hup1qwh": {
+    "screen": {
+     "id": "effect-i5hup1qwh",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 0.75
+      }
+     ],
+     "options": {
+      "ease": "none",
+      "startKeyframe": 25,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "2313167834": {
+  "animations": {
+   "animation-i36mw454j": {
+    "id": "animation-i36mw454j",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-iq8pbuusm"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iib2p854e_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iq8pbuusm": {
+    "screen": {
+     "id": "effect-iq8pbuusm",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 50
+     }
+    }
+   }
+  }
+ },
+ "3402738830": {
+  "animations": {
+   "animation-imcf9s33l": {
+    "id": "animation-imcf9s33l",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ittse858h"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iib2p854e_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ittse858h": {
+    "screen": {
+     "id": "effect-ittse858h",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 10,
+      "endKeyframe": 60
+     }
+    }
+   }
+  }
+ },
+ "3498808859": {
+  "animations": {
+   "animation-imcf9s33l": {
+    "id": "animation-imcf9s33l",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-ittse858h"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iib2p854e_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ittse858h": {
+    "screen": {
+     "id": "effect-ittse858h",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 20,
+      "endKeyframe": 70
+     }
+    }
+   }
+  }
+ },
+ "2816902101": {
+  "animations": {
+   "animation-imcf9s33l": {
+    "id": "animation-imcf9s33l",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-ittse858h"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iib2p854e_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ittse858h": {
+    "screen": {
+     "id": "effect-ittse858h",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 30,
+      "endKeyframe": 80
+     }
+    }
+   }
+  }
+ },
+ "814333718": {
+  "animations": {
+   "animation-imcf9s33l": {
+    "id": "animation-imcf9s33l",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-ittse858h"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iib2p854e_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ittse858h": {
+    "screen": {
+     "id": "effect-ittse858h",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 40,
+      "endKeyframe": 90
+     }
+    }
+   }
+  }
+ },
+ "3455732971": {
+  "animations": {
+   "animation-imcf9s33l": {
+    "id": "animation-imcf9s33l",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-ittse858h"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iib2p854e_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ittse858h": {
+    "screen": {
+     "id": "effect-ittse858h",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "100%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 50,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "1290676434": {
+  "animations": {
+   "animation-iqi3jkc7k": {
+    "id": "animation-iqi3jkc7k",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i1u5yys8d"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ig5resaoj_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i1u5yys8d": {
+    "screen": {
+     "id": "effect-i1u5yys8d",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 6
+     }
+    }
+   }
+  }
+ },
+ "248479885": {
+  "animations": {
+   "animation-i81ap7f8z": {
+    "id": "animation-i81ap7f8z",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iwzygeqn2",
+       "effect-iehcxgdfx",
+       "effect-iij2rkv9d",
+       "effect-ijncjnxeg"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ig5resaoj_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iwzygeqn2": {
+    "screen": {
+     "id": "effect-iwzygeqn2",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "32.68vh",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "32.68vh",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 10
+     }
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      {
+       "y": "34.9vh"
+      },
+      {
+       "y": "34.9vh"
+      }
+     ]
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      {
+       "y": "29.88vh"
+      },
+      {
+       "y": "29.88vh"
+      }
+     ]
+    }
+   },
+   "effect-iehcxgdfx": {
+    "screen": {
+     "id": "effect-iehcxgdfx",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 2
+     }
+    }
+   },
+   "effect-iij2rkv9d": {
+    "screen": {
+     "id": "effect-iij2rkv9d",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "32.68vh",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0vh",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 10,
+      "endKeyframe": 50
+     }
+    }
+   },
+   "effect-ijncjnxeg": {
+    "screen": {
+     "id": "effect-ijncjnxeg",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 2,
+      "endKeyframe": 10
+     }
+    }
+   }
+  }
+ },
+ "763423879": {
+  "animations": {
+   "animation-idu0jjhh7": {
+    "id": "animation-idu0jjhh7",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-itr7s5avy"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ig5resaoj_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-itr7s5avy": {
+    "screen": {
+     "id": "effect-itr7s5avy",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "130%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 25,
+      "endKeyframe": 75
+     }
+    }
+   }
+  }
+ },
+ "452313966": {
+  "screen": {
+   "objectFit": "contain",
+   "lockRatio": true,
+   "maxWidth": "233",
+   "maxHeight": "734"
+  },
+  "(min-width: 1920px)": {
+   "objectFit": "contain"
+  }
+ },
+ "12645215": {
+  "animations": {
+   "animation-ivbf1k5a8": {
+    "id": "animation-ivbf1k5a8",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i9vfgax6d",
+       "effect-imhllgq1j",
+       "effect-is3fevg4c",
+       "effect-iquw7ft1a"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ig5resaoj_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i9vfgax6d": {
+    "screen": {
+     "id": "effect-i9vfgax6d",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "140%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "140%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 25
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      {
+       "y": "132%"
+      },
+      {
+       "y": "132%"
+      }
+     ]
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      {
+       "y": "152%"
+      },
+      {
+       "y": "152%"
+      }
+     ]
+    }
+   },
+   "effect-imhllgq1j": {
+    "screen": {
+     "id": "effect-imhllgq1j",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "38.59vh",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "113.69%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 25,
+      "endKeyframe": 35
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "105.79%"
+      }
+     ]
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "124.61%"
+      }
+     ]
+    }
+   },
+   "effect-is3fevg4c": {
+    "screen": {
+     "id": "effect-is3fevg4c",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "38.59vh",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "113.69%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 35,
+      "endKeyframe": 45
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "105.79%"
+      }
+     ]
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "124.61%"
+      }
+     ]
+    }
+   },
+   "effect-iquw7ft1a": {
+    "screen": {
+     "id": "effect-iquw7ft1a",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0vh",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 45,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "882901478": {
+  "animations": {
+   "animation-iqfovyjx2": {
+    "id": "animation-iqfovyjx2",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-ipii15nb7",
+       "effect-ioci3eba2",
+       "effect-inqfwt7bm",
+       "effect-irfkag8yj"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ig5resaoj_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ipii15nb7": {
+    "screen": {
+     "id": "effect-ipii15nb7",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "140%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "140%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 25
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      {
+       "y": "132%"
+      },
+      {
+       "y": "132%"
+      }
+     ]
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      {
+       "y": "152%"
+      },
+      {
+       "y": "152%"
+      }
+     ]
+    }
+   },
+   "effect-ioci3eba2": {
+    "screen": {
+     "id": "effect-ioci3eba2",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "50vh",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "113.69%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 25,
+      "endKeyframe": 35
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "105.79%"
+      }
+     ]
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "124.61%"
+      }
+     ]
+    }
+   },
+   "effect-inqfwt7bm": {
+    "screen": {
+     "id": "effect-inqfwt7bm",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "38.59vh",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "113.69%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 35,
+      "endKeyframe": 60
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "105.79%"
+      }
+     ]
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "124.61%"
+      }
+     ]
+    }
+   },
+   "effect-irfkag8yj": {
+    "screen": {
+     "id": "effect-irfkag8yj",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0vh",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 60,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "3318910944": {
+  "animations": {
+   "animation-iqfovyjx2": {
+    "id": "animation-iqfovyjx2",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-ipii15nb7",
+       "effect-ioci3eba2",
+       "effect-isbb8vc6e",
+       "effect-i13u33zro"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ig5resaoj_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ipii15nb7": {
+    "screen": {
+     "id": "effect-ipii15nb7",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "140%",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "140%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 25
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      {
+       "y": "132%"
+      },
+      {
+       "y": "132%"
+      }
+     ]
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      {
+       "y": "152%"
+      },
+      {
+       "y": "152%"
+      }
+     ]
+    }
+   },
+   "effect-ioci3eba2": {
+    "screen": {
+     "id": "effect-ioci3eba2",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "50vh",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "113.69%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 25,
+      "endKeyframe": 35
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "105.79%"
+      }
+     ]
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "124.61%"
+      }
+     ]
+    }
+   },
+   "effect-isbb8vc6e": {
+    "screen": {
+     "id": "effect-isbb8vc6e",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "38.59vh",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "113.69%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 35,
+      "endKeyframe": 75
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "105.79%"
+      }
+     ]
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      null,
+      {
+       "y": "124.61%"
+      }
+     ]
+    }
+   },
+   "effect-i13u33zro": {
+    "screen": {
+     "id": "effect-i13u33zro",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "0vh",
+       "z": "0px"
+      },
+      {
+       "x": "0px",
+       "y": "0%",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 75,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "3466807767": {
+  "animations": {
+   "animation-i6vr1frka": {
+    "id": "animation-i6vr1frka",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-idztq9x1p"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iljeh1gyu_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     },
+     "(min-width: 1920px)": {}
+    }
+   }
+  },
+  "effects": {
+   "effect-idztq9x1p": {
+    "screen": {
+     "id": "effect-idztq9x1p",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "0%",
+       "height": "100%"
+      },
+      {
+       "width": "100%",
+       "height": "100%"
+      }
+     ],
+     "options": {
+      "ease": "power1.out",
+      "startKeyframe": 12,
+      "endKeyframe": 92
+     }
+    }
+   }
+  }
+ },
+ "161323640": {
+  "animations": {
+   "animation-i6rrprs0s": {
+    "id": "animation-i6rrprs0s",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-inkig11yr"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iljeh1gyu_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     },
+     "(min-width: 1920px)": {}
+    }
+   }
+  },
+  "effects": {
+   "effect-inkig11yr": {
+    "screen": {
+     "id": "effect-inkig11yr",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "0%",
+       "height": "100%"
+      },
+      {
+       "width": "100%",
+       "height": "100%"
+      }
+     ],
+     "options": {
+      "ease": "power1.out",
+      "startKeyframe": 8,
+      "endKeyframe": 85
+     }
+    }
+   }
+  }
+ },
+ "764327104": {
+  "animations": {
+   "animation-is2wluaup": {
+    "id": "animation-is2wluaup",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-i8hxsqc26"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iljeh1gyu_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     },
+     "(min-width: 1920px)": {}
+    }
+   }
+  },
+  "effects": {
+   "effect-i8hxsqc26": {
+    "screen": {
+     "id": "effect-i8hxsqc26",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "0%",
+       "height": "100%"
+      },
+      {
+       "width": "100%",
+       "height": "100%"
+      }
+     ],
+     "options": {
+      "ease": "power1.out",
+      "startKeyframe": 4,
+      "endKeyframe": 70
+     }
+    }
+   }
+  }
+ },
+ "3344254714": {
+  "animations": {
+   "animation-ipa7qi5wh": {
+    "id": "animation-ipa7qi5wh",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-iwbjm6pco"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iljeh1gyu_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     },
+     "(min-width: 1920px)": {}
+    }
+   }
+  },
+  "effects": {
+   "effect-iwbjm6pco": {
+    "screen": {
+     "id": "effect-iwbjm6pco",
+     "name": "SIZE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "width": "0%",
+       "height": "100%"
+      },
+      {
+       "width": "100%",
+       "height": "100%"
+      }
+     ],
+     "options": {
+      "ease": "power1.out",
+      "startKeyframe": 0,
+      "endKeyframe": 55
+     }
+    }
+   }
+  }
+ },
+ "985786767": {
+  "animations": {
+   "animation-iwjsj7xw9": {
+    "id": "animation-iwjsj7xw9",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-ilsux0bw0"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iljeh1gyu_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 0,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ilsux0bw0": {
+    "screen": {
+     "id": "effect-ilsux0bw0",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "none",
+      "startKeyframe": 99,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "2681350809": {
+  "animations": {
+   "animation-i2qpjnijh": {
+    "id": "animation-i2qpjnijh",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-iwfl8nzze"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iduv2dwj8_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iwfl8nzze": {
+    "screen": {
+     "id": "effect-iwfl8nzze",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 50
+     }
+    }
+   }
+  }
+ },
+ "1323216674": {
+  "animations": {
+   "animation-i1nhk7gho": {
+    "id": "animation-i1nhk7gho",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iptq5mqho"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#iduv2dwj8_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iptq5mqho": {
+    "screen": {
+     "id": "effect-iptq5mqho",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 30,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "757276620": {
+  "animations": {
+   "animation-i5yewhokp": {
+    "id": "animation-i5yewhokp",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-izhqnv8yo"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ihde6yg8u_0",
+      "startPosition": "center",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "0%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-izhqnv8yo": {
+    "screen": {
+     "id": "effect-izhqnv8yo",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "110%",
+       "y": "0px",
+       "z": "0px"
+      },
+      {
+       "x": "0%",
+       "y": "0px",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "none",
+      "startKeyframe": 0,
+      "endKeyframe": 30
+     }
+    }
+   }
+  }
+ },
+ "3408703353": {
+  "animations": {
+   "animation-i5yewhokp": {
+    "id": "animation-i5yewhokp",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-izhqnv8yo"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ihde6yg8u_0",
+      "startPosition": "center",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "0%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-izhqnv8yo": {
+    "screen": {
+     "id": "effect-izhqnv8yo",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "110%",
+       "y": "0px",
+       "z": "0px"
+      },
+      {
+       "x": "0%",
+       "y": "0px",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "none",
+      "startKeyframe": 10,
+      "endKeyframe": 40
+     }
+    }
+   }
+  }
+ },
+ "893717989": {
+  "animations": {
+   "animation-i5yewhokp": {
+    "id": "animation-i5yewhokp",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-izhqnv8yo"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ihde6yg8u_0",
+      "startPosition": "center",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "0%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-izhqnv8yo": {
+    "screen": {
+     "id": "effect-izhqnv8yo",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "110%",
+       "y": "0px",
+       "z": "0px"
+      },
+      {
+       "x": "0%",
+       "y": "0px",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "none",
+      "startKeyframe": 20,
+      "endKeyframe": 50
+     }
+    }
+   }
+  }
+ },
+ "3701253753": {
+  "animations": {
+   "animation-it661gfc9": {
+    "id": "animation-it661gfc9",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "effectIds": [
+       "effect-iko5mbpyr",
+       "effect-ic9q574p7",
+       "effect-i8bp5ibr5",
+       "effect-iqxxdyzdn",
+       "effect-iyraw9519"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#ipm7pwexx_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "0%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     },
+     "(min-width: 1920px)": {
+      "startOffset": "0%"
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iko5mbpyr": {
+    "screen": {
+     "id": "effect-iko5mbpyr",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0px",
+       "y": "-17.5vh",
+       "z": "0px"
+      },
+      {
+       "x": "0vw",
+       "y": "0vh",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "none",
+      "startKeyframe": 0,
+      "endKeyframe": 40
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      {
+       "y": "-9.3vh"
+      },
+      {}
+     ]
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      {
+       "y": "-8.3vh"
+      },
+      {}
+     ]
+    }
+   },
+   "effect-ic9q574p7": {
+    "screen": {
+     "id": "effect-ic9q574p7",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 0.7
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "none",
+      "startKeyframe": 0,
+      "endKeyframe": 40
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      {
+       "scale": 0.5
+      }
+     ]
+    }
+   },
+   "effect-i8bp5ibr5": {
+    "screen": {
+     "id": "effect-i8bp5ibr5",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1
+      },
+      {
+       "scale": 0.65
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 40,
+      "endKeyframe": 100
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      null,
+      {
+       "scale": 0.68
+      }
+     ],
+     "options": {}
+    },
+    "(min-width: 1920px)": {
+     "options": {},
+     "keyframes": [
+      null,
+      {
+       "scale": 0.65
+      }
+     ]
+    }
+   },
+   "effect-iqxxdyzdn": {
+    "screen": {
+     "id": "effect-iqxxdyzdn",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0.2
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 40,
+      "endKeyframe": 100
+     }
+    }
+   },
+   "effect-iyraw9519": {
+    "screen": {
+     "id": "effect-iyraw9519",
+     "name": "MOVE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "x": "0vw",
+       "y": "0vh",
+       "z": "0px"
+      },
+      {
+       "x": "-16.63vw",
+       "y": "0vh",
+       "z": "0px"
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 40,
+      "endKeyframe": 100
+     }
+    },
+    "(min-width: 1440px)": {
+     "keyframes": [
+      {
+       "y": "9.3vh"
+      },
+      {
+       "y": "9.3vh",
+       "x": "-15.21vw"
+      }
+     ],
+     "options": {}
+    },
+    "(min-width: 1920px)": {
+     "keyframes": [
+      {
+       "y": "8.3vh"
+      },
+      {
+       "y": "8.3vh",
+       "x": "-16.67vw"
+      }
+     ],
+     "options": {}
+    }
+   }
+  }
+ },
+ "2971701756": {
+  "screen": {
+   "direction": "horizontal",
+   "effect": "slide",
+   "easing": "linear",
+   "speed": 500,
+   "autoHeight": false,
+   "loop": false,
+   "allowTouchMove": true,
+   "autoplay": false,
+   "delay": 3000,
+   "hideArrowsAtTheEnd": false,
+   "paginationType": "points",
+   "thumbs": false,
+   "thumbsNumber": 3,
+   "thumbsSlider": false,
+   "centeredThumbs": false
+  },
+  "(max-width: 991px)": {
+   "loop": true,
+   "effect": "fade"
+  }
+ },
+ "2383120862": {
+  "animations": {
+   "animation-iv2fta0jf": {
+    "id": "animation-iv2fta0jf",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iryu3x3ww"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iryu3x3ww": {
+    "screen": {
+     "id": "effect-iryu3x3ww",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 15,
+      "endKeyframe": 25
+     }
+    }
+   }
+  }
+ },
+ "233705449": {
+  "animations": {
+   "animation-ivuu171sg": {
+    "id": "animation-ivuu171sg",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iy96vp3b7"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iy96vp3b7": {
+    "screen": {
+     "id": "effect-iy96vp3b7",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 10,
+      "endKeyframe": 25
+     }
+    }
+   }
+  }
+ },
+ "3070692210": {
+  "animations": {
+   "animation-iypv5jhip": {
+    "id": "animation-iypv5jhip",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ilrrt2bz9",
+       "effect-ijby9xsm6",
+       "effect-ij8ehjouu"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ilrrt2bz9": {
+    "screen": {
+     "id": "effect-ilrrt2bz9",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 15,
+      "endKeyframe": 25
+     }
+    }
+   },
+   "effect-ijby9xsm6": {
+    "screen": {
+     "id": "effect-ijby9xsm6",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 25,
+      "endKeyframe": 35
+     }
+    }
+   },
+   "effect-ij8ehjouu": {
+    "screen": {
+     "id": "effect-ij8ehjouu",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 35,
+      "endKeyframe": 45
+     }
+    }
+   }
+  }
+ },
+ "2250995723": {
+  "animations": {
+   "animation-i13jch1zc": {
+    "id": "animation-i13jch1zc",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i7x0upmzv"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i7x0upmzv": {
+    "screen": {
+     "id": "effect-i7x0upmzv",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 35,
+      "endKeyframe": 45
+     }
+    }
+   }
+  }
+ },
+ "1496111874": {
+  "animations": {
+   "animation-iy6o0mqoh": {
+    "id": "animation-iy6o0mqoh",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i5rf35yvu",
+       "effect-ifp8ddd65",
+       "effect-inc62koe5"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i5rf35yvu": {
+    "screen": {
+     "id": "effect-i5rf35yvu",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 35,
+      "endKeyframe": 45
+     }
+    }
+   },
+   "effect-ifp8ddd65": {
+    "screen": {
+     "id": "effect-ifp8ddd65",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 45,
+      "endKeyframe": 55
+     }
+    }
+   },
+   "effect-inc62koe5": {
+    "screen": {
+     "id": "effect-inc62koe5",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 55,
+      "endKeyframe": 65
+     }
+    }
+   }
+  }
+ },
+ "3918363517": {
+  "animations": {
+   "animation-ibosayqwu": {
+    "id": "animation-ibosayqwu",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-itv5pdgdh"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-itv5pdgdh": {
+    "screen": {
+     "id": "effect-itv5pdgdh",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 55,
+      "endKeyframe": 65
+     }
+    }
+   }
+  }
+ },
+ "3150107431": {
+  "animations": {
+   "animation-ixbks8fob": {
+    "id": "animation-ixbks8fob",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i9q103nvc",
+       "effect-i3vfxjxyz",
+       "effect-i4dt7thqt"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i9q103nvc": {
+    "screen": {
+     "id": "effect-i9q103nvc",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 55,
+      "endKeyframe": 65
+     }
+    }
+   },
+   "effect-i3vfxjxyz": {
+    "screen": {
+     "id": "effect-i3vfxjxyz",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 65,
+      "endKeyframe": 75
+     }
+    }
+   },
+   "effect-i4dt7thqt": {
+    "screen": {
+     "id": "effect-i4dt7thqt",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 75,
+      "endKeyframe": 85
+     }
+    }
+   }
+  }
+ },
+ "4107187466": {
+  "animations": {
+   "animation-idrts55fv": {
+    "id": "animation-idrts55fv",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-in66zdkcd"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-in66zdkcd": {
+    "screen": {
+     "id": "effect-in66zdkcd",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 75,
+      "endKeyframe": 85
+     }
+    }
+   }
+  }
+ },
+ "618864293": {
+  "animations": {
+   "animation-ib9pbftaf": {
+    "id": "animation-ib9pbftaf",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iuuu67vl2",
+       "effect-iiu30zj5r"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iuuu67vl2": {
+    "screen": {
+     "id": "effect-iuuu67vl2",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 75,
+      "endKeyframe": 85
+     }
+    }
+   },
+   "effect-iiu30zj5r": {
+    "screen": {
+     "id": "effect-iiu30zj5r",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 85,
+      "endKeyframe": 95
+     }
+    }
+   }
+  }
+ },
+ "2050774063": {
+  "animations": {
+   "animation-i9tzy45a6": {
+    "id": "animation-i9tzy45a6",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i41tpourp"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i41tpourp": {
+    "screen": {
+     "id": "effect-i41tpourp",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0.4
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 10,
+      "endKeyframe": 25
+     }
+    }
+   }
+  }
+ },
+ "3958291857": {
+  "animations": {
+   "animation-igg79x3eq": {
+    "id": "animation-igg79x3eq",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i89veavwh",
+       "effect-i47u7z5gz",
+       "effect-ie6dwu0nd"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i89veavwh": {
+    "screen": {
+     "id": "effect-i89veavwh",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0.4
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 15,
+      "endKeyframe": 25
+     }
+    }
+   },
+   "effect-i47u7z5gz": {
+    "screen": {
+     "id": "effect-i47u7z5gz",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 25,
+      "endKeyframe": 35
+     }
+    }
+   },
+   "effect-ie6dwu0nd": {
+    "screen": {
+     "id": "effect-ie6dwu0nd",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0.4
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 35,
+      "endKeyframe": 45
+     }
+    }
+   }
+  }
+ },
+ "3290433325": {
+  "animations": {
+   "animation-id5558foj": {
+    "id": "animation-id5558foj",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iy97rr1ow",
+       "effect-i8ftwug0n",
+       "effect-ih76njh9f"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iy97rr1ow": {
+    "screen": {
+     "id": "effect-iy97rr1ow",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0.4
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 35,
+      "endKeyframe": 45
+     }
+    }
+   },
+   "effect-i8ftwug0n": {
+    "screen": {
+     "id": "effect-i8ftwug0n",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 45,
+      "endKeyframe": 55
+     }
+    }
+   },
+   "effect-ih76njh9f": {
+    "screen": {
+     "id": "effect-ih76njh9f",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0.4
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 55,
+      "endKeyframe": 65
+     }
+    }
+   }
+  }
+ },
+ "3381245934": {
+  "animations": {
+   "animation-irjvbct3s": {
+    "id": "animation-irjvbct3s",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-ihtpwoa9d",
+       "effect-i9f7y54hr",
+       "effect-iifgdmvwr"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-ihtpwoa9d": {
+    "screen": {
+     "id": "effect-ihtpwoa9d",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0.4
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 55,
+      "endKeyframe": 65
+     }
+    }
+   },
+   "effect-i9f7y54hr": {
+    "screen": {
+     "id": "effect-i9f7y54hr",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 65,
+      "endKeyframe": 75
+     }
+    }
+   },
+   "effect-iifgdmvwr": {
+    "screen": {
+     "id": "effect-iifgdmvwr",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 0.4
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 75,
+      "endKeyframe": 85
+     }
+    }
+   }
+  }
+ },
+ "2024210985": {
+  "animations": {
+   "animation-ipti470qe": {
+    "id": "animation-ipti470qe",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iw6kp11fl",
+       "effect-im0ink5om"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itcx2nwlb_0",
+      "startPosition": "top",
+      "endPosition": "bottom",
+      "startOffset": "0%",
+      "endOffset": "0%",
+      "scrollerStartOffset": "0%",
+      "scrollerEndOffset": "100%",
+      "smoothing": 1,
+      "markers": true
+     },
+     "(max-width: 991px)": {
+      "disabled": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iw6kp11fl": {
+    "screen": {
+     "id": "effect-iw6kp11fl",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0.4
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 75,
+      "endKeyframe": 85
+     }
+    }
+   },
+   "effect-im0ink5om": {
+    "screen": {
+     "id": "effect-im0ink5om",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 1
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 85,
+      "endKeyframe": 95
+     }
+    }
+   }
+  }
+ },
+ "2462570903": {
+  "screen": {
+   "type": "link",
+   "eventName": "click",
+   "eventElement": "select",
+   "eventAction": "",
+   "displayType": "",
+   "selectedTag": "",
+   "linkType": "link",
+   "blank": true
+  }
+ },
+ "4265388630": {
+  "animations": {
+   "animation-i9qcor3mg": {
+    "id": "animation-i9qcor3mg",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i06xp5eed",
+       "effect-i54a9xca7"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "#itz251722_0",
+      "startPosition": "top",
+      "endPosition": "center",
+      "startOffset": "0%",
+      "endOffset": "-50%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "0%",
+      "smoothing": 0,
+      "markers": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i06xp5eed": {
+    "screen": {
+     "id": "effect-i06xp5eed",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 30
+     }
+    }
+   },
+   "effect-i54a9xca7": {
+    "screen": {
+     "id": "effect-i54a9xca7",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1.3
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "3855299915": {
+  "animations": {
+   "animation-i52v0c9j5": {
+    "id": "animation-i52v0c9j5",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i2e69qx9w",
+       "effect-ipbu3w64u"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "",
+      "startPosition": "top",
+      "endPosition": "center",
+      "startOffset": "30%",
+      "endOffset": "-50%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "0%",
+      "smoothing": 0,
+      "markers": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i2e69qx9w": {
+    "screen": {
+     "id": "effect-i2e69qx9w",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 30
+     }
+    }
+   },
+   "effect-ipbu3w64u": {
+    "screen": {
+     "id": "effect-ipbu3w64u",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1.3
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "3708865408": {
+  "animations": {
+   "animation-iw6urm6yq": {
+    "id": "animation-iw6urm6yq",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-iox6cr1nf",
+       "effect-igbn5bgoq"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "",
+      "startPosition": "top",
+      "endPosition": "center",
+      "startOffset": "30%",
+      "endOffset": "-50%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "0%",
+      "smoothing": 0,
+      "markers": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-iox6cr1nf": {
+    "screen": {
+     "id": "effect-iox6cr1nf",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 30
+     }
+    }
+   },
+   "effect-igbn5bgoq": {
+    "screen": {
+     "id": "effect-igbn5bgoq",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1.3
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "2329182984": {
+  "animations": {
+   "animation-ixdabdszj": {
+    "id": "animation-ixdabdszj",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-it0kehd4t"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "",
+      "startPosition": "top",
+      "endPosition": "center",
+      "startOffset": "30%",
+      "endOffset": "-50%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "0%",
+      "smoothing": 1,
+      "markers": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-it0kehd4t": {
+    "screen": {
+     "id": "effect-it0kehd4t",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 20
+     }
+    }
+   }
+  }
+ },
+ "479666099": {
+  "animations": {
+   "animation-iqh3oule9": {
+    "id": "animation-iqh3oule9",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-i84s7vihy",
+       "effect-iye1ndm2m"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "",
+      "startPosition": "top",
+      "endPosition": "center",
+      "startOffset": "30%",
+      "endOffset": "-50%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "0%",
+      "smoothing": 1,
+      "markers": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-i84s7vihy": {
+    "screen": {
+     "id": "effect-i84s7vihy",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 30
+     }
+    }
+   },
+   "effect-iye1ndm2m": {
+    "screen": {
+     "id": "effect-iye1ndm2m",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1.3
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "1359564134": {
+  "animations": {
+   "animation-i2ieyky6e": {
+    "id": "animation-i2ieyky6e",
+    "triggerName": "SCROLL_TRANSFORM",
+    "mediaParams": {
+     "screen": {
+      "disabled": false,
+      "effectIds": [
+       "effect-imp193lzd",
+       "effect-i300qe6nh"
+      ],
+      "preset": "FADE_IN",
+      "triggerElement": "",
+      "startPosition": "top",
+      "endPosition": "center",
+      "startOffset": "30%",
+      "endOffset": "-50%",
+      "scrollerStartOffset": "100%",
+      "scrollerEndOffset": "0%",
+      "smoothing": 1,
+      "markers": true
+     }
+    }
+   }
+  },
+  "effects": {
+   "effect-imp193lzd": {
+    "screen": {
+     "id": "effect-imp193lzd",
+     "name": "OPACITY",
+     "disabled": false,
+     "keyframes": [
+      {
+       "opacity": 0
+      },
+      {
+       "opacity": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 30
+     }
+    }
+   },
+   "effect-i300qe6nh": {
+    "screen": {
+     "id": "effect-i300qe6nh",
+     "name": "SCALE",
+     "disabled": false,
+     "keyframes": [
+      {
+       "scale": 1.3
+      },
+      {
+       "scale": 1
+      }
+     ],
+     "options": {
+      "ease": "power1.inOut",
+      "startKeyframe": 0,
+      "endKeyframe": 100
+     }
+    }
+   }
+  }
+ },
+ "3971710226": {
+  "screen": {
+   "speed": 600
+  }
+ }
+}
