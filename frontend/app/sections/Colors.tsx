@@ -7,42 +7,12 @@ import type { ColorVariant } from "../../lib/api";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ------------------------------------------------------------------ *
- * Reference fallbacks.
- *
- * Order is the reference order (and the CMS `order` field):
- * silver, graphite, blue, red, orange. Copy comes from Strapi; the images
- * are the five `nota_scene_7` renders, mirrored into `public/d/` because
- * the CMS color-variant entries carry no `image` yet.
- * ------------------------------------------------------------------ */
-const VARIANT_FALLBACKS = [
-  {
-    name: "Silver",
-    tagline: "Impossible to overthink",
-    image: "/d/library_image-14781-symbol-i64njjjjo-nota_scene_7_img_01.jpg"
-  },
-  {
-    name: "Graphite Black",
-    tagline: "Clarity in silence.",
-    image: "/d/library_image-14781-symbol-i64njjjjo-nota_scene_7_img_02.jpg"
-  },
-  {
-    name: "Mist Blue",
-    tagline: "Light thinking.",
-    image: "/d/library_image-14781-symbol-i64njjjjo-nota_scene_7_img_03.jpg"
-  },
-  {
-    name: "Precision Red",
-    tagline: "Form follows thought.",
-    image: "/d/library_image-14781-symbol-i64njjjjo-nota_scene_7_img_04.jpg"
-  },
-  {
-    name: "Bright Orange",
-    tagline: "Steady focus.",
-    image: "/d/library_image-14781-symbol-i64njjjjo-nota_scene_7_img_05.jpg"
-  }
-];
-
+/**
+ * The desktop section hard-codes five variant slots — silver, graphite,
+ * blue, red, orange — so the CMS `color-variant` collection maps onto them
+ * one-to-one, in `order`. Nothing is invented here: a missing entry leaves
+ * its slot blank rather than borrowing copy or artwork.
+ */
 const VARIANT_COUNT = 5;
 
 /** Desktop breakpoint used by the reference (`.section-colors` ≥ 992px). */
@@ -156,11 +126,10 @@ export default function Colors({ colors }: { colors: ColorVariant[] }) {
   const desktop = useRef<HTMLDivElement>(null);
   const { listRef, index, go, onScroll, onTouchStart, onTouchEnd } = useMobileSlider(VARIANT_COUNT);
 
-  const variants = VARIANT_FALLBACKS.map((fallback, i) => ({
-    name: colors[i]?.name || fallback.name,
-    tagline: colors[i]?.tagline || fallback.tagline,
-    image: colors[i]?.image || fallback.image
-  }));
+  const variants = Array.from(
+    { length: VARIANT_COUNT },
+    (_, i): ColorVariant => colors[i] ?? { name: "", tagline: "", image: "", accent: "light" }
+  );
 
   // The slider scrolls its own list, so the page-level scroll
   // measurements have to be redone when the viewport changes.

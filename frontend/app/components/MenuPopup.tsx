@@ -67,24 +67,13 @@ const MENU_LINKS: MenuLink[] = [
   { label: "Inside the box", target: "ipavj5rd0_0", anchorId: "i23jxciyu_0", textId: "iwhlxe8zz_0" }
 ];
 
-/** Reference-only order artwork, used when the CMS holds no `popup_image`. */
-const ORDER_IMG = {
-  lg: {
-    src: "/thumb/2/48v7oqZUAYG0LHOJ-CgFqA/1472r1008/d/library_image-14639-symbol-ibp1e2m59-popup_order-img.png",
-    size: "1472x1008",
-    alt: "popup__order-img"
-  },
-  md: {
-    src: "/thumb/2/89XFsBtyOJQj6l1MDE9mcA/896r578/d/library_image-14639-symbol-ibp1e2m59-popup_order-img480.png",
-    size: "896x578",
-    alt: "popup__order-img480"
-  },
-  sm: {
-    src: "/thumb/2/23v_cjk1hEG0m1FgxLR3Qg/600r590/d/library_image-14639-symbol-ibp1e2m59-popup_order-img320.png",
-    size: "600x590",
-    alt: "popup__order-img320"
-  }
-};
+/**
+ * The three responsive slots the reference uses for the order artwork. All of
+ * them are fed from the single `product.popup_image` media field — the
+ * reference swaps in differently sized crops at each breakpoint via CSS, but
+ * the CMS exposes one asset, so the same URL serves all three.
+ */
+const ORDER_IMG_SIZES = { lg: "1472x1008", md: "896x578", sm: "600x590" };
 
 function prefersReduced(): boolean {
   return typeof window !== "undefined" && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -268,11 +257,11 @@ export default function MenuPopup({
             <div className="image popup-img768" id="i4ezeljxj_0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={product.popupImage || ORDER_IMG.lg.src}
-                alt={ORDER_IMG.lg.alt}
+                src={product.popupImage || undefined}
+                alt=""
                 title=""
-                data-size={ORDER_IMG.lg.size}
-                data-origin-src={ORDER_IMG.lg.src}
+                data-size={ORDER_IMG_SIZES.lg}
+                data-origin-src={product.popupImage || undefined}
                 className="image__img"
                 id="io13f18ks_0"
               />
@@ -280,11 +269,11 @@ export default function MenuPopup({
             <div className="image popup-img480" id="iwq9gkfvw_0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={product.popupImage || ORDER_IMG.md.src}
-                alt={ORDER_IMG.md.alt}
+                src={product.popupImage || undefined}
+                alt=""
                 title=""
-                data-size={ORDER_IMG.md.size}
-                data-origin-src={ORDER_IMG.md.src}
+                data-size={ORDER_IMG_SIZES.md}
+                data-origin-src={product.popupImage || undefined}
                 className="image__img"
                 id="igf6l9rw1_0"
               />
@@ -292,11 +281,11 @@ export default function MenuPopup({
             <div className="image popup-img320" id="i2mf5vifa_0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src={product.popupImage || ORDER_IMG.sm.src}
-                alt={ORDER_IMG.sm.alt}
+                src={product.popupImage || undefined}
+                alt=""
                 title=""
-                data-size={ORDER_IMG.sm.size}
-                data-origin-src={ORDER_IMG.sm.src}
+                data-size={ORDER_IMG_SIZES.sm}
+                data-origin-src={product.popupImage || undefined}
                 className="image__img"
                 id="ic1pethtz_0"
               />
@@ -305,14 +294,14 @@ export default function MenuPopup({
           <div className="div button-order__content div--u-i1q2yjhgv" id="i1q2yjhgv_0">
             <div className="div button-order__texts" id="ikche88ih_0">
               <div className="text button-title tc--main-white" id="iynhujwhb_0">
-                <span className="text-block-wrap-div">{product.ctaLabel || "Order"}</span>
+                <span className="text-block-wrap-div">{product.ctaLabel}</span>
               </div>
               <div className="text button-title tc--main-white-40" id="i5hday4sj_0">
-                <span className="text-block-wrap-div">{product.name || "Nota One"}</span>
+                <span className="text-block-wrap-div">{product.name}</span>
               </div>
               <div className="div button__separator bc--main-white div--u-ivfvatlwp" id="ivfvatlwp_0"></div>
               <div className="text button-title tc--main-white" id="imvea5dtc_0">
-                <span className="text-block-wrap-div">{product.ctaPrice || "$300"}</span>
+                <span className="text-block-wrap-div">{product.ctaPrice}</span>
               </div>
             </div>
           </div>

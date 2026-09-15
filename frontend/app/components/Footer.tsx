@@ -82,8 +82,12 @@ const NAV_LINKS_STATIC: NavLink[] = [
   }
 ];
 
-const ELLIPSE_SRC =
-  "/thumb/2/XFO-Z6KKLQ1J3F5qhK1gag/640r480/d/library_image-14785-symbol-iof6gcmn1-ellipse_6750.svg";
+/**
+ * The tiny dot that separates the footer credits. It is a design-system
+ * asset (mirrored next to the other `/d/` files the vendored stylesheets
+ * reference), not CMS content — the schema has no field for it.
+ */
+const ELLIPSE_SRC = "/d/library_image-14785-ellipse_6750.svg";
 
 export default function Footer({
   product,
@@ -98,8 +102,7 @@ export default function Footer({
 
   const year = product.year || new Date().getFullYear();
   const description =
-    product.description ||
-    "NŌTA creates tools that respect the way people think and write. Natural handwriting, quietly connected to digital structure.";
+    product.description;
 
   const scroll = (event: MouseEvent<HTMLAnchorElement>, target: string) => {
     event.preventDefault();
@@ -170,22 +173,22 @@ export default function Footer({
             </div>
             <div className="div footer__content-bottom" id="iers039h0_0">
               <p className="text footer__copyright footer-title tc--main-white-50" id="iwqnz2xi6_0">
-                <span className="text-block-wrap-div">{homepage.footerCopyright || "@2026 Nōta Team"}</span>
+                <span className="text-block-wrap-div">{homepage.footerCopyright}</span>
               </p>
               <div className="div footer__team-wrapper" id="il774jhmo_0">
                 {/* `aria-label` is the one addition to the reference node: it is
                     where `product.team` ("NŌTA Team") lands — the reference
                     footer has no visible slot for the team's own name. */}
-                <div className="div footer__team" id="ijim6lty4_0" aria-label={product.team || "NŌTA Team"}>
+                <div className="div footer__team" id="ijim6lty4_0" aria-label={product.team}>
                   <div className="div footer__link-wrapper" id="i59lstgrf_0">
                     <a
-                      href={homepage.madeInUrl || "https://taptop.pro/"}
+                      href={homepage.madeInUrl}
                       data-action-element=""
                       target="_blank"
                       className="link footer-link--gray"
                       id="i6zco9f6s_0"
                     >
-                      <span className="text-block-wrap-div">{homepage.footerMadeIn || "Made in Taptop"}</span>
+                      <span className="text-block-wrap-div">{homepage.footerMadeIn}</span>
                     </a>
                   </div>
                   <div className="image footer__team-icon image--u-iak699zx6" id="iak699zx6_0">
@@ -207,24 +210,24 @@ export default function Footer({
                       className="link footer-link--gray"
                       id="ioayzm2vy_0"
                     >
-                      <span className="text-block-wrap-div">{homepage.footerBuiltBy || "Builded by NōtaTeam"}</span>
+                      <span className="text-block-wrap-div">{homepage.footerBuiltBy}</span>
                     </div>
                   </div>
                 </div>
                 <div className="div footer__design-team" id="i0nnjl6yp_0">
                   <a
-                    href={homepage.designedUrl || "https://www.behance.net/alicem"}
+                    href={homepage.designedUrl}
                     data-action-element=""
                     target="_blank"
                     className="link footer-link--gray"
                     id="ibcdu08c9_0"
                   >
                     <span className="text-block-wrap-div">
-                      <span style={{ whiteSpace: "pre" }}>{homepage.footerDesignedBy || "Designed by Alice"}</span>
+                      <span style={{ whiteSpace: "pre" }}>{homepage.footerDesignedBy}</span>
                     </span>
                   </a>
                   <a
-                    href={homepage.uprockUrl || "https://www.uprock.ru/"}
+                    href={homepage.uprockUrl}
                     data-action-element=""
                     target="_blank"
                     className="link footer-link--gray"

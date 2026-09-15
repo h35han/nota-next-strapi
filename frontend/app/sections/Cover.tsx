@@ -1,5 +1,5 @@
 import type { Product } from "../../lib/api";
-import CoverLottie from "../components/CoverLottie";
+import CoverMedia from "../components/CoverMedia";
 
 /**
  * Cover — the hero.
@@ -21,11 +21,11 @@ export default function Cover({ product }: { product: Product }) {
     <>
       <section className="section cover section--u-ir47l3u8h bc--main-radial" id="ir47l3u8h_0">
         <div className="container cover__camera container--u-i2lfv83sv" id="i2lfv83sv_0">
-          <CoverLottie
+          <CoverMedia
             id="ikskfddht_0"
             className="div cover__lottie-pen div--u-ikskfddht"
-            src={product.coverLottie}
-            videoSrc={product.heroVideo || product.heroCoverVideo}
+            webpSrc={product.heroCoverVideo}
+            videoSrc={product.heroVideo}
             fallback={product.coverImage}
           />
           <div className="div cover__wrapper" id="i9157cbsc_0">
@@ -34,14 +34,14 @@ export default function Cover({ product }: { product: Product }) {
                 className="text tc--main-white headline--1 scramble-text text--u-it88tlt81"
                 id="it88tlt81_0"
               >
-                <span className="text-block-wrap-div">{product.heading || "Smart pen"}</span>
+                <span className="text-block-wrap-div">{product.heading}</span>
               </h1>
               <h1
                 className="text tc--main-white headline--1 scramble-text text--u-i3rz6q624"
                 id="i3rz6q624_0"
               >
                 <span className="text-block-wrap-div">
-                  {product.subheading || "for real thinking"}
+                  {product.subheading}
                 </span>
               </h1>
             </div>
@@ -66,11 +66,11 @@ export default function Cover({ product }: { product: Product }) {
             </div>
             <div className="div cover__headline-wrapper--static" id="iattqicsd_0">
               <div className="text headline--1 scramble-text tc--main-white" id="iv9aj1gd1_0">
-                <span className="text-block-wrap-div">{product.heading || "Smart pen"}</span>
+                <span className="text-block-wrap-div">{product.heading}</span>
               </div>
               <div className="text headline--1 scramble-text tc--main-white" id="irxswcv37_0">
                 <span className="text-block-wrap-div">
-                  {product.subheading || "for real thinking"}
+                  {product.subheading}
                 </span>
               </div>
             </div>

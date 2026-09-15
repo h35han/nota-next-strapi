@@ -21,33 +21,6 @@ import type { Audience, Product } from "../../lib/api";
  * `.reference/scripts/inline_11.js` (see `useEffect` below).
  */
 
-/* ------------------------------------------------------------------ *
- * Reference copy — used only when Strapi returns nothing (CMS offline).
- * ------------------------------------------------------------------ */
-const FALLBACK_INTRO_1 =
-  "Some thoughts need time, space, and a physical trace to exist. Writing by hand creates focus, presence, and a deeper connection with ideas. This tool is built around that simple truth.";
-
-const FALLBACK_INTRO_2 =
-  "This tool is made for people who think on paper. It keeps handwriting natural and focused, letting you write the way you always have without distractions or screens getting in the way. Everything you write syncs to the app, where your notes are organized, searchable, and ready to work with AI when you need more clarity or structure.";
-
-const FALLBACK_AUDIENCES: Audience[] = [
-  {
-    title: "Students & Learners",
-    description:
-      "Handwritten notes stay personal and intuitive, but become searchable, organized, and easy to study. Lectures, ideas, and revisions are captured as they are — then supported by AI summaries, text recognition, and quick navigation when it matters most."
-  },
-  {
-    title: "Creators, Designers & Architects",
-    description:
-      "Sketches, diagrams, concepts, and fragments of ideas belong on paper. This tool makes sure they don’t disappear. Everything drawn or written is safely stored, easy to revisit, and ready to evolve into something bigger — without interrupting the creative flow."
-  },
-  {
-    title: "Managers & Product Thinkers",
-    description:
-      "Meetings start on paper and end with structure. Notes turn into clear summaries, tasks, and follow-ups. The pen captures everything quietly, while the app helps organize decisions without pulling attention away from the room."
-  }
-];
-
 /**
  * Desktop theses: the reference gives each `list__item` its own element id
  * (unlike the mobile family, where all three share one base id + `_0/_1/_2`).
@@ -89,8 +62,8 @@ export default function Who({ product, audiences }: { product: Product; audience
   const desktop = useRef<HTMLElement>(null);
   const text1 = useRef<HTMLParagraphElement>(null);
 
-  /** The theses actually rendered: Strapi's list, or the reference copy. */
-  const items = audiences.length > 0 ? audiences : FALLBACK_AUDIENCES;
+  /** The theses, straight from the `audience` collection. */
+  const items = audiences;
 
   /**
    * Copy split, matching the reference exactly:
@@ -101,18 +74,12 @@ export default function Who({ product, audiences }: { product: Product; audience
    *                            two paragraphs, split into four lines).
    */
   const intro = useMemo(() => {
-    const paragraphs = (product.whoForIntro || "")
+    const paragraphs = (product.whoForIntro)
       .split(/\n{2,}/)
       .map((part) => part.trim())
       .filter(Boolean);
 
-    return {
-      text1: product.about || FALLBACK_INTRO_1,
-      paragraphs:
-        paragraphs.length > 0
-          ? paragraphs
-          : [FALLBACK_INTRO_2]
-    };
+    return { text1: product.about, paragraphs };
   }, [product.about, product.whoForIntro]);
 
   /** The reference collapses all whitespace before splitting into characters. */

@@ -266,20 +266,25 @@ export default function Header({ product }: { product: Product }) {
           >
             <div className="image button-order__logo" id="iaop3qq35_0">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src="/d/order-logo.svg" alt="logo" className="image__img" id="iizle9q6u_0" />
+              <img
+                src={product.popupLogo || undefined}
+                alt=""
+                className="image__img"
+                id="iizle9q6u_0"
+              />
             </div>
             <div className="div button-order__content div--u-i36a30ugn" id="i36a30ugn_0">
               <div className="div button-order__texts div--u-ih8sf86nh" id="ih8sf86nh_0">
                 <div className="text button-title tc--main-white" id="i0foueqdg_0">
-                  <span className="text-block-wrap-div">{product.ctaLabel || "Order"}&nbsp;</span>
+                  <span className="text-block-wrap-div">{product.ctaLabel}&nbsp;</span>
                 </div>
                 <div className="text button-title tc--main-white-40" id="i4vkozi9y_0">
-                  <span className="text-block-wrap-div">{product.name || "Nota One"}</span>
+                  <span className="text-block-wrap-div">{product.name}</span>
                 </div>
               </div>
               <div className="div button__separator bc--main-white" id="iiw8s1mv9_0" />
               <div className="text button-title tc--main-white" id="i5pk49g9e_0">
-                <span className="text-block-wrap-div">{product.ctaPrice || "$300"}</span>
+                <span className="text-block-wrap-div">{product.ctaPrice}</span>
               </div>
             </div>
           </div>

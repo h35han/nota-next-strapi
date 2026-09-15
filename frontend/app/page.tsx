@@ -1,4 +1,4 @@
-import { getHomeData, FALLBACK_HOME_DATA } from "../lib/api";
+import { getHomeData } from "../lib/api";
 import Preloader from "./components/Preloader";
 import { OrderProvider } from "./components/chrome";
 import Header from "./components/Header";
@@ -44,13 +44,10 @@ export const dynamic = "force-dynamic";
  * nesting in sync with the reference (`.reference/sections/_full_body.html`).
  */
 export default async function Home() {
-  let data;
-  try {
-    data = await getHomeData();
-  } catch {
-    // Strapi unreachable — render a static default so the site never 500s.
-    data = FALLBACK_HOME_DATA;
-  }
+  // Every word and every image on this page comes from Strapi. There is no
+  // in-repo copy to fall back to on purpose: if the CMS is unreachable the
+  // page should fail loudly rather than silently render invented content.
+  const data = await getHomeData();
 
   return (
     <>

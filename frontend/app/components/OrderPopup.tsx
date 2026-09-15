@@ -66,11 +66,11 @@ function PopupBody({ homepage }: { homepage: Homepage }) {
       >
         <div className="div popup__text-wrapper" id="iyk9q28qm_0">
           <div className="text headline--1 tc--main-black text--u-ixt89z1z0" id="ixt89z1z0_0">
-            <span className="text-block-wrap-div">{homepage.popupHeading || "Stay ahead"}</span>
+            <span className="text-block-wrap-div">{homepage.popupHeading}</span>
           </div>
           <div className="text popup__main-text tc--gray main-text" id="imcg0hehx_0">
             <span className="text-block-wrap-div">
-              {homepage.popupText || "Launching soon. Get early access and insider updates"}
+              {homepage.popupText}
             </span>
           </div>
         </div>
@@ -83,7 +83,7 @@ function PopupBody({ homepage }: { homepage: Homepage }) {
           id="ixj6u7qa9_0"
         >
           <input
-            placeholder={homepage.popupInputPlaceholder || "E-mail"}
+            placeholder={homepage.popupInputPlaceholder}
             type="email"
             className="form__input popup__input tc--main-black-40 form__input--u-i9d6td3ac"
             id="i9d6td3ac_0"
@@ -97,19 +97,19 @@ function PopupBody({ homepage }: { homepage: Homepage }) {
             <span className="text-block-wrap-div">Это поле обязательно для заполнения</span>
           </div>
           <div className="text error-text text--u-i0fta0jg1" id="i0fta0jg1_0">
-            <span className="text-block-wrap-div">{homepage.popupError || "Something went wrong! Try again"}</span>
+            <span className="text-block-wrap-div">{homepage.popupError}</span>
           </div>
         </div>
         <button type="submit" className="submit_button popup__button submit_button--u-iau8fobkk" id="iau8fobkk_0">
           <span className="text-button button-title" id="izgubndmb_0">
-            <span className="text-block-wrap-div">{homepage.popupButton || "Notify me"}</span>
+            <span className="text-block-wrap-div">{homepage.popupButton}</span>
           </span>
           <div className="div button__separator bc--main-white" id="iczvt8g41_0"></div>
         </button>
       </form>
       <div className="form__state-success form__state-success--u-i2th1p7i3" id="i2th1p7i3_0">
         <div className="text headline--1 text--u-iph0ejp0l" id="iph0ejp0l_0">
-          <span className="text-block-wrap-div">{homepage.popupSuccess || "All set. We’ll keep you posted"}</span>
+          <span className="text-block-wrap-div">{homepage.popupSuccess}</span>
         </div>
       </div>
       <div className="form__state-error" id="i6l34jarn_0">
@@ -197,7 +197,7 @@ export default function OrderPopup({
           id="i0s0s0e83_0"
           onClick={onClose}
         >
-          <span className="text-block-wrap-div">{homepage.popupClose || "Close"}</span>
+          <span className="text-block-wrap-div">{homepage.popupClose}</span>
         </div>
       </div>
     </div>

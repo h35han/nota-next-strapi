@@ -29,19 +29,6 @@ import { setScrollLock } from "../../lib/smooth";
 const LIST_TOP_IDS = ["i76dcqvj6_0", "iq13vujsn_0", "iqgub8xbx_0", "i2zpcvgmb_0", "i5rmm4jos_0"];
 const LIST_BOTTOM_IDS = ["ilg9pyr6x_0", "inj58w0yf_0", "iyhgdr138_0", "i77rrbpqq_0"];
 
-/** The reference's hard-coded list, used when the CMS team is empty/unreachable. */
-const REFERENCE_TEAM: TeamMember[] = [
-  { name: "Alexandra Kazimirskaya", telegram: "lunary_me" },
-  { name: "Daria Zubareva", telegram: "mi_shunia" },
-  { name: "Olga Kopyeva", telegram: "imkopyova" },
-  { name: "Stefania Orlova", telegram: "whybitchcry" },
-  { name: "Dobrinya Karepin", telegram: "donkarepin" },
-  { name: "Maya Melnichuk", telegram: "MYaroslavovna" },
-  { name: "Valeria Yalova-Chernova", telegram: "Yalova_Valeriya" },
-  { name: "Natalia Borovkova", telegram: "NatalieMeribel" },
-  { name: "Anastasia Voronova", telegram: "Anastasia_coin" }
-];
-
 /** How many names the reference puts in `footer-popup__list-top`. */
 const LIST_TOP_COUNT = 5;
 
@@ -58,19 +45,14 @@ export default function FooterPopup({
   open: boolean;
   onClose: () => void;
   homepage: Homepage;
-  /**
-   * Optional, additive prop: the reference hard-codes exactly the nine people
-   * held in the Strapi `team-members` collection, so `Footer` passes it in and
-   * the markup is filled from the CMS (`REFERENCE_TEAM` is the fallback).
-   */
-  team?: TeamMember[];
+  /** The Strapi `team-member` collection, passed down by `Footer`. */
+  team: TeamMember[];
 }) {
   const root = useRef<HTMLDivElement>(null);
   const shown = useRef(false);
 
-  const members = team && team.length > 0 ? team : REFERENCE_TEAM;
-  const listTop = members.slice(0, LIST_TOP_COUNT);
-  const listBottom = members.slice(LIST_TOP_COUNT);
+  const listTop = team.slice(0, LIST_TOP_COUNT);
+  const listBottom = team.slice(LIST_TOP_COUNT);
 
   // `scrollLock: true` in the reference's tt_modal settings.
   useEffect(() => {
@@ -126,7 +108,7 @@ export default function FooterPopup({
       <div
         className="pop-up__content pop-up__content--u-ita86m2cj bc--main-radial footer-popup__list"
         id="ita86m2cj_0"
-        aria-label={homepage.footerBuiltBy || "Builded by NōtaTeam"}
+        aria-label={homepage.footerBuiltBy}
       >
         <div className="div footer-popup__list-top" id="iu4bpxwq2_0">
           {listTop.map((member, i) => (

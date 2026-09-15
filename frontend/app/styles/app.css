@@ -148,23 +148,29 @@ html.lenis body {
   opacity: 1;
 }
 
-/* --- hero Lottie stack --------------------------------------------- */
-.nota-lottie-host,
-.nota-lottie-video,
-.nota-lottie-image {
+/* --- hero media stack ---------------------------------------------- */
+.nota-cover-canvas,
+.nota-cover-video,
+.nota-cover-image {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  transition: opacity 200ms linear;
 }
 
-.nota-lottie-host svg {
+.nota-cover-canvas {
   display: block;
-  width: 100%;
-  height: 100%;
 }
 
-.nota-lottie-video,
-.nota-lottie-image {
+/* The video and the still are full-bleed assets, so they cover. */
+.nota-cover-video {
   object-fit: cover;
+}
+
+/* `cover_image` is the tall pen render (the reference's *mobile* hero
+   asset), so covering a 16:9 box would crop it to a few magnified pixels.
+   Contain keeps it legible if the animation cannot be decoded. */
+.nota-cover-image {
+  object-fit: contain;
 }

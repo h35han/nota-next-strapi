@@ -15,6 +15,35 @@ npm run dev:frontend  # Next only (expects Strapi on :1337)
 
 `npm run env:setup` copies `.env.example` → `.env.local` on first install.
 
+## Content comes from Strapi — all of it
+
+Every word and every image on the page is fetched from the CMS through
+`lib/api.ts`. There is deliberately **no content copy or artwork in this repo**:
+
+* the per-section `FALLBACK_*` constants, the reference team list, the
+  reference colour variants and `FALLBACK_HOME_DATA` are gone — if Strapi is
+  unreachable the page fails loudly instead of rendering invented content;
+* `product.* || "literal"` fallbacks are gone too, so an empty CMS field
+  renders empty;
+* every `hero_cover_video`, `cover_image`, `specs_image`, `who_video`,
+  `popup_image`, `popup_logo`, `inside_set_image`, `details_video`,
+  `color_variant.image`, `feature.image`, `box_item.image` and
+  `detail_card.image` is used straight from the API.
+
+`frontend/public/d/` holds **design chrome only** — the 40 backgrounds and
+icons that the vendored stylesheets reference by URL (`.inside__blinds-image--hover`,
+`.footer-popup__close`, the footer credits dot, …). Those are part of the
+design system, not content, and the schema has no field for them.
+
+A handful of visible labels have no field in `backend/src/api/**` either, so
+they remain constants in the components: the four header/menu nav labels, the
+`Specifications` and `Who it's for:` headings, the `Inside / the box` title,
+and the footer's `Navigation` / `Year` column headers. Adding a CMS field for
+any of them is a backend change, so they stay where they are until one exists.
+
+Metadata is bound too (`meta_title`, `meta_description`, `og_image`); only an
+error-path site name and the bundled `opengraph.jpg` remain in code.
+
 ## How this port is put together
 
 The original is a Taptop "mosaic" page: a declarative design system plus a
@@ -113,17 +142,33 @@ rendered; the vendored CSS toggles them at the 991px breakpoint.
 
 ### The hero
 
-`app/sections/Cover.tsx` + `app/components/CoverLottie.tsx`. The reference plays
-a **Lottie** document and seeks it frame by frame from the scroll position, so
-that is what we do: `lottie-web` is mounted with `autoplay:false, loop:false`
-and `goToAndStop(frame, true)` runs on every scroll tick. The frame comes from
-the first ancestor taller than the viewport — `.cover__camera` is
-`position:sticky`, so that ancestor is `.black-bg__wrapper`, exactly as in the
-reference. Fallbacks in order: Lottie JSON → all-keyframe MP4 → still image.
+`app/sections/Cover.tsx` + `app/components/CoverMedia.tsx`.
 
-The Lottie file is Strapi-bound: `product.cover_lottie` (a `files` media field
-on the Product content type). The headline uses the reference's scramble-text
-intro.
+The reference drives the cover from a **Lottie** document. The Product schema
+exposes exactly one hero media field, `hero_cover_video`, and the file it
+points at is an **animated WebP** (`nota_lottie.webp`, 76 frames) — the
+Taptop raster render of the same animation. Since there is no field for the
+Lottie, `CoverMedia` decodes the WebP instead, which gives the identical
+frame-by-frame behaviour:
+
+1. `ImageDecoder.decode({ frameIndex })` on demand, blitted to a canvas with a
+   cover fit (Chromium / Edge / Safari 16.4+). Frames decode at source
+   resolution and are cached in a small bounded LRU;
+2. otherwise the all-keyframe `.mp4` sibling of the Strapi URL, scrubbed
+   through `<video>.currentTime`;
+3. otherwise `product.cover_image`.
+
+The frame is chosen by walking up from the cover to the first ancestor taller
+than the viewport — `.cover__camera` is `position:sticky`, so that ancestor is
+`.black-bg__wrapper`, exactly as in the reference — and mapping
+`(scrollY − ancestorTop) / (ancestorHeight − viewportHeight)` onto the frame
+range, gated on 30 % visibility (`inline_03.js`).
+
+Note the raster asset carries mild compression noise in the dark gradient that
+the original vector Lottie does not. That is inherent to the CMS file, not the
+decode path — the browser decode is byte-for-byte comparable to the MP4.
+
+The headline uses the reference's scramble-text intro.
 
 ## Reference material
 

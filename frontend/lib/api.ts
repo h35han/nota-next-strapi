@@ -59,7 +59,6 @@ export type Product = {
   designCredit: string;
   builtCredit: string;
   coverImage: string;
-  coverLottie: string;
   heroCoverVideo: string;
   heroVideo: string;
   specsImage: string;
@@ -132,10 +131,14 @@ function mediaToUrl(value: unknown): string {
 }
 
 /**
- * Derive the scroll-scrubbable MP4 sibling of an animated WebP asset
+ * Derive the scroll-scrubbable MP4 sibling of the hero's animated WebP
  * (e.g. `/uploads/nota_lottie_ce8fd33945.webp` → the `.mp4` next to it).
- * The MP4 gives us a reliable `<video>` `currentTime` scrub in every
- * browser; the WebP remains the authored asset in Strapi.
+ *
+ * `hero_cover_video` is the only hero media the Product schema exposes, and
+ * the file it points at is an animated WebP — which `CoverMedia` scrubs
+ * frame by frame itself via `ImageDecoder`. This URL is the *fallback* for
+ * engines without `ImageDecoder`; it is derived from the Strapi-bound URL
+ * rather than hard-coded, and a 404 simply drops through to `coverImage`.
  */
 function heroToVideoUrl(webpUrl: string): string {
   if (!webpUrl) return "";
@@ -187,7 +190,6 @@ function mapProduct(entry: Entry | undefined): Product {
     designCredit: str(entry?.design_credit),
     builtCredit: str(entry?.built_credit),
     coverImage: mediaToUrl(entry?.cover_image),
-    coverLottie: mediaToUrl(entry?.cover_lottie),
     heroCoverVideo: mediaToUrl(entry?.hero_cover_video),
     heroVideo: heroToVideoUrl(mediaToUrl(entry?.hero_cover_video)),
     specsImage: mediaToUrl(entry?.specs_image),
@@ -223,75 +225,13 @@ function mapHomepage(entry: Entry | null | undefined): Homepage {
   };
 }
 
-const DEFAULT_METADATA: HtmlMetadata = {
-  title: "NŌTA | Writing Infrastructure for Modern Thinking",
-  description:
-    "NŌTA is a smart writing system that combines a precision smart pen, intelligent paper, and real-time digital sync. Designed for people who think better by hand, it captures handwriting instantly, organizes notes automatically, and turns analog writing into structured, searchable digital knowledge.",
-  ogImage: "/opengraph.jpg"
-};
-
 /**
- * Minimal data set so the page still renders a functional hero, sections,
- * and footer if the Strapi backend is unreachable. Gives the site a static
- * default instead of hard 500s while the CMS boots.
+ * Error-path metadata only. Every rendered word on the site comes from
+ * Strapi; this is used solely when the CMS cannot be reached while the
+ * document head is being built, so the page still has a title.
  */
-export const FALLBACK_HOME_DATA: HomeData = {
-  product: {
-    name: "NŌTA",
-    heading: "Smart pen",
-    subheading: "for real thinking",
-    tagline: "Nota pen",
-    description: "",
-    about:
-      "Some thoughts need time, space, and a physical trace to exist. Writing by hand creates focus, presence, and a deeper connection with ideas. This tool is built around that simple truth.",
-    whoForIntro: "",
-    ctaLabel: "Order",
-    ctaPrice: "$300",
-    availability: "",
-    year: 2026,
-    team: "",
-    designCredit: "",
-    builtCredit: "",
-    coverImage: "",
-    coverLottie: "",
-    heroCoverVideo: "",
-    heroVideo: "",
-    specsImage: "",
-    specsImageTablet: "",
-    specsImageMobile: "",
-    whoVideo: "",
-    popupImage: "",
-    popupLogo: ""
-  },
-  specs: [],
-  audiences: [],
-  features: [],
-  colorVariants: [],
-  boxItems: [],
-  detailCards: [],
-  teamMembers: [],
-  homepage: {
-    insideCompleteHeading: "Everything, in one box",
-    insideCompleteText: "",
-    insideIntro: "Inside the box",
-    insideSetImage: "",
-    detailsVideo: "",
-    popupHeading: "Get early access",
-    popupText: "",
-    popupInputPlaceholder: "",
-    popupButton: "Submit",
-    popupSuccess: "",
-    popupError: "",
-    popupClose: "",
-    footerCopyright: "© 2026 NŌTA",
-    footerMadeIn: "",
-    footerBuiltBy: "",
-    footerDesignedBy: "",
-    madeInUrl: "",
-    designedUrl: "",
-    uprockUrl: ""
-  }
-};
+const SITE_NAME = "NŌTA";
+const SITE_OG_IMAGE = "/opengraph.jpg";
 
 // ---------------------------------------------------------------------------
 // Public API
@@ -359,11 +299,11 @@ export async function getHtmlMetadata(): Promise<HtmlMetadata> {
     const raw = await fetchJson<Entry>("/homepage?populate=*");
     const h = raw.data as unknown as Entry | null;
     return {
-      title: str(h?.meta_title) || DEFAULT_METADATA.title,
-      description: str(h?.meta_description) || DEFAULT_METADATA.description,
-      ogImage: mediaToUrl(h?.og_image) || DEFAULT_METADATA.ogImage
+      title: str(h?.meta_title) || SITE_NAME,
+      description: str(h?.meta_description),
+      ogImage: mediaToUrl(h?.og_image) || SITE_OG_IMAGE
     };
   } catch {
-    return DEFAULT_METADATA;
+    return { title: SITE_NAME, description: "", ogImage: SITE_OG_IMAGE };
   }
 }
